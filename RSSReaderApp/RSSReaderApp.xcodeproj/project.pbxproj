@@ -15,6 +15,7 @@
 		F97F3C9E25BEB65C001B8CC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97F3C9C25BEB65C001B8CC3 /* LaunchScreen.storyboard */; };
 		F97F3CA925BEB65D001B8CC3 /* RSSReaderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F3CA825BEB65D001B8CC3 /* RSSReaderAppTests.swift */; };
 		F97F3CB425BEB65D001B8CC3 /* RSSReaderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F3CB325BEB65D001B8CC3 /* RSSReaderAppUITests.swift */; };
+		F984271825C27E5F0069AD72 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F984271725C27E5F0069AD72 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F97F3CAF25BEB65D001B8CC3 /* RSSReaderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSSReaderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97F3CB325BEB65D001B8CC3 /* RSSReaderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSReaderAppUITests.swift; sourceTree = "<group>"; };
 		F97F3CB525BEB65D001B8CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F984271725C27E5F0069AD72 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				F97F3C9A25BEB65C001B8CC3 /* Assets.xcassets */,
 				F97F3C9C25BEB65C001B8CC3 /* LaunchScreen.storyboard */,
 				F97F3C9F25BEB65C001B8CC3 /* Info.plist */,
+				F984271725C27E5F0069AD72 /* LoginViewController.swift */,
 			);
 			path = RSSReaderApp;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F984271825C27E5F0069AD72 /* LoginViewController.swift in Sources */,
 				F97F3C9625BEB65A001B8CC3 /* ViewController.swift in Sources */,
 				F97F3C9225BEB65A001B8CC3 /* AppDelegate.swift in Sources */,
 				F97F3C9425BEB65A001B8CC3 /* SceneDelegate.swift in Sources */,
