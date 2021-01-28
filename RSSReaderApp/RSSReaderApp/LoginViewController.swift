@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LineSDK
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -14,15 +15,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         print(UserDefaults.standard.string(forKey: "userName"))
         print(UserDefaults.standard.string(forKey: "userPassword"))
-        print(UserDefaults.standard.set(true, forKey: "isUserLoggedIn"))
+        print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
         userNameTextField.delegate = self
         userPasswordTextField.delegate = self
         // 入力された文字を非表示モードにする.
         userPasswordTextField.isSecureTextEntry = true
         userNameTextField.addTarget(self, action: #selector(onExitAction), for: .editingDidEndOnExit)
         userPasswordTextField.addTarget(self, action: #selector(onExitAction), for: .editingDidEndOnExit)
+        // LINE
+        // Create Login Button.
+        let loginButton = LoginButton()
+        loginButton.delegate = self
+        // Configuration for permissions and presenting.
+        loginButton.permissions = [.profile]
+        loginButton.presentingViewController = self
+        // Add button to view and layout it.
+        view.addSubview(loginButton)
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        //下部からマージン100を指定
+        loginButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
     }
     @IBOutlet var loginButton: UIButton!
     
@@ -78,4 +93,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     }
 
+}
+// LINE
+extension LoginViewController: LoginButtonDelegate {
+    func loginButton(_ button: LoginButton, didSucceedLogin loginResult: LoginResult) {
+        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+        print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
+        print("Login Succeeded.")
+    }
+    
+    func loginButton(_ button: LoginButton, didFailLogin error: LineSDKError) {
+        print("Error: \(error)")
+    }
+    
+    func loginButtonDidStartLogin(_ button: LoginButton) {
+        print("Login Started.")
+    }
 }

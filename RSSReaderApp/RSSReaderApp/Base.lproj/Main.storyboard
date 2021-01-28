@@ -101,7 +101,7 @@
                             <constraint firstItem="jO2-1b-GRb" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.0415648" id="DxW-A2-qfY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qwu-12-slH" secondAttribute="trailing" constant="20" id="Eou-mH-y1E"/>
                             <constraint firstItem="JXI-7v-Evr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="144" id="IZo-9Z-awL"/>
-                            <constraint firstItem="fJZ-N4-S1B" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="83" id="Jmb-l9-oSi"/>
+                            <constraint firstItem="fJZ-N4-S1B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="83" id="Jmb-l9-oSi"/>
                             <constraint firstItem="IBA-NR-t2O" firstAttribute="width" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.903382" id="KJs-N4-ZDx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jO2-1b-GRb" secondAttribute="trailing" constant="20" id="O5b-jf-2bT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IBA-NR-t2O" secondAttribute="trailing" constant="20" id="OIp-Bc-Y6E"/>
@@ -111,7 +111,7 @@
                             <constraint firstItem="Qwu-12-slH" firstAttribute="width" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.903382" id="WzG-fI-GCt"/>
                             <constraint firstItem="I70-8E-ZZL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="144" id="Wzc-Df-WPf"/>
                             <constraint firstItem="jO2-1b-GRb" firstAttribute="width" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.903382" id="XBR-g4-AEv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rcn-ZA-tzh" secondAttribute="bottom" constant="266" id="XfI-vg-6Wh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rcn-ZA-tzh" secondAttribute="bottom" constant="150" id="XfI-vg-6Wh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JXI-7v-Evr" secondAttribute="trailing" constant="144" id="XqH-GG-Jij"/>
                             <constraint firstItem="Qwu-12-slH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YmQ-hZ-u5J"/>
                             <constraint firstItem="IBA-NR-t2O" firstAttribute="top" secondItem="Qwu-12-slH" secondAttribute="bottom" constant="8" symbolic="YES" id="ao9-dH-CZh"/>
