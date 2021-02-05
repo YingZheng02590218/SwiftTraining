@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LineSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // LINE
+        // アプリの起動直後に、LoginManager.setupメソッドを呼び出す
+        // https://developers.line.biz/ja/docs/ios-sdk/swift/integrate-line-login/
+        // setupメソッドを呼び出した後で他のメソッドを呼び出したりすること
+        LoginManager.shared.setup(channelID: "1655619021", universalLinkURL: nil)
+        
         return true
+    }
+    // LINE
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return LoginManager.shared.application(app, open: url)
     }
 
     // MARK: UISceneSession Lifecycle

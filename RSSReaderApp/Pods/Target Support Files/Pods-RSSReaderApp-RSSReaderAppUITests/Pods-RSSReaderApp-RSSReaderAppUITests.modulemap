@@ -1,0 +1,6 @@
+framework module Pods_RSSReaderApp_RSSReaderAppUITests {
+  umbrella header "Pods-RSSReaderApp-RSSReaderAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

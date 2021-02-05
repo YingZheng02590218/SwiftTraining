@@ -1,0 +1,1702 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		009260A677B6FD5971DF1A7F359CE482 /* TemplateMessagePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5F6429D34B70C805487C1A81B3223 /* TemplateMessagePayload.swift */; };
+		069B0E6240702C9A15C1E226180864C9 /* JWTHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC847717604BCD43A998ED4A71B1ED5 /* JWTHelpers.swift */; };
+		0720770433B9E34EE2B706602CD1A520 /* RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2CAE77CDA2643F8BE28BCC3DD7C48B /* RSA.swift */; };
+		07485A1BE56631015B80C733CD8853E7 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6D567F52213E99BB7BB677F26633C /* ImageManager.swift */; };
+		09931362B621658F325BBF0DD5F73C3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		0AB14407AFBC95250CE7AD9B7AF9372C /* ECDSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488398FA01347A531E8C56C78F41A2FC /* ECDSA.swift */; };
+		0BB1DDDF3C4596F4E220D58917433C20 /* GetApproversInGroupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C8BECEFEAB4A30793210F710AC32A /* GetApproversInGroupRequest.swift */; };
+		0D541A2DB6B73F2FE2D0BA89993B4840 /* GetVerifyTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C2DCFB7BED9E1A458840144A76C6A2 /* GetVerifyTokenRequest.swift */; };
+		0D8F394C895E0EDA730D73D443487420 /* FlexFillerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B7EF8AB7A4C93F2A7FCDD7F03C2234 /* FlexFillerComponent.swift */; };
+		0FE2109AF2E7CD8390EE8950B6B0A6C6 /* ShareTargetSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086AE4BCF86F05BFE972ED96D397DE3 /* ShareTargetSearchResultViewController.swift */; };
+		13C4B2D4499E69E7F01FDA7E75594599 /* OpenChatRoomInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CB2F78915A3101715BDAE56C464DC /* OpenChatRoomInfoViewController.swift */; };
+		14FD30E3BB7636B9E05FA0C65A35FDF3 /* LineSDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489663B93B0BF308ECEC09D58671397 /* LineSDKError.swift */; };
+		150B5C657C03FFBDD9F72982F12464DD /* Pods-RSSReaderApp-RSSReaderAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B34B7E16F08F7417E3F5E94DE300125A /* Pods-RSSReaderApp-RSSReaderAppUITests-dummy.m */; };
+		15DF5AC3BCE9143B8CB8FACCA751A32C /* FlexMessageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91E4108739EC48C326494DFE150E4D4 /* FlexMessageProperties.swift */; };
+		16E173F56291DA45624AE12BD4C7CB67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		1C48886C7B6D0CD62236445E75C46E05 /* MessageSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371E556D977EF1CE82E3B7AC3B7B975 /* MessageSender.swift */; };
+		1E34420D9AE35C5C211F2EBE04E249DF /* Pods-RSSReaderAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 908906781DC962DAB5A7605237D5A7B4 /* Pods-RSSReaderAppTests-dummy.m */; };
+		1F3EA7FD0721CC4042B172E38F585DFA /* OpenChatRoomCreatingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C97A12C9E540EE15EB2F2D15944EF /* OpenChatRoomCreatingItem.swift */; };
+		2248C99B6330156AEC245AE5E407CA1F /* LoginConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17519237EA3FEB7379964FD624651E7C /* LoginConfiguration.swift */; };
+		23C4AE0754727B7730D23F107C0A1307 /* CryptoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F77CE74E5111FD5FF9226D9977967 /* CryptoData.swift */; };
+		24202E36F78235C1C4D381F6EDEE0D99 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066FF95D62E5031D245BA7BEEE847051 /* UserProfile.swift */; };
+		268C56AB9910D1C0ADF6F17442B90988 /* CountLimitedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB196F7C3E986F3629022EF8AAB5474 /* CountLimitedTextView.swift */; };
+		269A2C5967A45672698C20EBF552906E /* CryptoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6EB0ADC953428DD96DF798674952AE /* CryptoHelpers.swift */; };
+		2758633382F1FD0F93E5C846D887C52B /* LoginPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559352FD4C47E8FC0A221FF2D5774520 /* LoginPermission.swift */; };
+		286EA46317F92BFABBD556F8F93F4476 /* FlexBoxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938111DF5EA959A1384260D63A76A0B9 /* FlexBoxComponent.swift */; };
+		2944914CCE437C092A27DE83F2E1459D /* TemplateMessageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD41B1B4559AD8370B93A4C0A133278 /* TemplateMessageProperties.swift */; };
+		29D618D115C6C3A3A0ADA7C676ADFBE1 /* LoginProcessURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CB207956DAA365BF27BA337E051D7 /* LoginProcessURLResponse.swift */; };
+		2B1486AD7565DC611E5AF8B2929AA230 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD232A563A75A5B28A6D51A3AA5A63B2 /* Colors.swift */; };
+		2B8A213D56FA5FC110E4804C8FC2642A /* PageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EC4C4E686BDEBF3027C6907D80E204 /* PageTabView.swift */; };
+		2B9321C70A82771038E395A3B2471201 /* FlexMessageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B04CE2EDB7D1A51A731BDC127BE69 /* FlexMessageContainer.swift */; };
+		2C90FC7761AF38DC72D370028251B207 /* FlexSeparatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F90B34F1CBEAC5B095AA055A731C756 /* FlexSeparatorComponent.swift */; };
+		2EFC2C455BB0FE9E9A1BD53D65EE20A3 /* LineSDKSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7929EFE97F41716642AE7CAB63F0E245 /* LineSDKSwift-dummy.m */; };
+		30947F4401EBBB5FD50AB2D72E5E4C1F /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F6305FD2E8A7B87139BCDC129A9B49 /* Delegate.swift */; };
+		3175B5CC221A49D20D6B499D29EDD8BB /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF04FFC46B299B71F0411686E1122CD /* AccessToken.swift */; };
+		32F4194A41A2A43C9EBC8D55D87451F7 /* FlexButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F4F777F84A185A289852328114A168 /* FlexButtonComponent.swift */; };
+		33514BBCA69E1D331EF5DAEFC170BFAD /* CodingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26982D705C0C6E153DFEC9AB05288B48 /* CodingExtension.swift */; };
+		33E4F6DE7ACBFCBE9D1319A986D8B0DE /* VerticallyCenteredTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B5189A15BCBCB3F4C965F781B754B9 /* VerticallyCenteredTextView.swift */; };
+		37025C578E4C80D948C4BB67B4AF1F60 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC687A049C706874260064C760A2469F /* APIError.swift */; };
+		37EB9A211DEAA05D2B10359723A52A71 /* CryptoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D656F95A601595DBE71DC71B722ACE1 /* CryptoKey.swift */; };
+		38C6FB712A61B3B90C2DA6BE8E0C9525 /* ShareTargetSelectingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E6C2D827CC0C69BE5F2F241E3210DA /* ShareTargetSelectingTableCell.swift */; };
+		3A1C6024A123FD600CBFBA40DDF4985C /* ShareTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFCDBA4C279E9BE2D1E495D3F6D390 /* ShareTarget.swift */; };
+		3C38F30BF00361C84F5BEF2D8706703A /* JWKSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6FF08EA75852FD8DD2E0254262FA35 /* JWKSet.swift */; };
+		408FA27875DDA26A5A5305F2D003AF78 /* CryptoAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28680D93B379DBB78794C59D036E8A64 /* CryptoAlgorithm.swift */; };
+		412C70FCE3B1A2D48616E28E1C178331 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D906CEA0F724BFCAF717C5163CCEF47 /* Unit.swift */; };
+		441AB5D35C154A1BEEFF0660D5236B8A /* TemplateMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A7070C1F9C68E5270EAE6205E01B0A /* TemplateMessage.swift */; };
+		44F1210D34AE47D10C86923145E44B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4347907B74E7C861F0668B2A5C7DD0 /* Assets.xcassets */; };
+		45132063FD334C19A8144C5C81F27D66 /* NotificationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7144E71FA0D019290D95222BD9565C0 /* NotificationToken.swift */; };
+		463BD3F5F2554C64DFBF0028F5618F23 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AED542A9AE7907D660114D6FF9F186 /* Request.swift */; };
+		4775224CE0040FB322E3AD6C513E3006 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC090D33FC86BBD3BC976C2185902BE /* ShareViewController.swift */; };
+		47EB8EA137CCCB1A1025880E2955598D /* PostMultisendMessagesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53EC28A05EB8CF8D22B2C5DB3D5FF93 /* PostMultisendMessagesRequest.swift */; };
+		4B61E6CBAEA5D2CCB12DFD8C48BBB67A /* Pods-RSSReaderAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 262CEC9AE58FE9041D5023D961FDA6BD /* Pods-RSSReaderAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B74C9E6D2FB23A68E5C762384B0A4DF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077ECEC39AABEE069913803B446B794 /* String.swift */; };
+		4E0C681FF2D4905C8109B3D615EAA64A /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2774A4B6D0D5FCBA208D8B235019590 /* LoginButton.swift */; };
+		4EFCCE9974DD066778941BB5B5093525 /* ShareViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A3EEE2E9CEE3F204C34BE90FBA260 /* ShareViewControllerDelegate.swift */; };
+		4F1A88002FC6DFEA12A3F5BA9DCB07C9 /* ShareTargetTableViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131AE6B375DF2A7B4AE3081C812E51E8 /* ShareTargetTableViewStyling.swift */; };
+		51DD677720BE2720EC4A98950B6E056A /* FlexImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631DCEE851A45520A37D2D197411786 /* FlexImageComponent.swift */; };
+		52ADA1F5586505990BBEB84D2710A6E8 /* OpenChatRoomNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3DFC14AAEDAC9DCA75381D512DD64 /* OpenChatRoomNameTableViewCell.swift */; };
+		5613BCC48A95A4DCF24F5A68060A4791 /* PostRevokeTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85669EB8BB5FAD2226D110131A0CD475 /* PostRevokeTokenRequest.swift */; };
+		581E409FFD24AA6018308EBEE18D7E3E /* StyleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D049208AFB5A3E46735BFF08851F51 /* StyleNavigationController.swift */; };
+		5DF1311FF2BA8C15E5F2974150CEC08D /* GetOpenChatRoomJoinTypeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3600BE5EFA111A4D37581BA72A13ABC /* GetOpenChatRoomJoinTypeRequest.swift */; };
+		601352BF4B53CEFB44DE15950BB5F314 /* OpenChatCreatingFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B12684D558BB96D1B9D337EEF08966 /* OpenChatCreatingFormItem.swift */; };
+		6038FDFB0C4A9D4C3FF1BC11547C5F0D /* GetOpenChatTermAgreementStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C47C0E187FB350EF175032F859161F8 /* GetOpenChatTermAgreementStatusRequest.swift */; };
+		6326AE11F49DCD33994A9ACB715F9271 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D41F8EA02DD013C0DE8AC18790B8D0 /* Helpers.swift */; };
+		650A1DCB278936DA6881E4CA58012782 /* PostMessageSendingTokenIssueRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B65AF2CAA63280789F337C72D80DD3 /* PostMessageSendingTokenIssueRequest.swift */; };
+		659A4C68F5D8447639EDAD9A1ABD27B0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCFE10F5CB622CF6F2BEC1CC021511 /* Constant.swift */; };
+		676541E9C68356AAD6B8B4286ED3D1CE /* ColumnDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AF396732B717C752E268615354FA /* ColumnDataStore.swift */; };
+		695D9D143CDD623AB9C7841440265193 /* GetShareGroupsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9742FBDCD2CB017C72E24CBA47DCFC /* GetShareGroupsRequest.swift */; };
+		6D2C555B48F76015C5C16802563681D3 /* ChainedPaginatedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF94939D5968AB91FFEB1442243780 /* ChainedPaginatedRequest.swift */; };
+		6ECF5CA66C7E71F4027BC91B515AD02F /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70655BA219D94E08BCDBF6D0E89B6AE /* LoginManager.swift */; };
+		7136754ED1B20DE43F9889B4C7E83F57 /* DownloadableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7315D7B0C9EAF93798EDBEF5F590A453 /* DownloadableImageView.swift */; };
+		72225E553C21F260F15475DCCBDF1BCB /* GetDiscoveryDocumentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC24897660300639F1E7A792057C6B0 /* GetDiscoveryDocumentRequest.swift */; };
+		72DEE6CA1BA54B1CBE65B16198717AE4 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A369E3756E5963DCF0DFD84DC542A28 /* Session.swift */; };
+		7345DB4E8B14F0CD5646E2C14221E4D9 /* RequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30DE88FF54236A108ED29034E8C734C /* RequestAdapter.swift */; };
+		759CDB581C86B9B93F6667ECD36D5C20 /* ShareRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9C53012EEBF235B9EA838DF5C96 /* ShareRootViewController.swift */; };
+		77989CBEE6E3877C718FD20272C67BAB /* FormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1540A825597A6C4C93422E2DFBE5C /* FormSection.swift */; };
+		78465DAFFAEAAEA27CD39BBA8A73D271 /* OpenChatCreatingControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC8E2C0A6B7BF22D75685DB162BD6A /* OpenChatCreatingControllerDelegate.swift */; };
+		78676446310F4423F6EEEEB803D1383A /* JWK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037972D754E11DD6C9AA2D6E58D4589 /* JWK.swift */; };
+		79C4911E695876E71EE03CB652B42CA4 /* UserDefaultsValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254294CA3A283D75C45408399449236B /* UserDefaultsValue.swift */; };
+		7D9435E13DBC4E5067A48B5B78E50CC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		7E6AAAD42A5A72E2F152F5302BE9C596 /* FormEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D380850ED316A8431AA1FD184BABD04 /* FormEntry.swift */; };
+		7EEEF57E93EC54229F167FD64609271E /* TemplateCarouselPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B52B499A519A71277A908291FEF695F /* TemplateCarouselPayload.swift */; };
+		7F0EB4E7FC4F9F8F93DE77E96E10B15C /* OptionSelectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57838F35BC3C9291C639E0A3656738 /* OptionSelectingViewController.swift */; };
+		819440C7103EE04E224DC6C44203AE3F /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2CB9DEDC4E2C979E553A323E154AB0CE /* Resource.bundle */; };
+		823BD1B33F931FDD4FE8A3F030E298CF /* GetBotFriendshipStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0F3BDBFAB2DE9ADFC504DC999B7B8 /* GetBotFriendshipStatus.swift */; };
+		827496F05F6D331B2A544F73DB49B8AF /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA52373D12DEB22D9EF68860D44BFCA0 /* KeychainStore.swift */; };
+		86786B0B42D44EDACF75470577CA5683 /* ShareTargetSelectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C6116F82A9DB7BB99AF6141E572FE /* ShareTargetSelectingViewController.swift */; };
+		88706C3D6F8AE36B63D3DBEAC82E9450 /* ParametersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4444EFAC11393D449584457278736 /* ParametersAdapter.swift */; };
+		888F577EB26BD18DF0831B45382D60F1 /* FlexBlockStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3272EE10851F22CD04343FE0047DBD /* FlexBlockStyle.swift */; };
+		8950F7D1AEAE2132EAA9719419AF2B86 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A66EEDC1AD7352451C10D86ACE554 /* JWT.swift */; };
+		8B7F2D2E2F4385A75A446A515FBF44DC /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F30FA40B1C16FE654DD969DC5576B2 /* PageViewController.swift */; };
+		8B88A098451596552F08C743D2D24830 /* GetFriendsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979D9933052FE3DA0BCFFAD4B0BD10E /* GetFriendsRequest.swift */; };
+		8BB7CF4275A6DC995D33FA1408353D5A /* OpenChatUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C4D402128E8A9624254ACA40DAB52 /* OpenChatUserProfileViewController.swift */; };
+		8CE189A0AE600392DF5FD7454D4ED864 /* ResourceLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E74A43F65FAB25D245E80B56197BD43 /* ResourceLoading.swift */; };
+		8D09C0DBF2349097D75CB33990274382 /* ShareTargetSearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DFD0B9A29FF1F11D99D5CBCB3730A9 /* ShareTargetSearchResultTableViewController.swift */; };
+		8EC50ECA0DCAF41C9B87F6E4419A3D43 /* AudioMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4337415FF405EDDAAAD29C14E12BBB /* AudioMessage.swift */; };
+		8EE988657610A1212EDFD58DE522EE49 /* TemplateButtonsPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80DE47291EE384A15F9EFABE069E25 /* TemplateButtonsPayload.swift */; };
+		8F95D5715152432CF8FB9353417F14D5 /* VideoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305BC6060AB113746333FAC1E004FD3 /* VideoMessage.swift */; };
+		907CE45A2DD889D6C8DB157024AFF778 /* AccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6A8BA3B6DD5AE31690137A8DE690E /* AccessTokenStore.swift */; };
+		91EE7173F70ECB013C569A8630636624 /* LoginProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4366DB935A877AF053BB757539AE7B /* LoginProcess.swift */; };
+		925DDE984AF5A119A66D1097609F88D5 /* AuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB09540B8BF3DD95039790E27AD3EE /* AuthorizationStatus.swift */; };
+		927C1073FD807C518774EDF5FE2B8F01 /* OpenChatCategoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD6D364BC928E3987796C08B6C2772 /* OpenChatCategoryExtensions.swift */; };
+		93EF5B71E4580A2F6B2925D94DCCD2DB /* PostSendMessagesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1D9116C5F408355CF21A016D43E888 /* PostSendMessagesRequest.swift */; };
+		96049EA62AB5B0F5B91A3A2AE7094BCB /* SelectedTargetPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96079649293BC7638DC3DCD316F9D5A /* SelectedTargetPanelViewController.swift */; };
+		9662EF80D7ED548294834081207AC256 /* ShareTargetSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0D17E87C8B2A810CD99205BF50FC67 /* ShareTargetSearchController.swift */; };
+		96D47872E5DF19F2A7FDC93A3D0A0D7B /* GetShareFriendsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668B3E3FABB51A233F47ECB2CF21AB5D /* GetShareFriendsRequest.swift */; };
+		986131316811490DEA2F347C9FAF1A4E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B410BB3DE1B64229C7A8A95C5BE74ADA /* Result.swift */; };
+		9970FD4C94858A09D9180A41BB3FBCFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		9A9EB1BC32E92AD6720CBAAD15131A93 /* CryptoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51577209DE8F9F0A0020BCA6E6CD591 /* CryptoError.swift */; };
+		9DEDA7B194FB0BE64AFE0789AF91405E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0B852604749DAE9DB306F27CEB0E6 /* User.swift */; };
+		9FCCD2EE8197E83180E7F98951EEB182 /* TemplateImageCarouselPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8E5604CE7707D8C15C36C04C52A95 /* TemplateImageCarouselPayload.swift */; };
+		A0AEB998FD3041673DAE0017A163EAC4 /* PKCE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBA490D5478C82B18623CE2D02791A /* PKCE.swift */; };
+		A3BFEBF25279C5CABD70282D2093F3D7 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65927518D32EC7567D052C42EABC1143 /* ToastView.swift */; };
+		A443BE1402A5F851557894DF0D43234A /* ShareTargetSelectingSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F09ABB231869E4AC8269AB9B6A91F /* ShareTargetSelectingSectionHeaderView.swift */; };
+		A65ABB29A305E105A5944207FFDDC1C6 /* MessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D111C324C03930EED767DFA1801CE886 /* MessageAction.swift */; };
+		A7014D6A3A35DFBEECE94E2A6194F3EF /* PostOpenChatRoomJoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B272A247A4D84A08CBF23680DBDA26 /* PostOpenChatRoomJoinRequest.swift */; };
+		A92B3DE59149B0C7FDFFE54808CD01AF /* Pods-RSSReaderApp-RSSReaderAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08C0A35A609C2DED089B7324DF74FAA5 /* Pods-RSSReaderApp-RSSReaderAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABEE6F257F517369BE5DD9D2101A1A6B /* LineSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21884814589265F911F9B3050AFF92D6 /* LineSDK.bundle */; };
+		B069905D4DE1946E2C217C99AD72D763 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D832ADD049F2BD7E7C794AC99C9943 /* Message.swift */; };
+		B45C95E4C0F1C4C1E523FF3174E5520D /* OpenChatCreatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5104843AE97BDD4DDE4EEFB8AFB3976F /* OpenChatCreatingController.swift */; };
+		B485E8A2D2A02CAE597AFEE962951122 /* FlexTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C9C3AADD43A65C2974013D4F877C37 /* FlexTextComponent.swift */; };
+		B6A13B5B3592AC964FC095D97ED8390C /* Pods-RSSReaderApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4D74AFC5415D307BB6635FBAC8A97 /* Pods-RSSReaderApp-dummy.m */; };
+		B6A2E66A13BC7E132808451094563046 /* PostRefreshTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8D3EDFC1F5D7082412A15106AB2EE /* PostRefreshTokenRequest.swift */; };
+		B9EDD40536102E134AF73ABBB800EC70 /* LineSDKSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD10D86EEF6605B11AC5F06DA0303CCE /* LineSDKSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA0FA2A43CE5D762B04B2AD2C575060E /* API+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAD47EBFE51FA49577CE2A88E40E0F /* API+Internal.swift */; };
+		BA4E66C8D4B144CDC3070C45B9733327 /* FlexSpacerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3617405E61DA03C4C362979AAABB3B /* FlexSpacerComponent.swift */; };
+		BE0FDEF6920A17116C8BFE12DAE752C9 /* OpenChatRoomDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A678F86BF36C95E30C0E39F03EE3451 /* OpenChatRoomDescriptionTableViewCell.swift */; };
+		BE14045288879ADCD4D8C7F9833956C9 /* JWTCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667C5101621E97422CAB47FCD5584B17 /* JWTCoder.swift */; };
+		BEC72C0C0FC813671E6D8ADB8B5E581A /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D58414129A3D1895FF7F72D6B49DE04 /* URLs.swift */; };
+		C20F38BE921F508C403835DAC909C6E7 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DB68F01E3EB48EFD8888EC0953F8F7 /* LoginResult.swift */; };
+		C25DBBD1283228C02222D7A5FD86E1C4 /* PostMultisendMessagesWithTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B81C98456D3B1466ED655B9D6CDBF1 /* PostMultisendMessagesWithTokenRequest.swift */; };
+		C2A881304E95D04D2D623F08FC8D827A /* ResponsePipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7EA4EC25196BD00BE558392BE0177 /* ResponsePipeline.swift */; };
+		C3EB7D74DFDBA89B340267C7120C5FA8 /* AccessTokenVerifyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A94A3850DA94EED23202C8068722D5E /* AccessTokenVerifyResult.swift */; };
+		C5E205AE787B08D60BB25580094DEA7A /* LineSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CB159D351219BD1FA7C1A8D95D28A12 /* LineSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C656E2C58479246D5366C810143F0767 /* LocationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E38F72FB12174FE0336385FE8BE120 /* LocationMessage.swift */; };
+		C68368C2A4D28F7E3B1C23FE6FBD0556 /* ImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3AE895409E3AAA2590934D0188BC6 /* ImageMessage.swift */; };
+		C6AA3C3A032230F8C0149D317CAC7A2C /* FlexMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FA24DFFD64C95CADB13D5D10DEB1C7 /* FlexMessage.swift */; };
+		C7910460158EB5AE71D135458F635ECA /* MessageShareTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53874CF3885F8C420DB3E839C39CC3D /* MessageShareTargetType.swift */; };
+		C80ADD98AE576A322061C0E7C5CCCA82 /* GetApproversInFriendsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC291D88CDBEC748F97FB1BDE0E0611 /* GetApproversInFriendsRequest.swift */; };
+		C9512D235E046247D5D60E354F8FBF15 /* LoginManagerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316855AFD6D28DF70758B097FDF04F6F /* LoginManagerOptions.swift */; };
+		C9BD969C510194B3168B1EB2AC5CA6FC /* FlexMessageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C457EC80D12ECCF7D26AC6D12FEA7FD /* FlexMessageComponent.swift */; };
+		C9EB20C7E1858F42046C5833CD1825C7 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB2F1036D4FF1ACCF9F2D2000E749F9 /* HexColor.swift */; };
+		CA040BFC5BB3E280B70541193DD8E72F /* OpenChatCreatingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554692E333C88A6CF476B28E85913F7 /* OpenChatCreatingNavigationController.swift */; };
+		CB1CBC7D94BEB2C327D126A8C3977A4D /* GetUserProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD9017F43ECF2912B38D70E1398CEC4 /* GetUserProfileRequest.swift */; };
+		CC1CFB802A3E054AC429AA5D3B3AC541 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446AB02151079AAD3427C63A2CC8551A /* Group.swift */; };
+		CE5005FAF75E47FAB83A6C39BD801036 /* API+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E44B21146BBDB916047A0C44F8B69E /* API+Auth.swift */; };
+		CEFBA0FFF61A9220E0CEB62E536BF555 /* TextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F4F671B2C5EF9DEEF049D1005F889 /* TextMessage.swift */; };
+		D32EA3BD4965C24DCC9F2D2D5F62AAB1 /* MessageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3E251D48CEAE0EE4D30B14256C1F3 /* MessageProtocols.swift */; };
+		D339108945E773948AD7C78B363817D0 /* GetJWKSetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF7013170C482661564D0B1E1B7D80F /* GetJWKSetRequest.swift */; };
+		D8262D891737E3D1E1177E682367A76E /* KeyboardObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE21431FDB4A0987BB5628113ECE71 /* KeyboardObservable.swift */; };
+		D94A85B861CE8D6C853FDED88A0D91D0 /* PostExchangeTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D355673DCA0C486C7C37E7EE87DB83BF /* PostExchangeTokenRequest.swift */; };
+		D9885616775E41F7FA062B5F06C37258 /* OpenChatCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C35BB822DCFE96F070CCEBCA81BE1 /* OpenChatCategory.swift */; };
+		DA3BD8F837F18DC6689759CB5B209661 /* FlexCarouselContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A29E1370DB4D1D598309CC5A6693F69 /* FlexCarouselContainer.swift */; };
+		DBF9319480A2FD84C67C7D7CEC47A691 /* SelectedTargetPanelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9983029D64E6306137AADACB2888350 /* SelectedTargetPanelCell.swift */; };
+		DDA85C314017D5B8A3CF8E365AFF7262 /* GetOpenChatRoomStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F8145E014D3D53DFB2AB791DA3453F /* GetOpenChatRoomStatusRequest.swift */; };
+		E07DE04F2F8FB05EB18D0BE1DDF4BE4C /* FlexIconComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902862CC4C75DBB143C668013A2F09C4 /* FlexIconComponent.swift */; };
+		E18E6831F301B7138273EB1FEB6E7139 /* PostOpenChatCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9E313425761E967C878098A5D1829 /* PostOpenChatCreateRequest.swift */; };
+		E2B2C56733ECA4AD379F7BF729967FD2 /* TemplateConfirmPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC662AB51D5BC57DF74C920C1BC7CF10 /* TemplateConfirmPayload.swift */; };
+		E4F272B6D7E6AAEFA40F9DA4CD43EF62 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2197E95559D06386AA7F84D1D6FF90EE /* API.swift */; };
+		E9A23DA89C6B96CDA11EC2B6A404B8CD /* LoginManagerParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3997D6CC9A07E974095A496C7DFE40F /* LoginManagerParameters.swift */; };
+		EC27D91253B85B8CFAC6F74352756543 /* CallbackQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7755F69C23C8E0745B22109CB78B2AC5 /* CallbackQueue.swift */; };
+		ECF7BFBE94F3531175649D5303B42359 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF4D2D29360E762B3E2A368F0FFD09 /* LoadingIndicator.swift */; };
+		EF8AC5BB8D2F91D17EB14634364749AF /* ResultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC21A8A01BF58F3DC42D7F7CA3B9D91 /* ResultUtils.swift */; };
+		F19D355366256F9223081CC68CC95AF9 /* Pods-RSSReaderApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 75506D2584EFB4B4DA67415634049507 /* Pods-RSSReaderApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F20A4645B2CC06626807AFCB6D535DA5 /* FlexBubbleContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE1BBAC8E07A5552E5AC245D8A2B24 /* FlexBubbleContainer.swift */; };
+		F44594DC247DFEF79C7FA226B0193DA1 /* API+Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169CCF196E0DE76560EC975B3BA8A2C /* API+Deprecated.swift */; };
+		F5101F1E275638E07BBACCC051F728E4 /* JWA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59BA41B95B4314B69094F0AE64072F /* JWA.swift */; };
+		F7D274A2462388C1D00AE043440B9421 /* GetGroupsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD9A914E1B914642BBB0E25861953D2 /* GetGroupsRequest.swift */; };
+		F89A329D18E43414479E62E610A9D8FF /* GetOpenChatRoomMembershipStateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBF1ACF92392437FCFB1C25EB50721 /* GetOpenChatRoomMembershipStateRequest.swift */; };
+		FDC8BB556D559043424570053EC54E05 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5959CC121255F986501F906700196A /* ImageDownloader.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		050E004BD6627EF4C037D20D31BFEF6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D0EC5A99C1524143507D6890CFE86D7;
+			remoteInfo = "Pods-RSSReaderApp";
+		};
+		096CE21A2D9C6BCB29D591D1C74FEA7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60341B61A103DC4E82D2E469E8D72F20;
+			remoteInfo = LineSDKSwift;
+		};
+		1E9D7B0879B714BC7187848065DCED08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60341B61A103DC4E82D2E469E8D72F20;
+			remoteInfo = LineSDKSwift;
+		};
+		A6C6262B06E584A86B4E708151C7CD23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6692DAAD6A57E72084D39B7BF259E4EF;
+			remoteInfo = "LineSDKSwift-LineSDK";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00B81C98456D3B1466ED655B9D6CDBF1 /* PostMultisendMessagesWithTokenRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostMultisendMessagesWithTokenRequest.swift; path = LineSDK/LineSDK/Messaging/Request/PostMultisendMessagesWithTokenRequest.swift; sourceTree = "<group>"; };
+		0371E556D977EF1CE82E3B7AC3B7B975 /* MessageSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageSender.swift; path = LineSDK/LineSDK/Messaging/Model/MessageSender.swift; sourceTree = "<group>"; };
+		049C35BB822DCFE96F070CCEBCA81BE1 /* OpenChatCategory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenChatCategory.swift; path = LineSDK/LineSDK/OpenChat/Model/OpenChatCategory.swift; sourceTree = "<group>"; };
+		04D9E313425761E967C878098A5D1829 /* PostOpenChatCreateRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostOpenChatCreateRequest.swift; path = LineSDK/LineSDK/OpenChat/Request/PostOpenChatCreateRequest.swift; sourceTree = "<group>"; };
+		0554692E333C88A6CF476B28E85913F7 /* OpenChatCreatingNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenChatCreatingNavigationController.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/ViewControllers/OpenChatCreatingNavigationController.swift; sourceTree = "<group>"; };
+		062CCD96827F6F594B1EB2DB453C5CDB /* Pods-RSSReaderApp-RSSReaderAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSSReaderApp-RSSReaderAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		066FF95D62E5031D245BA7BEEE847051 /* UserProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = LineSDK/LineSDK/Login/Model/UserProfile.swift; sourceTree = "<group>"; };
+		08C0A35A609C2DED089B7324DF74FAA5 /* Pods-RSSReaderApp-RSSReaderAppUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RSSReaderApp-RSSReaderAppUITests-umbrella.h"; sourceTree = "<group>"; };
+		0B59BA41B95B4314B69094F0AE64072F /* JWA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWA.swift; path = LineSDK/LineSDK/Crypto/JWK/JWA.swift; sourceTree = "<group>"; };
+		0B80DE47291EE384A15F9EFABE069E25 /* TemplateButtonsPayload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemplateButtonsPayload.swift; path = LineSDK/LineSDK/Messaging/Model/Template/Payloads/TemplateButtonsPayload.swift; sourceTree = "<group>"; };
+		0CB159D351219BD1FA7C1A8D95D28A12 /* LineSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LineSDK.h; path = LineSDK/LineSDK/LineSDK.h; sourceTree = "<group>"; };
+		0D4337415FF405EDDAAAD29C14E12BBB /* AudioMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioMessage.swift; path = LineSDK/LineSDK/Messaging/Model/AudioMessage.swift; sourceTree = "<group>"; };
+		0D58414129A3D1895FF7F72D6B49DE04 /* URLs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLs.swift; path = LineSDK/LineSDK/Utils/URLs.swift; sourceTree = "<group>"; };
+		0FF7013170C482661564D0B1E1B7D80F /* GetJWKSetRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetJWKSetRequest.swift; path = LineSDK/LineSDK/Crypto/GetJWKSetRequest.swift; sourceTree = "<group>"; };
+		1077ECEC39AABEE069913803B446B794 /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = String.swift; path = LineSDK/LineSDK/Utils/String.swift; sourceTree = "<group>"; };
+		1169CCF196E0DE76560EC975B3BA8A2C /* API+Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "API+Deprecated.swift"; path = "LineSDK/LineSDK/Networking/API/API+Deprecated.swift"; sourceTree = "<group>"; };
+		12E38F72FB12174FE0336385FE8BE120 /* LocationMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationMessage.swift; path = LineSDK/LineSDK/Messaging/Model/LocationMessage.swift; sourceTree = "<group>"; };
+		1305BC6060AB113746333FAC1E004FD3 /* VideoMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoMessage.swift; path = LineSDK/LineSDK/Messaging/Model/VideoMessage.swift; sourceTree = "<group>"; };
+		131AE6B375DF2A7B4AE3081C812E51E8 /* ShareTargetTableViewStyling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareTargetTableViewStyling.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/TargetSelecting/ShareTargetTableViewStyling.swift; sourceTree = "<group>"; };
+		13F5F6429D34B70C805487C1A81B3223 /* TemplateMessagePayload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemplateMessagePayload.swift; path = LineSDK/LineSDK/Messaging/Model/Template/Payloads/TemplateMessagePayload.swift; sourceTree = "<group>"; };
+		17519237EA3FEB7379964FD624651E7C /* LoginConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginConfiguration.swift; path = LineSDK/LineSDK/Login/LoginConfiguration.swift; sourceTree = "<group>"; };
+		1A369E3756E5963DCF0DFD84DC542A28 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = LineSDK/LineSDK/Networking/Client/Session.swift; sourceTree = "<group>"; };
+		1E5CB207956DAA365BF27BA337E051D7 /* LoginProcessURLResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginProcessURLResponse.swift; path = LineSDK/LineSDK/Login/LoginProcessURLResponse.swift; sourceTree = "<group>"; };
+		1FD9A914E1B914642BBB0E25861953D2 /* GetGroupsRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetGroupsRequest.swift; path = LineSDK/LineSDK/Graph/Request/GetGroupsRequest.swift; sourceTree = "<group>"; };
+		2037972D754E11DD6C9AA2D6E58D4589 /* JWK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWK.swift; path = LineSDK/LineSDK/Crypto/JWK/JWK.swift; sourceTree = "<group>"; };
+		2040B0D8908F7C0EAF6F0324F4593BD3 /* Pods-RSSReaderAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RSSReaderAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		21884814589265F911F9B3050AFF92D6 /* LineSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LineSDK.bundle; path = "LineSDKSwift-LineSDK.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2197E95559D06386AA7F84D1D6FF90EE /* API.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = API.swift; path = LineSDK/LineSDK/Networking/API/API.swift; sourceTree = "<group>"; };
+		21A7070C1F9C68E5270EAE6205E01B0A /* TemplateMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemplateMessage.swift; path = LineSDK/LineSDK/Messaging/Model/TemplateMessage.swift; sourceTree = "<group>"; };
+		24D41F8EA02DD013C0DE8AC18790B8D0 /* Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = LineSDK/LineSDK/Utils/Helpers.swift; sourceTree = "<group>"; };
+		24D832ADD049F2BD7E7C794AC99C9943 /* Message.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Message.swift; path = LineSDK/LineSDK/Messaging/Model/Message.swift; sourceTree = "<group>"; };
+		254294CA3A283D75C45408399449236B /* UserDefaultsValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserDefaultsValue.swift; path = LineSDK/LineSDK/Utils/UserDefaultsValue.swift; sourceTree = "<group>"; };
+		262CEC9AE58FE9041D5023D961FDA6BD /* Pods-RSSReaderAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RSSReaderAppTests-umbrella.h"; sourceTree = "<group>"; };
+		26982D705C0C6E153DFEC9AB05288B48 /* CodingExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodingExtension.swift; path = LineSDK/LineSDK/Networking/Model/CustomizeCoding/CodingExtension.swift; sourceTree = "<group>"; };
+		26C4444EFAC11393D449584457278736 /* ParametersAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParametersAdapter.swift; path = LineSDK/LineSDK/Networking/Client/ParametersAdapter.swift; sourceTree = "<group>"; };
+		282DC269DB2FCDB2B196F903FB706B7C /* Pods-RSSReaderApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSSReaderApp-Info.plist"; sourceTree = "<group>"; };
+		28680D93B379DBB78794C59D036E8A64 /* CryptoAlgorithm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CryptoAlgorithm.swift; path = LineSDK/LineSDK/Crypto/CryptoAlgorithm.swift; sourceTree = "<group>"; };
+		29F30FA40B1C16FE654DD969DC5576B2 /* PageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/PageViewController/PageViewController.swift; sourceTree = "<group>"; };
+		2A678F86BF36C95E30C0E39F03EE3451 /* OpenChatRoomDescriptionTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenChatRoomDescriptionTableViewCell.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/View/OpenChatRoomDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		2C47C0E187FB350EF175032F859161F8 /* GetOpenChatTermAgreementStatusRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetOpenChatTermAgreementStatusRequest.swift; path = LineSDK/LineSDK/OpenChat/Request/GetOpenChatTermAgreementStatusRequest.swift; sourceTree = "<group>"; };
+		2CB9DEDC4E2C979E553A323E154AB0CE /* Resource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Resource.bundle; path = LineSDK/LineSDK/Resource.bundle; sourceTree = "<group>"; };
+		2EBBF1ACF92392437FCFB1C25EB50721 /* GetOpenChatRoomMembershipStateRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetOpenChatRoomMembershipStateRequest.swift; path = LineSDK/LineSDK/OpenChat/Request/GetOpenChatRoomMembershipStateRequest.swift; sourceTree = "<group>"; };
+		30B65AF2CAA63280789F337C72D80DD3 /* PostMessageSendingTokenIssueRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostMessageSendingTokenIssueRequest.swift; path = LineSDK/LineSDK/Messaging/Request/PostMessageSendingTokenIssueRequest.swift; sourceTree = "<group>"; };
+		316855AFD6D28DF70758B097FDF04F6F /* LoginManagerOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginManagerOptions.swift; path = LineSDK/LineSDK/Login/LoginManagerOptions.swift; sourceTree = "<group>"; };
+		31C9C3AADD43A65C2974013D4F877C37 /* FlexTextComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexTextComponent.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Component/FlexTextComponent.swift; sourceTree = "<group>"; };
+		35B272A247A4D84A08CBF23680DBDA26 /* PostOpenChatRoomJoinRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostOpenChatRoomJoinRequest.swift; path = LineSDK/LineSDK/OpenChat/Request/PostOpenChatRoomJoinRequest.swift; sourceTree = "<group>"; };
+		3691430BA1F36BE9600B26E7601D6C42 /* Pods-RSSReaderApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RSSReaderApp.modulemap"; sourceTree = "<group>"; };
+		38B0B852604749DAE9DB306F27CEB0E6 /* User.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = User.swift; path = LineSDK/LineSDK/Graph/Model/User.swift; sourceTree = "<group>"; };
+		3A94A3850DA94EED23202C8068722D5E /* AccessTokenVerifyResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessTokenVerifyResult.swift; path = LineSDK/LineSDK/Login/Model/AccessTokenVerifyResult.swift; sourceTree = "<group>"; };
+		3AC291D88CDBEC748F97FB1BDE0E0611 /* GetApproversInFriendsRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetApproversInFriendsRequest.swift; path = LineSDK/LineSDK/Graph/Request/GetApproversInFriendsRequest.swift; sourceTree = "<group>"; };
+		3C3272EE10851F22CD04343FE0047DBD /* FlexBlockStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexBlockStyle.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Style/FlexBlockStyle.swift; sourceTree = "<group>"; };
+		3D906CEA0F724BFCAF717C5163CCEF47 /* Unit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Unit.swift; path = LineSDK/LineSDK/Networking/Model/Unit.swift; sourceTree = "<group>"; };
+		42C1540A825597A6C4C93422E2DFBE5C /* FormSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormSection.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/Model/FormSection.swift; sourceTree = "<group>"; };
+		433A3EEE2E9CEE3F204C34BE90FBA260 /* ShareViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareViewControllerDelegate.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/Public/ShareViewControllerDelegate.swift; sourceTree = "<group>"; };
+		446AB02151079AAD3427C63A2CC8551A /* Group.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Group.swift; path = LineSDK/LineSDK/Graph/Model/Group.swift; sourceTree = "<group>"; };
+		4701BF235D3BCC4176FC632ED05D414C /* Pods-RSSReaderAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSSReaderAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		488398FA01347A531E8C56C78F41A2FC /* ECDSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ECDSA.swift; path = LineSDK/LineSDK/Crypto/Algorithms/ECDSA.swift; sourceTree = "<group>"; };
+		495C8BECEFEAB4A30793210F710AC32A /* GetApproversInGroupRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetApproversInGroupRequest.swift; path = LineSDK/LineSDK/Graph/Request/GetApproversInGroupRequest.swift; sourceTree = "<group>"; };
+		49D6A8BA3B6DD5AE31690137A8DE690E /* AccessTokenStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessTokenStore.swift; path = LineSDK/LineSDK/Login/Model/AccessTokenStore.swift; sourceTree = "<group>"; };
+		4AD3DFC14AAEDAC9DCA75381D512DD64 /* OpenChatRoomNameTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenChatRoomNameTableViewCell.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/View/OpenChatRoomNameTableViewCell.swift; sourceTree = "<group>"; };
+		4B3617405E61DA03C4C362979AAABB3B /* FlexSpacerComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexSpacerComponent.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Component/FlexSpacerComponent.swift; sourceTree = "<group>"; };
+		4D3CB2F78915A3101715BDAE56C464DC /* OpenChatRoomInfoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenChatRoomInfoViewController.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/ViewControllers/OpenChatRoomInfoViewController.swift; sourceTree = "<group>"; };
+		5104843AE97BDD4DDE4EEFB8AFB3976F /* OpenChatCreatingController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenChatCreatingController.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/Public/OpenChatCreatingController.swift; sourceTree = "<group>"; };
+		517B04CE2EDB7D1A51A731BDC127BE69 /* FlexMessageContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexMessageContainer.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Container/FlexMessageContainer.swift; sourceTree = "<group>"; };
+		51D8E5604CE7707D8C15C36C04C52A95 /* TemplateImageCarouselPayload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemplateImageCarouselPayload.swift; path = LineSDK/LineSDK/Messaging/Model/Template/Payloads/TemplateImageCarouselPayload.swift; sourceTree = "<group>"; };
+		5489663B93B0BF308ECEC09D58671397 /* LineSDKError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineSDKError.swift; path = LineSDK/LineSDK/General/LineSDKError.swift; sourceTree = "<group>"; };
+		54E6C2D827CC0C69BE5F2F241E3210DA /* ShareTargetSelectingTableCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareTargetSelectingTableCell.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/TargetSelecting/ShareTargetSelectingTableCell.swift; sourceTree = "<group>"; };
+		559352FD4C47E8FC0A221FF2D5774520 /* LoginPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginPermission.swift; path = LineSDK/LineSDK/Login/LoginPermission.swift; sourceTree = "<group>"; };
+		55BAE9C53012EEBF235B9EA838DF5C96 /* ShareRootViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareRootViewController.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/TargetSelecting/ShareRootViewController.swift; sourceTree = "<group>"; };
+		55FCFE10F5CB622CF6F2BEC1CC021511 /* Constant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = LineSDK/LineSDK/Utils/Constant.swift; sourceTree = "<group>"; };
+		5A845A0F86E70846524BB16E5A531611 /* Pods-RSSReaderApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RSSReaderApp-frameworks.sh"; sourceTree = "<group>"; };
+		5ACBA790B694DA5C61F3B3D24DBD0527 /* Pods-RSSReaderApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSSReaderApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		5B6DB7135C38AB69660F6C7331120B83 /* Pods-RSSReaderApp-RSSReaderAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSSReaderApp-RSSReaderAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5CEBA490D5478C82B18623CE2D02791A /* PKCE.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCE.swift; path = LineSDK/LineSDK/Login/PKCE/PKCE.swift; sourceTree = "<group>"; };
+		5E6EB0ADC953428DD96DF798674952AE /* CryptoHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CryptoHelpers.swift; path = LineSDK/LineSDK/Crypto/CryptoHelpers.swift; sourceTree = "<group>"; };
+		6086AE4BCF86F05BFE972ED96D397DE3 /* ShareTargetSearchResultViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareTargetSearchResultViewController.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/TargetSearch/ShareTargetSearchResultViewController.swift; sourceTree = "<group>"; };
+		6175F23A1FB4ED14BD06FF395AA22933 /* LineSDKSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LineSDKSwift.debug.xcconfig; sourceTree = "<group>"; };
+		62F4F777F84A185A289852328114A168 /* FlexButtonComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexButtonComponent.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Component/FlexButtonComponent.swift; sourceTree = "<group>"; };
+		64CB09540B8BF3DD95039790E27AD3EE /* AuthorizationStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthorizationStatus.swift; path = LineSDK/LineSDK/LineSDKUI/AuthorizationStatus.swift; sourceTree = "<group>"; };
+		65927518D32EC7567D052C42EABC1143 /* ToastView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastView.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/View/ToastView.swift; sourceTree = "<group>"; };
+		667C5101621E97422CAB47FCD5584B17 /* JWTCoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWTCoder.swift; path = LineSDK/LineSDK/Crypto/JWT/JWTCoder.swift; sourceTree = "<group>"; };
+		668B3E3FABB51A233F47ECB2CF21AB5D /* GetShareFriendsRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetShareFriendsRequest.swift; path = LineSDK/LineSDK/Graph/Request/GetShareFriendsRequest.swift; sourceTree = "<group>"; };
+		69B5189A15BCBCB3F4C965F781B754B9 /* VerticallyCenteredTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VerticallyCenteredTextView.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/View/VerticallyCenteredTextView.swift; sourceTree = "<group>"; };
+		6D380850ED316A8431AA1FD184BABD04 /* FormEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormEntry.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/Model/FormEntry.swift; sourceTree = "<group>"; };
+		6E46321E926E220E32B65EAA35220C6D /* Pods-RSSReaderApp-RSSReaderAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RSSReaderApp-RSSReaderAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6EA3AE895409E3AAA2590934D0188BC6 /* ImageMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageMessage.swift; path = LineSDK/LineSDK/Messaging/Model/ImageMessage.swift; sourceTree = "<group>"; };
+		6FC0F3BDBFAB2DE9ADFC504DC999B7B8 /* GetBotFriendshipStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetBotFriendshipStatus.swift; path = LineSDK/LineSDK/Friendship/Request/GetBotFriendshipStatus.swift; sourceTree = "<group>"; };
+		6FC847717604BCD43A998ED4A71B1ED5 /* JWTHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWTHelpers.swift; path = LineSDK/LineSDK/Crypto/JWT/JWTHelpers.swift; sourceTree = "<group>"; };
+		707D04B20E290289016468F05144A710 /* Pods_RSSReaderApp_RSSReaderAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RSSReaderApp_RSSReaderAppUITests.framework; path = "Pods-RSSReaderApp-RSSReaderAppUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70DFD0B9A29FF1F11D99D5CBCB3730A9 /* ShareTargetSearchResultTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareTargetSearchResultTableViewController.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/TargetSearch/ShareTargetSearchResultTableViewController.swift; sourceTree = "<group>"; };
+		72FCFF229D8D1D71EC1295B398A0EFF6 /* Pods-RSSReaderApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RSSReaderApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7315D7B0C9EAF93798EDBEF5F590A453 /* DownloadableImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DownloadableImageView.swift; path = LineSDK/LineSDK/Networking/Images/DownloadableImageView.swift; sourceTree = "<group>"; };
+		74C2DCFB7BED9E1A458840144A76C6A2 /* GetVerifyTokenRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetVerifyTokenRequest.swift; path = LineSDK/LineSDK/Login/Request/GetVerifyTokenRequest.swift; sourceTree = "<group>"; };
+		75506D2584EFB4B4DA67415634049507 /* Pods-RSSReaderApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RSSReaderApp-umbrella.h"; sourceTree = "<group>"; };
+		770C97A12C9E540EE15EB2F2D15944EF /* OpenChatRoomCreatingItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenChatRoomCreatingItem.swift; path = LineSDK/LineSDK/OpenChat/Model/OpenChatRoomCreatingItem.swift; sourceTree = "<group>"; };
+		7754A38310CD1845E9555D3D97A7A782 /* Pods-RSSReaderAppTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSSReaderAppTests-Info.plist"; sourceTree = "<group>"; };
+		7755F69C23C8E0745B22109CB78B2AC5 /* CallbackQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CallbackQueue.swift; path = LineSDK/LineSDK/Utils/CallbackQueue.swift; sourceTree = "<group>"; };
+		7929EFE97F41716642AE7CAB63F0E245 /* LineSDKSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LineSDKSwift-dummy.m"; sourceTree = "<group>"; };
+		7ABC8E2C0A6B7BF22D75685DB162BD6A /* OpenChatCreatingControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenChatCreatingControllerDelegate.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/Public/OpenChatCreatingControllerDelegate.swift; sourceTree = "<group>"; };
+		7B52B499A519A71277A908291FEF695F /* TemplateCarouselPayload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemplateCarouselPayload.swift; path = LineSDK/LineSDK/Messaging/Model/Template/Payloads/TemplateCarouselPayload.swift; sourceTree = "<group>"; };
+		7C457EC80D12ECCF7D26AC6D12FEA7FD /* FlexMessageComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexMessageComponent.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Component/FlexMessageComponent.swift; sourceTree = "<group>"; };
+		7D9C7BF77405B04A2ED60DCDD9876491 /* LineSDKSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LineSDKSwift-Info.plist"; sourceTree = "<group>"; };
+		7E74A43F65FAB25D245E80B56197BD43 /* ResourceLoading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResourceLoading.swift; path = LineSDK/LineSDK/LineSDKUI/ResourceLoading.swift; sourceTree = "<group>"; };
+		7F90B34F1CBEAC5B095AA055A731C756 /* FlexSeparatorComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexSeparatorComponent.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Component/FlexSeparatorComponent.swift; sourceTree = "<group>"; };
+		81D7438EF8909C8CC98C627BA3CB8541 /* Pods-RSSReaderAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSSReaderAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		83F3E251D48CEAE0EE4D30B14256C1F3 /* MessageProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageProtocols.swift; path = LineSDK/LineSDK/Messaging/Model/MessageProtocols.swift; sourceTree = "<group>"; };
+		84CFCDBA4C279E9BE2D1E495D3F6D390 /* ShareTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareTarget.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/Public/ShareTarget.swift; sourceTree = "<group>"; };
+		85669EB8BB5FAD2226D110131A0CD475 /* PostRevokeTokenRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostRevokeTokenRequest.swift; path = LineSDK/LineSDK/Login/Request/PostRevokeTokenRequest.swift; sourceTree = "<group>"; };
+		87F8145E014D3D53DFB2AB791DA3453F /* GetOpenChatRoomStatusRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetOpenChatRoomStatusRequest.swift; path = LineSDK/LineSDK/OpenChat/Request/GetOpenChatRoomStatusRequest.swift; sourceTree = "<group>"; };
+		89677A5901BCF362CE58B540F9591237 /* LineSDKSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LineSDKSwift-prefix.pch"; sourceTree = "<group>"; };
+		8A29E1370DB4D1D598309CC5A6693F69 /* FlexCarouselContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexCarouselContainer.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Container/FlexCarouselContainer.swift; sourceTree = "<group>"; };
+		8D4347907B74E7C861F0668B2A5C7DD0 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = LineSDK/LineSDK/Assets.xcassets; sourceTree = "<group>"; };
+		8D656F95A601595DBE71DC71B722ACE1 /* CryptoKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CryptoKey.swift; path = LineSDK/LineSDK/Crypto/CryptoKey.swift; sourceTree = "<group>"; };
+		902862CC4C75DBB143C668013A2F09C4 /* FlexIconComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexIconComponent.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Component/FlexIconComponent.swift; sourceTree = "<group>"; };
+		908906781DC962DAB5A7605237D5A7B4 /* Pods-RSSReaderAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RSSReaderAppTests-dummy.m"; sourceTree = "<group>"; };
+		92BAD47EBFE51FA49577CE2A88E40E0F /* API+Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "API+Internal.swift"; path = "LineSDK/LineSDK/Networking/API/API+Internal.swift"; sourceTree = "<group>"; };
+		92BE1BBAC8E07A5552E5AC245D8A2B24 /* FlexBubbleContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexBubbleContainer.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Container/FlexBubbleContainer.swift; sourceTree = "<group>"; };
+		938111DF5EA959A1384260D63A76A0B9 /* FlexBoxComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexBoxComponent.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Component/FlexBoxComponent.swift; sourceTree = "<group>"; };
+		93F226DEACCFA3DF1D4BC802274DD5DE /* LineSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LineSDK.framework; path = LineSDKSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A2F4F671B2C5EF9DEEF049D1005F889 /* TextMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextMessage.swift; path = LineSDK/LineSDK/Messaging/Model/TextMessage.swift; sourceTree = "<group>"; };
+		9AB196F7C3E986F3629022EF8AAB5474 /* CountLimitedTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountLimitedTextView.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/View/CountLimitedTextView.swift; sourceTree = "<group>"; };
+		9CEA1B2EE49CC0A79FD678CB05FA7FA0 /* Pods-RSSReaderApp-RSSReaderAppUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RSSReaderApp-RSSReaderAppUITests-frameworks.sh"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EAF6BACE8FD47C60040453ED3FA161D /* Pods-RSSReaderAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSSReaderAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A0B02807947B36E849459FB4F21BC97E /* Pods_RSSReaderAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RSSReaderAppTests.framework; path = "Pods-RSSReaderAppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A25D6EB95B5A405319AED6B1C5AF4811 /* LineSDKSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LineSDKSwift.modulemap; sourceTree = "<group>"; };
+		A53EC28A05EB8CF8D22B2C5DB3D5FF93 /* PostMultisendMessagesRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostMultisendMessagesRequest.swift; path = LineSDK/LineSDK/Messaging/Request/PostMultisendMessagesRequest.swift; sourceTree = "<group>"; };
+		A8E44B21146BBDB916047A0C44F8B69E /* API+Auth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "API+Auth.swift"; path = "LineSDK/LineSDK/Networking/API/API+Auth.swift"; sourceTree = "<group>"; };
+		A9DB68F01E3EB48EFD8888EC0953F8F7 /* LoginResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginResult.swift; path = LineSDK/LineSDK/Login/LoginResult.swift; sourceTree = "<group>"; };
+		AA6F77CE74E5111FD5FF9226D9977967 /* CryptoData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CryptoData.swift; path = LineSDK/LineSDK/Crypto/CryptoData.swift; sourceTree = "<group>"; };
+		AAA6D567F52213E99BB7BB677F26633C /* ImageManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageManager.swift; path = LineSDK/LineSDK/Networking/Images/ImageManager.swift; sourceTree = "<group>"; };
+		AC5E6CCE0C733E1ADCD44D5B970C327A /* Pods-RSSReaderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSSReaderApp.release.xcconfig"; sourceTree = "<group>"; };
+		ACC21A8A01BF58F3DC42D7F7CA3B9D91 /* ResultUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultUtils.swift; path = LineSDK/LineSDK/Utils/ResultUtils.swift; sourceTree = "<group>"; };
+		AF6FF08EA75852FD8DD2E0254262FA35 /* JWKSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWKSet.swift; path = LineSDK/LineSDK/Crypto/JWK/JWKSet.swift; sourceTree = "<group>"; };
+		AFCF4D2D29360E762B3E2A368F0FFD09 /* LoadingIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingIndicator.swift; path = LineSDK/LineSDK/Utils/LoadingIndicator.swift; sourceTree = "<group>"; };
+		B30DE88FF54236A108ED29034E8C734C /* RequestAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestAdapter.swift; path = LineSDK/LineSDK/Networking/Client/RequestAdapter.swift; sourceTree = "<group>"; };
+		B34B7E16F08F7417E3F5E94DE300125A /* Pods-RSSReaderApp-RSSReaderAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RSSReaderApp-RSSReaderAppUITests-dummy.m"; sourceTree = "<group>"; };
+		B3600BE5EFA111A4D37581BA72A13ABC /* GetOpenChatRoomJoinTypeRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetOpenChatRoomJoinTypeRequest.swift; path = LineSDK/LineSDK/OpenChat/Request/GetOpenChatRoomJoinTypeRequest.swift; sourceTree = "<group>"; };
+		B410BB3DE1B64229C7A8A95C5BE74ADA /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = LineSDK/LineSDK/Utils/Result.swift; sourceTree = "<group>"; };
+		B51577209DE8F9F0A0020BCA6E6CD591 /* CryptoError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CryptoError.swift; path = LineSDK/LineSDK/Crypto/CryptoError.swift; sourceTree = "<group>"; };
+		B61C6116F82A9DB7BB99AF6141E572FE /* ShareTargetSelectingViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareTargetSelectingViewController.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/TargetSelecting/ShareTargetSelectingViewController.swift; sourceTree = "<group>"; };
+		B6CE21431FDB4A0987BB5628113ECE71 /* KeyboardObservable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardObservable.swift; path = LineSDK/LineSDK/Utils/KeyboardObservable.swift; sourceTree = "<group>"; };
+		B7144E71FA0D019290D95222BD9565C0 /* NotificationToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationToken.swift; path = LineSDK/LineSDK/Utils/NotificationToken.swift; sourceTree = "<group>"; };
+		B7F6305FD2E8A7B87139BCDC129A9B49 /* Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Delegate.swift; path = LineSDK/LineSDK/Utils/Delegate.swift; sourceTree = "<group>"; };
+		B91E4108739EC48C326494DFE150E4D4 /* FlexMessageProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexMessageProperties.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Component/FlexMessageProperties.swift; sourceTree = "<group>"; };
+		BBB2F1036D4FF1ACCF9F2D2000E749F9 /* HexColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HexColor.swift; path = LineSDK/LineSDK/Networking/Model/CustomizeCoding/HexColor.swift; sourceTree = "<group>"; };
+		BCF04FFC46B299B71F0411686E1122CD /* AccessToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessToken.swift; path = LineSDK/LineSDK/Login/Model/AccessToken.swift; sourceTree = "<group>"; };
+		BE57838F35BC3C9291C639E0A3656738 /* OptionSelectingViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionSelectingViewController.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/ViewControllers/OptionSelectingViewController.swift; sourceTree = "<group>"; };
+		BFC090D33FC86BBD3BC976C2185902BE /* ShareViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareViewController.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/Public/ShareViewController.swift; sourceTree = "<group>"; };
+		BFE8D3EDFC1F5D7082412A15106AB2EE /* PostRefreshTokenRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostRefreshTokenRequest.swift; path = LineSDK/LineSDK/Login/Request/PostRefreshTokenRequest.swift; sourceTree = "<group>"; };
+		C32C4D402128E8A9624254ACA40DAB52 /* OpenChatUserProfileViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenChatUserProfileViewController.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/ViewControllers/OpenChatUserProfileViewController.swift; sourceTree = "<group>"; };
+		C384AF396732B717C752E268615354FA /* ColumnDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColumnDataStore.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/Model/ColumnDataStore.swift; sourceTree = "<group>"; };
+		C3997D6CC9A07E974095A496C7DFE40F /* LoginManagerParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginManagerParameters.swift; path = LineSDK/LineSDK/Login/LoginManagerParameters.swift; sourceTree = "<group>"; };
+		C4F7EA4EC25196BD00BE558392BE0177 /* ResponsePipeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponsePipeline.swift; path = LineSDK/LineSDK/Networking/Client/ResponsePipeline.swift; sourceTree = "<group>"; };
+		C56F09ABB231869E4AC8269AB9B6A91F /* ShareTargetSelectingSectionHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareTargetSelectingSectionHeaderView.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/TargetSearch/ShareTargetSelectingSectionHeaderView.swift; sourceTree = "<group>"; };
+		C5F4D74AFC5415D307BB6635FBAC8A97 /* Pods-RSSReaderApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RSSReaderApp-dummy.m"; sourceTree = "<group>"; };
+		C6D049208AFB5A3E46735BFF08851F51 /* StyleNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StyleNavigationController.swift; path = LineSDK/LineSDK/LineSDKUI/Base/StyleNavigationController.swift; sourceTree = "<group>"; };
+		C70655BA219D94E08BCDBF6D0E89B6AE /* LoginManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginManager.swift; path = LineSDK/LineSDK/Login/LoginManager.swift; sourceTree = "<group>"; };
+		C8AED542A9AE7907D660114D6FF9F186 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = LineSDK/LineSDK/Networking/Client/Request.swift; sourceTree = "<group>"; };
+		C958701DB4CDD0F5D6967E25D0351768 /* Pods_RSSReaderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RSSReaderApp.framework; path = "Pods-RSSReaderApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9983029D64E6306137AADACB2888350 /* SelectedTargetPanelCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectedTargetPanelCell.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/SelectedPanel/SelectedTargetPanelCell.swift; sourceTree = "<group>"; };
+		CC662AB51D5BC57DF74C920C1BC7CF10 /* TemplateConfirmPayload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemplateConfirmPayload.swift; path = LineSDK/LineSDK/Messaging/Model/Template/Payloads/TemplateConfirmPayload.swift; sourceTree = "<group>"; };
+		CC9742FBDCD2CB017C72E24CBA47DCFC /* GetShareGroupsRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetShareGroupsRequest.swift; path = LineSDK/LineSDK/Graph/Request/GetShareGroupsRequest.swift; sourceTree = "<group>"; };
+		CD232A563A75A5B28A6D51A3AA5A63B2 /* Colors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = LineSDK/LineSDK/Utils/Colors.swift; sourceTree = "<group>"; };
+		D0CD6D364BC928E3987796C08B6C2772 /* OpenChatCategoryExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenChatCategoryExtensions.swift; path = LineSDK/LineSDK/LineSDKUI/OpenChatUI/Model/OpenChatCategoryExtensions.swift; sourceTree = "<group>"; };
+		D111C324C03930EED767DFA1801CE886 /* MessageAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageAction.swift; path = LineSDK/LineSDK/Messaging/Model/Actions/MessageAction.swift; sourceTree = "<group>"; };
+		D2774A4B6D0D5FCBA208D8B235019590 /* LoginButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginButton.swift; path = LineSDK/LineSDK/LineSDKUI/LoginButton.swift; sourceTree = "<group>"; };
+		D355673DCA0C486C7C37E7EE87DB83BF /* PostExchangeTokenRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostExchangeTokenRequest.swift; path = LineSDK/LineSDK/Login/Request/PostExchangeTokenRequest.swift; sourceTree = "<group>"; };
+		D53874CF3885F8C420DB3E839C39CC3D /* MessageShareTargetType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageShareTargetType.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/Public/MessageShareTargetType.swift; sourceTree = "<group>"; };
+		D6EC4C4E686BDEBF3027C6907D80E204 /* PageTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageTabView.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/PageViewController/PageTabView.swift; sourceTree = "<group>"; };
+		D727C6801E39B380B29420436A63AE43 /* LineSDKSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LineSDKSwift.release.xcconfig; sourceTree = "<group>"; };
+		D7B12684D558BB96D1B9D337EEF08966 /* OpenChatCreatingFormItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenChatCreatingFormItem.swift; path = LineSDK/LineSDK/OpenChat/Model/OpenChatCreatingFormItem.swift; sourceTree = "<group>"; };
+		D7FBFCD27AB1ACE68EBE5BD1A4F02B29 /* Pods-RSSReaderAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RSSReaderAppTests.modulemap"; sourceTree = "<group>"; };
+		D96079649293BC7638DC3DCD316F9D5A /* SelectedTargetPanelViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectedTargetPanelViewController.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/SelectedPanel/SelectedTargetPanelViewController.swift; sourceTree = "<group>"; };
+		DA52373D12DEB22D9EF68860D44BFCA0 /* KeychainStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainStore.swift; path = LineSDK/LineSDK/Utils/KeychainStore.swift; sourceTree = "<group>"; };
+		DB0D17E87C8B2A810CD99205BF50FC67 /* ShareTargetSearchController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareTargetSearchController.swift; path = LineSDK/LineSDK/LineSDKUI/SharingUI/TargetSelecting/ShareTargetSearchController.swift; sourceTree = "<group>"; };
+		DB4366DB935A877AF053BB757539AE7B /* LoginProcess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginProcess.swift; path = LineSDK/LineSDK/Login/LoginProcess.swift; sourceTree = "<group>"; };
+		DBC08184F46B142BEF81E0D3E4C30BAE /* ResourceBundle-LineSDK-LineSDKSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-LineSDK-LineSDKSwift-Info.plist"; sourceTree = "<group>"; };
+		DE5959CC121255F986501F906700196A /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = LineSDK/LineSDK/Networking/Images/ImageDownloader.swift; sourceTree = "<group>"; };
+		E0FF94939D5968AB91FFEB1442243780 /* ChainedPaginatedRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChainedPaginatedRequest.swift; path = LineSDK/LineSDK/Networking/Client/ChainedPaginatedRequest.swift; sourceTree = "<group>"; };
+		E2FA24DFFD64C95CADB13D5D10DEB1C7 /* FlexMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexMessage.swift; path = LineSDK/LineSDK/Messaging/Model/FlexMessage.swift; sourceTree = "<group>"; };
+		E631DCEE851A45520A37D2D197411786 /* FlexImageComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexImageComponent.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Component/FlexImageComponent.swift; sourceTree = "<group>"; };
+		EA2CAE77CDA2643F8BE28BCC3DD7C48B /* RSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RSA.swift; path = LineSDK/LineSDK/Crypto/Algorithms/RSA.swift; sourceTree = "<group>"; };
+		EAC24897660300639F1E7A792057C6B0 /* GetDiscoveryDocumentRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetDiscoveryDocumentRequest.swift; path = LineSDK/LineSDK/Crypto/GetDiscoveryDocumentRequest.swift; sourceTree = "<group>"; };
+		EAD41B1B4559AD8370B93A4C0A133278 /* TemplateMessageProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemplateMessageProperties.swift; path = LineSDK/LineSDK/Messaging/Model/Template/Payloads/TemplateMessageProperties.swift; sourceTree = "<group>"; };
+		EE0A66EEDC1AD7352451C10D86ACE554 /* JWT.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWT.swift; path = LineSDK/LineSDK/Crypto/JWT/JWT.swift; sourceTree = "<group>"; };
+		F00AAEB038127B42FF153E022B2008C1 /* Pods-RSSReaderApp-RSSReaderAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSSReaderApp-RSSReaderAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F248DA951160F4C975ABDB8417731D59 /* Pods-RSSReaderApp-RSSReaderAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RSSReaderApp-RSSReaderAppUITests.modulemap"; sourceTree = "<group>"; };
+		F3B7EF8AB7A4C93F2A7FCDD7F03C2234 /* FlexFillerComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexFillerComponent.swift; path = LineSDK/LineSDK/Messaging/Model/Flex/Component/FlexFillerComponent.swift; sourceTree = "<group>"; };
+		F7254D2349C34A309C6941D4D036D323 /* Pods-RSSReaderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSSReaderApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F979D9933052FE3DA0BCFFAD4B0BD10E /* GetFriendsRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetFriendsRequest.swift; path = LineSDK/LineSDK/Graph/Request/GetFriendsRequest.swift; sourceTree = "<group>"; };
+		F9C13FD9C27B6276A4F4C55E3EFB4883 /* Pods-RSSReaderApp-RSSReaderAppUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSSReaderApp-RSSReaderAppUITests-Info.plist"; sourceTree = "<group>"; };
+		FBD9017F43ECF2912B38D70E1398CEC4 /* GetUserProfileRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetUserProfileRequest.swift; path = LineSDK/LineSDK/Login/Request/GetUserProfileRequest.swift; sourceTree = "<group>"; };
+		FC687A049C706874260064C760A2469F /* APIError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIError.swift; path = LineSDK/LineSDK/Networking/Model/APIError.swift; sourceTree = "<group>"; };
+		FD10D86EEF6605B11AC5F06DA0303CCE /* LineSDKSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LineSDKSwift-umbrella.h"; sourceTree = "<group>"; };
+		FF1D9116C5F408355CF21A016D43E888 /* PostSendMessagesRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostSendMessagesRequest.swift; path = LineSDK/LineSDK/Messaging/Request/PostSendMessagesRequest.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		492A7AB8F83A06431578450476F1F495 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5530D4360D2F471189AAF3622B6420C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16E173F56291DA45624AE12BD4C7CB67 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65D5DCDE786738DA735D34DAA52FA20D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09931362B621658F325BBF0DD5F73C3D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		792A3592F5FB094FB5B96BF76E627076 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D9435E13DBC4E5067A48B5B78E50CC3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4397E49ED68A3EA36514D6C1333639 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9970FD4C94858A09D9180A41BB3FBCFF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08BFD9A090D11ACE180ACADFBEB4D1DA /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				523E9A550CD0126384F8608083FED71B /* Pods-RSSReaderApp */,
+				D5953882CDC7851BBA6CFBF9F8B5EE79 /* Pods-RSSReaderApp-RSSReaderAppUITests */,
+				FF9DDA3823201B87E322C8247B25CCF1 /* Pods-RSSReaderAppTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		37FF1BAD3BCED09AB158898E8E033860 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D4347907B74E7C861F0668B2A5C7DD0 /* Assets.xcassets */,
+				2CB9DEDC4E2C979E553A323E154AB0CE /* Resource.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3BA43C3B3AEA6AB36A17235546C837AF /* LineSDKSwift */ = {
+			isa = PBXGroup;
+			children = (
+				5BB6AA83A8F110EF321078F277B6278D /* Core */,
+				D7D7116F4A163A88FA1E13C3861AC50D /* Support Files */,
+			);
+			name = LineSDKSwift;
+			path = LineSDKSwift;
+			sourceTree = "<group>";
+		};
+		523E9A550CD0126384F8608083FED71B /* Pods-RSSReaderApp */ = {
+			isa = PBXGroup;
+			children = (
+				3691430BA1F36BE9600B26E7601D6C42 /* Pods-RSSReaderApp.modulemap */,
+				72FCFF229D8D1D71EC1295B398A0EFF6 /* Pods-RSSReaderApp-acknowledgements.markdown */,
+				5ACBA790B694DA5C61F3B3D24DBD0527 /* Pods-RSSReaderApp-acknowledgements.plist */,
+				C5F4D74AFC5415D307BB6635FBAC8A97 /* Pods-RSSReaderApp-dummy.m */,
+				5A845A0F86E70846524BB16E5A531611 /* Pods-RSSReaderApp-frameworks.sh */,
+				282DC269DB2FCDB2B196F903FB706B7C /* Pods-RSSReaderApp-Info.plist */,
+				75506D2584EFB4B4DA67415634049507 /* Pods-RSSReaderApp-umbrella.h */,
+				F7254D2349C34A309C6941D4D036D323 /* Pods-RSSReaderApp.debug.xcconfig */,
+				AC5E6CCE0C733E1ADCD44D5B970C327A /* Pods-RSSReaderApp.release.xcconfig */,
+			);
+			name = "Pods-RSSReaderApp";
+			path = "Target Support Files/Pods-RSSReaderApp";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5BB6AA83A8F110EF321078F277B6278D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BCF04FFC46B299B71F0411686E1122CD /* AccessToken.swift */,
+				49D6A8BA3B6DD5AE31690137A8DE690E /* AccessTokenStore.swift */,
+				3A94A3850DA94EED23202C8068722D5E /* AccessTokenVerifyResult.swift */,
+				2197E95559D06386AA7F84D1D6FF90EE /* API.swift */,
+				A8E44B21146BBDB916047A0C44F8B69E /* API+Auth.swift */,
+				1169CCF196E0DE76560EC975B3BA8A2C /* API+Deprecated.swift */,
+				92BAD47EBFE51FA49577CE2A88E40E0F /* API+Internal.swift */,
+				FC687A049C706874260064C760A2469F /* APIError.swift */,
+				0D4337415FF405EDDAAAD29C14E12BBB /* AudioMessage.swift */,
+				64CB09540B8BF3DD95039790E27AD3EE /* AuthorizationStatus.swift */,
+				7755F69C23C8E0745B22109CB78B2AC5 /* CallbackQueue.swift */,
+				E0FF94939D5968AB91FFEB1442243780 /* ChainedPaginatedRequest.swift */,
+				26982D705C0C6E153DFEC9AB05288B48 /* CodingExtension.swift */,
+				CD232A563A75A5B28A6D51A3AA5A63B2 /* Colors.swift */,
+				C384AF396732B717C752E268615354FA /* ColumnDataStore.swift */,
+				55FCFE10F5CB622CF6F2BEC1CC021511 /* Constant.swift */,
+				9AB196F7C3E986F3629022EF8AAB5474 /* CountLimitedTextView.swift */,
+				28680D93B379DBB78794C59D036E8A64 /* CryptoAlgorithm.swift */,
+				AA6F77CE74E5111FD5FF9226D9977967 /* CryptoData.swift */,
+				B51577209DE8F9F0A0020BCA6E6CD591 /* CryptoError.swift */,
+				5E6EB0ADC953428DD96DF798674952AE /* CryptoHelpers.swift */,
+				8D656F95A601595DBE71DC71B722ACE1 /* CryptoKey.swift */,
+				B7F6305FD2E8A7B87139BCDC129A9B49 /* Delegate.swift */,
+				7315D7B0C9EAF93798EDBEF5F590A453 /* DownloadableImageView.swift */,
+				488398FA01347A531E8C56C78F41A2FC /* ECDSA.swift */,
+				3C3272EE10851F22CD04343FE0047DBD /* FlexBlockStyle.swift */,
+				938111DF5EA959A1384260D63A76A0B9 /* FlexBoxComponent.swift */,
+				92BE1BBAC8E07A5552E5AC245D8A2B24 /* FlexBubbleContainer.swift */,
+				62F4F777F84A185A289852328114A168 /* FlexButtonComponent.swift */,
+				8A29E1370DB4D1D598309CC5A6693F69 /* FlexCarouselContainer.swift */,
+				F3B7EF8AB7A4C93F2A7FCDD7F03C2234 /* FlexFillerComponent.swift */,
+				902862CC4C75DBB143C668013A2F09C4 /* FlexIconComponent.swift */,
+				E631DCEE851A45520A37D2D197411786 /* FlexImageComponent.swift */,
+				E2FA24DFFD64C95CADB13D5D10DEB1C7 /* FlexMessage.swift */,
+				7C457EC80D12ECCF7D26AC6D12FEA7FD /* FlexMessageComponent.swift */,
+				517B04CE2EDB7D1A51A731BDC127BE69 /* FlexMessageContainer.swift */,
+				B91E4108739EC48C326494DFE150E4D4 /* FlexMessageProperties.swift */,
+				7F90B34F1CBEAC5B095AA055A731C756 /* FlexSeparatorComponent.swift */,
+				4B3617405E61DA03C4C362979AAABB3B /* FlexSpacerComponent.swift */,
+				31C9C3AADD43A65C2974013D4F877C37 /* FlexTextComponent.swift */,
+				6D380850ED316A8431AA1FD184BABD04 /* FormEntry.swift */,
+				42C1540A825597A6C4C93422E2DFBE5C /* FormSection.swift */,
+				3AC291D88CDBEC748F97FB1BDE0E0611 /* GetApproversInFriendsRequest.swift */,
+				495C8BECEFEAB4A30793210F710AC32A /* GetApproversInGroupRequest.swift */,
+				6FC0F3BDBFAB2DE9ADFC504DC999B7B8 /* GetBotFriendshipStatus.swift */,
+				EAC24897660300639F1E7A792057C6B0 /* GetDiscoveryDocumentRequest.swift */,
+				F979D9933052FE3DA0BCFFAD4B0BD10E /* GetFriendsRequest.swift */,
+				1FD9A914E1B914642BBB0E25861953D2 /* GetGroupsRequest.swift */,
+				0FF7013170C482661564D0B1E1B7D80F /* GetJWKSetRequest.swift */,
+				B3600BE5EFA111A4D37581BA72A13ABC /* GetOpenChatRoomJoinTypeRequest.swift */,
+				2EBBF1ACF92392437FCFB1C25EB50721 /* GetOpenChatRoomMembershipStateRequest.swift */,
+				87F8145E014D3D53DFB2AB791DA3453F /* GetOpenChatRoomStatusRequest.swift */,
+				2C47C0E187FB350EF175032F859161F8 /* GetOpenChatTermAgreementStatusRequest.swift */,
+				668B3E3FABB51A233F47ECB2CF21AB5D /* GetShareFriendsRequest.swift */,
+				CC9742FBDCD2CB017C72E24CBA47DCFC /* GetShareGroupsRequest.swift */,
+				FBD9017F43ECF2912B38D70E1398CEC4 /* GetUserProfileRequest.swift */,
+				74C2DCFB7BED9E1A458840144A76C6A2 /* GetVerifyTokenRequest.swift */,
+				446AB02151079AAD3427C63A2CC8551A /* Group.swift */,
+				24D41F8EA02DD013C0DE8AC18790B8D0 /* Helpers.swift */,
+				BBB2F1036D4FF1ACCF9F2D2000E749F9 /* HexColor.swift */,
+				DE5959CC121255F986501F906700196A /* ImageDownloader.swift */,
+				AAA6D567F52213E99BB7BB677F26633C /* ImageManager.swift */,
+				6EA3AE895409E3AAA2590934D0188BC6 /* ImageMessage.swift */,
+				0B59BA41B95B4314B69094F0AE64072F /* JWA.swift */,
+				2037972D754E11DD6C9AA2D6E58D4589 /* JWK.swift */,
+				AF6FF08EA75852FD8DD2E0254262FA35 /* JWKSet.swift */,
+				EE0A66EEDC1AD7352451C10D86ACE554 /* JWT.swift */,
+				667C5101621E97422CAB47FCD5584B17 /* JWTCoder.swift */,
+				6FC847717604BCD43A998ED4A71B1ED5 /* JWTHelpers.swift */,
+				B6CE21431FDB4A0987BB5628113ECE71 /* KeyboardObservable.swift */,
+				DA52373D12DEB22D9EF68860D44BFCA0 /* KeychainStore.swift */,
+				0CB159D351219BD1FA7C1A8D95D28A12 /* LineSDK.h */,
+				5489663B93B0BF308ECEC09D58671397 /* LineSDKError.swift */,
+				AFCF4D2D29360E762B3E2A368F0FFD09 /* LoadingIndicator.swift */,
+				12E38F72FB12174FE0336385FE8BE120 /* LocationMessage.swift */,
+				D2774A4B6D0D5FCBA208D8B235019590 /* LoginButton.swift */,
+				17519237EA3FEB7379964FD624651E7C /* LoginConfiguration.swift */,
+				C70655BA219D94E08BCDBF6D0E89B6AE /* LoginManager.swift */,
+				316855AFD6D28DF70758B097FDF04F6F /* LoginManagerOptions.swift */,
+				C3997D6CC9A07E974095A496C7DFE40F /* LoginManagerParameters.swift */,
+				559352FD4C47E8FC0A221FF2D5774520 /* LoginPermission.swift */,
+				DB4366DB935A877AF053BB757539AE7B /* LoginProcess.swift */,
+				1E5CB207956DAA365BF27BA337E051D7 /* LoginProcessURLResponse.swift */,
+				A9DB68F01E3EB48EFD8888EC0953F8F7 /* LoginResult.swift */,
+				24D832ADD049F2BD7E7C794AC99C9943 /* Message.swift */,
+				D111C324C03930EED767DFA1801CE886 /* MessageAction.swift */,
+				83F3E251D48CEAE0EE4D30B14256C1F3 /* MessageProtocols.swift */,
+				0371E556D977EF1CE82E3B7AC3B7B975 /* MessageSender.swift */,
+				D53874CF3885F8C420DB3E839C39CC3D /* MessageShareTargetType.swift */,
+				B7144E71FA0D019290D95222BD9565C0 /* NotificationToken.swift */,
+				049C35BB822DCFE96F070CCEBCA81BE1 /* OpenChatCategory.swift */,
+				D0CD6D364BC928E3987796C08B6C2772 /* OpenChatCategoryExtensions.swift */,
+				5104843AE97BDD4DDE4EEFB8AFB3976F /* OpenChatCreatingController.swift */,
+				7ABC8E2C0A6B7BF22D75685DB162BD6A /* OpenChatCreatingControllerDelegate.swift */,
+				D7B12684D558BB96D1B9D337EEF08966 /* OpenChatCreatingFormItem.swift */,
+				0554692E333C88A6CF476B28E85913F7 /* OpenChatCreatingNavigationController.swift */,
+				770C97A12C9E540EE15EB2F2D15944EF /* OpenChatRoomCreatingItem.swift */,
+				2A678F86BF36C95E30C0E39F03EE3451 /* OpenChatRoomDescriptionTableViewCell.swift */,
+				4D3CB2F78915A3101715BDAE56C464DC /* OpenChatRoomInfoViewController.swift */,
+				4AD3DFC14AAEDAC9DCA75381D512DD64 /* OpenChatRoomNameTableViewCell.swift */,
+				C32C4D402128E8A9624254ACA40DAB52 /* OpenChatUserProfileViewController.swift */,
+				BE57838F35BC3C9291C639E0A3656738 /* OptionSelectingViewController.swift */,
+				D6EC4C4E686BDEBF3027C6907D80E204 /* PageTabView.swift */,
+				29F30FA40B1C16FE654DD969DC5576B2 /* PageViewController.swift */,
+				26C4444EFAC11393D449584457278736 /* ParametersAdapter.swift */,
+				5CEBA490D5478C82B18623CE2D02791A /* PKCE.swift */,
+				D355673DCA0C486C7C37E7EE87DB83BF /* PostExchangeTokenRequest.swift */,
+				30B65AF2CAA63280789F337C72D80DD3 /* PostMessageSendingTokenIssueRequest.swift */,
+				A53EC28A05EB8CF8D22B2C5DB3D5FF93 /* PostMultisendMessagesRequest.swift */,
+				00B81C98456D3B1466ED655B9D6CDBF1 /* PostMultisendMessagesWithTokenRequest.swift */,
+				04D9E313425761E967C878098A5D1829 /* PostOpenChatCreateRequest.swift */,
+				35B272A247A4D84A08CBF23680DBDA26 /* PostOpenChatRoomJoinRequest.swift */,
+				BFE8D3EDFC1F5D7082412A15106AB2EE /* PostRefreshTokenRequest.swift */,
+				85669EB8BB5FAD2226D110131A0CD475 /* PostRevokeTokenRequest.swift */,
+				FF1D9116C5F408355CF21A016D43E888 /* PostSendMessagesRequest.swift */,
+				C8AED542A9AE7907D660114D6FF9F186 /* Request.swift */,
+				B30DE88FF54236A108ED29034E8C734C /* RequestAdapter.swift */,
+				7E74A43F65FAB25D245E80B56197BD43 /* ResourceLoading.swift */,
+				C4F7EA4EC25196BD00BE558392BE0177 /* ResponsePipeline.swift */,
+				B410BB3DE1B64229C7A8A95C5BE74ADA /* Result.swift */,
+				ACC21A8A01BF58F3DC42D7F7CA3B9D91 /* ResultUtils.swift */,
+				EA2CAE77CDA2643F8BE28BCC3DD7C48B /* RSA.swift */,
+				C9983029D64E6306137AADACB2888350 /* SelectedTargetPanelCell.swift */,
+				D96079649293BC7638DC3DCD316F9D5A /* SelectedTargetPanelViewController.swift */,
+				1A369E3756E5963DCF0DFD84DC542A28 /* Session.swift */,
+				55BAE9C53012EEBF235B9EA838DF5C96 /* ShareRootViewController.swift */,
+				84CFCDBA4C279E9BE2D1E495D3F6D390 /* ShareTarget.swift */,
+				DB0D17E87C8B2A810CD99205BF50FC67 /* ShareTargetSearchController.swift */,
+				70DFD0B9A29FF1F11D99D5CBCB3730A9 /* ShareTargetSearchResultTableViewController.swift */,
+				6086AE4BCF86F05BFE972ED96D397DE3 /* ShareTargetSearchResultViewController.swift */,
+				C56F09ABB231869E4AC8269AB9B6A91F /* ShareTargetSelectingSectionHeaderView.swift */,
+				54E6C2D827CC0C69BE5F2F241E3210DA /* ShareTargetSelectingTableCell.swift */,
+				B61C6116F82A9DB7BB99AF6141E572FE /* ShareTargetSelectingViewController.swift */,
+				131AE6B375DF2A7B4AE3081C812E51E8 /* ShareTargetTableViewStyling.swift */,
+				BFC090D33FC86BBD3BC976C2185902BE /* ShareViewController.swift */,
+				433A3EEE2E9CEE3F204C34BE90FBA260 /* ShareViewControllerDelegate.swift */,
+				1077ECEC39AABEE069913803B446B794 /* String.swift */,
+				C6D049208AFB5A3E46735BFF08851F51 /* StyleNavigationController.swift */,
+				0B80DE47291EE384A15F9EFABE069E25 /* TemplateButtonsPayload.swift */,
+				7B52B499A519A71277A908291FEF695F /* TemplateCarouselPayload.swift */,
+				CC662AB51D5BC57DF74C920C1BC7CF10 /* TemplateConfirmPayload.swift */,
+				51D8E5604CE7707D8C15C36C04C52A95 /* TemplateImageCarouselPayload.swift */,
+				21A7070C1F9C68E5270EAE6205E01B0A /* TemplateMessage.swift */,
+				13F5F6429D34B70C805487C1A81B3223 /* TemplateMessagePayload.swift */,
+				EAD41B1B4559AD8370B93A4C0A133278 /* TemplateMessageProperties.swift */,
+				9A2F4F671B2C5EF9DEEF049D1005F889 /* TextMessage.swift */,
+				65927518D32EC7567D052C42EABC1143 /* ToastView.swift */,
+				3D906CEA0F724BFCAF717C5163CCEF47 /* Unit.swift */,
+				0D58414129A3D1895FF7F72D6B49DE04 /* URLs.swift */,
+				38B0B852604749DAE9DB306F27CEB0E6 /* User.swift */,
+				254294CA3A283D75C45408399449236B /* UserDefaultsValue.swift */,
+				066FF95D62E5031D245BA7BEEE847051 /* UserProfile.swift */,
+				69B5189A15BCBCB3F4C965F781B754B9 /* VerticallyCenteredTextView.swift */,
+				1305BC6060AB113746333FAC1E004FD3 /* VideoMessage.swift */,
+				37FF1BAD3BCED09AB158898E8E033860 /* Resources */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		8B2E90C9E58AE5DDBB8051DA0256A3F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21884814589265F911F9B3050AFF92D6 /* LineSDK.bundle */,
+				93F226DEACCFA3DF1D4BC802274DD5DE /* LineSDK.framework */,
+				C958701DB4CDD0F5D6967E25D0351768 /* Pods_RSSReaderApp.framework */,
+				707D04B20E290289016468F05144A710 /* Pods_RSSReaderApp_RSSReaderAppUITests.framework */,
+				A0B02807947B36E849459FB4F21BC97E /* Pods_RSSReaderAppTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8226ECCC5A661705C263A7093D02738 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BA43C3B3AEA6AB36A17235546C837AF /* LineSDKSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				B8226ECCC5A661705C263A7093D02738 /* Pods */,
+				8B2E90C9E58AE5DDBB8051DA0256A3F3 /* Products */,
+				08BFD9A090D11ACE180ACADFBEB4D1DA /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5953882CDC7851BBA6CFBF9F8B5EE79 /* Pods-RSSReaderApp-RSSReaderAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F248DA951160F4C975ABDB8417731D59 /* Pods-RSSReaderApp-RSSReaderAppUITests.modulemap */,
+				6E46321E926E220E32B65EAA35220C6D /* Pods-RSSReaderApp-RSSReaderAppUITests-acknowledgements.markdown */,
+				F00AAEB038127B42FF153E022B2008C1 /* Pods-RSSReaderApp-RSSReaderAppUITests-acknowledgements.plist */,
+				B34B7E16F08F7417E3F5E94DE300125A /* Pods-RSSReaderApp-RSSReaderAppUITests-dummy.m */,
+				9CEA1B2EE49CC0A79FD678CB05FA7FA0 /* Pods-RSSReaderApp-RSSReaderAppUITests-frameworks.sh */,
+				F9C13FD9C27B6276A4F4C55E3EFB4883 /* Pods-RSSReaderApp-RSSReaderAppUITests-Info.plist */,
+				08C0A35A609C2DED089B7324DF74FAA5 /* Pods-RSSReaderApp-RSSReaderAppUITests-umbrella.h */,
+				5B6DB7135C38AB69660F6C7331120B83 /* Pods-RSSReaderApp-RSSReaderAppUITests.debug.xcconfig */,
+				062CCD96827F6F594B1EB2DB453C5CDB /* Pods-RSSReaderApp-RSSReaderAppUITests.release.xcconfig */,
+			);
+			name = "Pods-RSSReaderApp-RSSReaderAppUITests";
+			path = "Target Support Files/Pods-RSSReaderApp-RSSReaderAppUITests";
+			sourceTree = "<group>";
+		};
+		D7D7116F4A163A88FA1E13C3861AC50D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A25D6EB95B5A405319AED6B1C5AF4811 /* LineSDKSwift.modulemap */,
+				7929EFE97F41716642AE7CAB63F0E245 /* LineSDKSwift-dummy.m */,
+				7D9C7BF77405B04A2ED60DCDD9876491 /* LineSDKSwift-Info.plist */,
+				89677A5901BCF362CE58B540F9591237 /* LineSDKSwift-prefix.pch */,
+				FD10D86EEF6605B11AC5F06DA0303CCE /* LineSDKSwift-umbrella.h */,
+				6175F23A1FB4ED14BD06FF395AA22933 /* LineSDKSwift.debug.xcconfig */,
+				D727C6801E39B380B29420436A63AE43 /* LineSDKSwift.release.xcconfig */,
+				DBC08184F46B142BEF81E0D3E4C30BAE /* ResourceBundle-LineSDK-LineSDKSwift-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LineSDKSwift";
+			sourceTree = "<group>";
+		};
+		FF9DDA3823201B87E322C8247B25CCF1 /* Pods-RSSReaderAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7FBFCD27AB1ACE68EBE5BD1A4F02B29 /* Pods-RSSReaderAppTests.modulemap */,
+				2040B0D8908F7C0EAF6F0324F4593BD3 /* Pods-RSSReaderAppTests-acknowledgements.markdown */,
+				9EAF6BACE8FD47C60040453ED3FA161D /* Pods-RSSReaderAppTests-acknowledgements.plist */,
+				908906781DC962DAB5A7605237D5A7B4 /* Pods-RSSReaderAppTests-dummy.m */,
+				7754A38310CD1845E9555D3D97A7A782 /* Pods-RSSReaderAppTests-Info.plist */,
+				262CEC9AE58FE9041D5023D961FDA6BD /* Pods-RSSReaderAppTests-umbrella.h */,
+				81D7438EF8909C8CC98C627BA3CB8541 /* Pods-RSSReaderAppTests.debug.xcconfig */,
+				4701BF235D3BCC4176FC632ED05D414C /* Pods-RSSReaderAppTests.release.xcconfig */,
+			);
+			name = "Pods-RSSReaderAppTests";
+			path = "Target Support Files/Pods-RSSReaderAppTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7A0C62D3EB213EF3F5233E04AFDF6FDC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A92B3DE59149B0C7FDFFE54808CD01AF /* Pods-RSSReaderApp-RSSReaderAppUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B59AA42959F5E2812A579C6B8121071E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F19D355366256F9223081CC68CC95AF9 /* Pods-RSSReaderApp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A817DC53B2DD387EDD834100700E1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B61E6CBAEA5D2CCB12DFD8C48BBB67A /* Pods-RSSReaderAppTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F772FB1A0DBFE74CF4177531AFFED739 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5E205AE787B08D60BB25580094DEA7A /* LineSDK.h in Headers */,
+				B9EDD40536102E134AF73ABBB800EC70 /* LineSDKSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3D0EC5A99C1524143507D6890CFE86D7 /* Pods-RSSReaderApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5039F583E9D90813AF2933B3F331730B /* Build configuration list for PBXNativeTarget "Pods-RSSReaderApp" */;
+			buildPhases = (
+				B59AA42959F5E2812A579C6B8121071E /* Headers */,
+				9F9FF75376B31C53A780CB7CB003B36B /* Sources */,
+				CA4397E49ED68A3EA36514D6C1333639 /* Frameworks */,
+				313B60102D17FB7F33D0B177C3F8A869 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9439C7945500580F41D4B78D73AEA1DE /* PBXTargetDependency */,
+			);
+			name = "Pods-RSSReaderApp";
+			productName = "Pods-RSSReaderApp";
+			productReference = C958701DB4CDD0F5D6967E25D0351768 /* Pods_RSSReaderApp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		518654C0BDA8922BBED45A082B89618E /* Pods-RSSReaderApp-RSSReaderAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0346BC586ED9D8C038FD38D07D87360B /* Build configuration list for PBXNativeTarget "Pods-RSSReaderApp-RSSReaderAppUITests" */;
+			buildPhases = (
+				7A0C62D3EB213EF3F5233E04AFDF6FDC /* Headers */,
+				46846EB5602270F4A26F6083685727F6 /* Sources */,
+				65D5DCDE786738DA735D34DAA52FA20D /* Frameworks */,
+				436ED3CDFD02E8B6B3F6EE8E5D140017 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37861D89A10BC37B8F4F2BF0D6DE2697 /* PBXTargetDependency */,
+			);
+			name = "Pods-RSSReaderApp-RSSReaderAppUITests";
+			productName = "Pods-RSSReaderApp-RSSReaderAppUITests";
+			productReference = 707D04B20E290289016468F05144A710 /* Pods_RSSReaderApp_RSSReaderAppUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		60341B61A103DC4E82D2E469E8D72F20 /* LineSDKSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5529260463649162495B9E5C354FF56 /* Build configuration list for PBXNativeTarget "LineSDKSwift" */;
+			buildPhases = (
+				F772FB1A0DBFE74CF4177531AFFED739 /* Headers */,
+				19918E7BAE6D133382C80A43D1ED7A7C /* Sources */,
+				5530D4360D2F471189AAF3622B6420C7 /* Frameworks */,
+				67CAFB5C4AF897F22F19F01322F88987 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C17E54A1994729DE629C024E33558AF /* PBXTargetDependency */,
+			);
+			name = LineSDKSwift;
+			productName = LineSDKSwift;
+			productReference = 93F226DEACCFA3DF1D4BC802274DD5DE /* LineSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6692DAAD6A57E72084D39B7BF259E4EF /* LineSDKSwift-LineSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56B7FAB204C8F0FC39FE040C1F0933BD /* Build configuration list for PBXNativeTarget "LineSDKSwift-LineSDK" */;
+			buildPhases = (
+				9B51BA575B2EDE3206DB6E512E623B1B /* Sources */,
+				492A7AB8F83A06431578450476F1F495 /* Frameworks */,
+				265D34B506A5E55623BC7A8C61F56C6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LineSDKSwift-LineSDK";
+			productName = "LineSDKSwift-LineSDK";
+			productReference = 21884814589265F911F9B3050AFF92D6 /* LineSDK.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		C6C62FFF9D755543DB3DC35A0A64649D /* Pods-RSSReaderAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A95EEAE21FCD14B45B17A96207DF7D7F /* Build configuration list for PBXNativeTarget "Pods-RSSReaderAppTests" */;
+			buildPhases = (
+				DE8A817DC53B2DD387EDD834100700E1 /* Headers */,
+				A81F1DAC6A7A2B8AD48D9D4474CC7742 /* Sources */,
+				792A3592F5FB094FB5B96BF76E627076 /* Frameworks */,
+				E4F8B445BA55C800BC22E633857436E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD99862A7396BD6E2E3036C0EA8450D2 /* PBXTargetDependency */,
+			);
+			name = "Pods-RSSReaderAppTests";
+			productName = "Pods-RSSReaderAppTests";
+			productReference = A0B02807947B36E849459FB4F21BC97E /* Pods_RSSReaderAppTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 8B2E90C9E58AE5DDBB8051DA0256A3F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				60341B61A103DC4E82D2E469E8D72F20 /* LineSDKSwift */,
+				6692DAAD6A57E72084D39B7BF259E4EF /* LineSDKSwift-LineSDK */,
+				3D0EC5A99C1524143507D6890CFE86D7 /* Pods-RSSReaderApp */,
+				518654C0BDA8922BBED45A082B89618E /* Pods-RSSReaderApp-RSSReaderAppUITests */,
+				C6C62FFF9D755543DB3DC35A0A64649D /* Pods-RSSReaderAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		265D34B506A5E55623BC7A8C61F56C6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44F1210D34AE47D10C86923145E44B96 /* Assets.xcassets in Resources */,
+				819440C7103EE04E224DC6C44203AE3F /* Resource.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		313B60102D17FB7F33D0B177C3F8A869 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		436ED3CDFD02E8B6B3F6EE8E5D140017 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67CAFB5C4AF897F22F19F01322F88987 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABEE6F257F517369BE5DD9D2101A1A6B /* LineSDK.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F8B445BA55C800BC22E633857436E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19918E7BAE6D133382C80A43D1ED7A7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3175B5CC221A49D20D6B499D29EDD8BB /* AccessToken.swift in Sources */,
+				907CE45A2DD889D6C8DB157024AFF778 /* AccessTokenStore.swift in Sources */,
+				C3EB7D74DFDBA89B340267C7120C5FA8 /* AccessTokenVerifyResult.swift in Sources */,
+				CE5005FAF75E47FAB83A6C39BD801036 /* API+Auth.swift in Sources */,
+				F44594DC247DFEF79C7FA226B0193DA1 /* API+Deprecated.swift in Sources */,
+				BA0FA2A43CE5D762B04B2AD2C575060E /* API+Internal.swift in Sources */,
+				E4F272B6D7E6AAEFA40F9DA4CD43EF62 /* API.swift in Sources */,
+				37025C578E4C80D948C4BB67B4AF1F60 /* APIError.swift in Sources */,
+				8EC50ECA0DCAF41C9B87F6E4419A3D43 /* AudioMessage.swift in Sources */,
+				925DDE984AF5A119A66D1097609F88D5 /* AuthorizationStatus.swift in Sources */,
+				EC27D91253B85B8CFAC6F74352756543 /* CallbackQueue.swift in Sources */,
+				6D2C555B48F76015C5C16802563681D3 /* ChainedPaginatedRequest.swift in Sources */,
+				33514BBCA69E1D331EF5DAEFC170BFAD /* CodingExtension.swift in Sources */,
+				2B1486AD7565DC611E5AF8B2929AA230 /* Colors.swift in Sources */,
+				676541E9C68356AAD6B8B4286ED3D1CE /* ColumnDataStore.swift in Sources */,
+				659A4C68F5D8447639EDAD9A1ABD27B0 /* Constant.swift in Sources */,
+				268C56AB9910D1C0ADF6F17442B90988 /* CountLimitedTextView.swift in Sources */,
+				408FA27875DDA26A5A5305F2D003AF78 /* CryptoAlgorithm.swift in Sources */,
+				23C4AE0754727B7730D23F107C0A1307 /* CryptoData.swift in Sources */,
+				9A9EB1BC32E92AD6720CBAAD15131A93 /* CryptoError.swift in Sources */,
+				269A2C5967A45672698C20EBF552906E /* CryptoHelpers.swift in Sources */,
+				37EB9A211DEAA05D2B10359723A52A71 /* CryptoKey.swift in Sources */,
+				30947F4401EBBB5FD50AB2D72E5E4C1F /* Delegate.swift in Sources */,
+				7136754ED1B20DE43F9889B4C7E83F57 /* DownloadableImageView.swift in Sources */,
+				0AB14407AFBC95250CE7AD9B7AF9372C /* ECDSA.swift in Sources */,
+				888F577EB26BD18DF0831B45382D60F1 /* FlexBlockStyle.swift in Sources */,
+				286EA46317F92BFABBD556F8F93F4476 /* FlexBoxComponent.swift in Sources */,
+				F20A4645B2CC06626807AFCB6D535DA5 /* FlexBubbleContainer.swift in Sources */,
+				32F4194A41A2A43C9EBC8D55D87451F7 /* FlexButtonComponent.swift in Sources */,
+				DA3BD8F837F18DC6689759CB5B209661 /* FlexCarouselContainer.swift in Sources */,
+				0D8F394C895E0EDA730D73D443487420 /* FlexFillerComponent.swift in Sources */,
+				E07DE04F2F8FB05EB18D0BE1DDF4BE4C /* FlexIconComponent.swift in Sources */,
+				51DD677720BE2720EC4A98950B6E056A /* FlexImageComponent.swift in Sources */,
+				C6AA3C3A032230F8C0149D317CAC7A2C /* FlexMessage.swift in Sources */,
+				C9BD969C510194B3168B1EB2AC5CA6FC /* FlexMessageComponent.swift in Sources */,
+				2B9321C70A82771038E395A3B2471201 /* FlexMessageContainer.swift in Sources */,
+				15DF5AC3BCE9143B8CB8FACCA751A32C /* FlexMessageProperties.swift in Sources */,
+				2C90FC7761AF38DC72D370028251B207 /* FlexSeparatorComponent.swift in Sources */,
+				BA4E66C8D4B144CDC3070C45B9733327 /* FlexSpacerComponent.swift in Sources */,
+				B485E8A2D2A02CAE597AFEE962951122 /* FlexTextComponent.swift in Sources */,
+				7E6AAAD42A5A72E2F152F5302BE9C596 /* FormEntry.swift in Sources */,
+				77989CBEE6E3877C718FD20272C67BAB /* FormSection.swift in Sources */,
+				C80ADD98AE576A322061C0E7C5CCCA82 /* GetApproversInFriendsRequest.swift in Sources */,
+				0BB1DDDF3C4596F4E220D58917433C20 /* GetApproversInGroupRequest.swift in Sources */,
+				823BD1B33F931FDD4FE8A3F030E298CF /* GetBotFriendshipStatus.swift in Sources */,
+				72225E553C21F260F15475DCCBDF1BCB /* GetDiscoveryDocumentRequest.swift in Sources */,
+				8B88A098451596552F08C743D2D24830 /* GetFriendsRequest.swift in Sources */,
+				F7D274A2462388C1D00AE043440B9421 /* GetGroupsRequest.swift in Sources */,
+				D339108945E773948AD7C78B363817D0 /* GetJWKSetRequest.swift in Sources */,
+				5DF1311FF2BA8C15E5F2974150CEC08D /* GetOpenChatRoomJoinTypeRequest.swift in Sources */,
+				F89A329D18E43414479E62E610A9D8FF /* GetOpenChatRoomMembershipStateRequest.swift in Sources */,
+				DDA85C314017D5B8A3CF8E365AFF7262 /* GetOpenChatRoomStatusRequest.swift in Sources */,
+				6038FDFB0C4A9D4C3FF1BC11547C5F0D /* GetOpenChatTermAgreementStatusRequest.swift in Sources */,
+				96D47872E5DF19F2A7FDC93A3D0A0D7B /* GetShareFriendsRequest.swift in Sources */,
+				695D9D143CDD623AB9C7841440265193 /* GetShareGroupsRequest.swift in Sources */,
+				CB1CBC7D94BEB2C327D126A8C3977A4D /* GetUserProfileRequest.swift in Sources */,
+				0D541A2DB6B73F2FE2D0BA89993B4840 /* GetVerifyTokenRequest.swift in Sources */,
+				CC1CFB802A3E054AC429AA5D3B3AC541 /* Group.swift in Sources */,
+				6326AE11F49DCD33994A9ACB715F9271 /* Helpers.swift in Sources */,
+				C9EB20C7E1858F42046C5833CD1825C7 /* HexColor.swift in Sources */,
+				FDC8BB556D559043424570053EC54E05 /* ImageDownloader.swift in Sources */,
+				07485A1BE56631015B80C733CD8853E7 /* ImageManager.swift in Sources */,
+				C68368C2A4D28F7E3B1C23FE6FBD0556 /* ImageMessage.swift in Sources */,
+				F5101F1E275638E07BBACCC051F728E4 /* JWA.swift in Sources */,
+				78676446310F4423F6EEEEB803D1383A /* JWK.swift in Sources */,
+				3C38F30BF00361C84F5BEF2D8706703A /* JWKSet.swift in Sources */,
+				8950F7D1AEAE2132EAA9719419AF2B86 /* JWT.swift in Sources */,
+				BE14045288879ADCD4D8C7F9833956C9 /* JWTCoder.swift in Sources */,
+				069B0E6240702C9A15C1E226180864C9 /* JWTHelpers.swift in Sources */,
+				D8262D891737E3D1E1177E682367A76E /* KeyboardObservable.swift in Sources */,
+				827496F05F6D331B2A544F73DB49B8AF /* KeychainStore.swift in Sources */,
+				14FD30E3BB7636B9E05FA0C65A35FDF3 /* LineSDKError.swift in Sources */,
+				2EFC2C455BB0FE9E9A1BD53D65EE20A3 /* LineSDKSwift-dummy.m in Sources */,
+				ECF7BFBE94F3531175649D5303B42359 /* LoadingIndicator.swift in Sources */,
+				C656E2C58479246D5366C810143F0767 /* LocationMessage.swift in Sources */,
+				4E0C681FF2D4905C8109B3D615EAA64A /* LoginButton.swift in Sources */,
+				2248C99B6330156AEC245AE5E407CA1F /* LoginConfiguration.swift in Sources */,
+				6ECF5CA66C7E71F4027BC91B515AD02F /* LoginManager.swift in Sources */,
+				C9512D235E046247D5D60E354F8FBF15 /* LoginManagerOptions.swift in Sources */,
+				E9A23DA89C6B96CDA11EC2B6A404B8CD /* LoginManagerParameters.swift in Sources */,
+				2758633382F1FD0F93E5C846D887C52B /* LoginPermission.swift in Sources */,
+				91EE7173F70ECB013C569A8630636624 /* LoginProcess.swift in Sources */,
+				29D618D115C6C3A3A0ADA7C676ADFBE1 /* LoginProcessURLResponse.swift in Sources */,
+				C20F38BE921F508C403835DAC909C6E7 /* LoginResult.swift in Sources */,
+				B069905D4DE1946E2C217C99AD72D763 /* Message.swift in Sources */,
+				A65ABB29A305E105A5944207FFDDC1C6 /* MessageAction.swift in Sources */,
+				D32EA3BD4965C24DCC9F2D2D5F62AAB1 /* MessageProtocols.swift in Sources */,
+				1C48886C7B6D0CD62236445E75C46E05 /* MessageSender.swift in Sources */,
+				C7910460158EB5AE71D135458F635ECA /* MessageShareTargetType.swift in Sources */,
+				45132063FD334C19A8144C5C81F27D66 /* NotificationToken.swift in Sources */,
+				D9885616775E41F7FA062B5F06C37258 /* OpenChatCategory.swift in Sources */,
+				927C1073FD807C518774EDF5FE2B8F01 /* OpenChatCategoryExtensions.swift in Sources */,
+				B45C95E4C0F1C4C1E523FF3174E5520D /* OpenChatCreatingController.swift in Sources */,
+				78465DAFFAEAAEA27CD39BBA8A73D271 /* OpenChatCreatingControllerDelegate.swift in Sources */,
+				601352BF4B53CEFB44DE15950BB5F314 /* OpenChatCreatingFormItem.swift in Sources */,
+				CA040BFC5BB3E280B70541193DD8E72F /* OpenChatCreatingNavigationController.swift in Sources */,
+				1F3EA7FD0721CC4042B172E38F585DFA /* OpenChatRoomCreatingItem.swift in Sources */,
+				BE0FDEF6920A17116C8BFE12DAE752C9 /* OpenChatRoomDescriptionTableViewCell.swift in Sources */,
+				13C4B2D4499E69E7F01FDA7E75594599 /* OpenChatRoomInfoViewController.swift in Sources */,
+				52ADA1F5586505990BBEB84D2710A6E8 /* OpenChatRoomNameTableViewCell.swift in Sources */,
+				8BB7CF4275A6DC995D33FA1408353D5A /* OpenChatUserProfileViewController.swift in Sources */,
+				7F0EB4E7FC4F9F8F93DE77E96E10B15C /* OptionSelectingViewController.swift in Sources */,
+				2B8A213D56FA5FC110E4804C8FC2642A /* PageTabView.swift in Sources */,
+				8B7F2D2E2F4385A75A446A515FBF44DC /* PageViewController.swift in Sources */,
+				88706C3D6F8AE36B63D3DBEAC82E9450 /* ParametersAdapter.swift in Sources */,
+				A0AEB998FD3041673DAE0017A163EAC4 /* PKCE.swift in Sources */,
+				D94A85B861CE8D6C853FDED88A0D91D0 /* PostExchangeTokenRequest.swift in Sources */,
+				650A1DCB278936DA6881E4CA58012782 /* PostMessageSendingTokenIssueRequest.swift in Sources */,
+				47EB8EA137CCCB1A1025880E2955598D /* PostMultisendMessagesRequest.swift in Sources */,
+				C25DBBD1283228C02222D7A5FD86E1C4 /* PostMultisendMessagesWithTokenRequest.swift in Sources */,
+				E18E6831F301B7138273EB1FEB6E7139 /* PostOpenChatCreateRequest.swift in Sources */,
+				A7014D6A3A35DFBEECE94E2A6194F3EF /* PostOpenChatRoomJoinRequest.swift in Sources */,
+				B6A2E66A13BC7E132808451094563046 /* PostRefreshTokenRequest.swift in Sources */,
+				5613BCC48A95A4DCF24F5A68060A4791 /* PostRevokeTokenRequest.swift in Sources */,
+				93EF5B71E4580A2F6B2925D94DCCD2DB /* PostSendMessagesRequest.swift in Sources */,
+				463BD3F5F2554C64DFBF0028F5618F23 /* Request.swift in Sources */,
+				7345DB4E8B14F0CD5646E2C14221E4D9 /* RequestAdapter.swift in Sources */,
+				8CE189A0AE600392DF5FD7454D4ED864 /* ResourceLoading.swift in Sources */,
+				C2A881304E95D04D2D623F08FC8D827A /* ResponsePipeline.swift in Sources */,
+				986131316811490DEA2F347C9FAF1A4E /* Result.swift in Sources */,
+				EF8AC5BB8D2F91D17EB14634364749AF /* ResultUtils.swift in Sources */,
+				0720770433B9E34EE2B706602CD1A520 /* RSA.swift in Sources */,
+				DBF9319480A2FD84C67C7D7CEC47A691 /* SelectedTargetPanelCell.swift in Sources */,
+				96049EA62AB5B0F5B91A3A2AE7094BCB /* SelectedTargetPanelViewController.swift in Sources */,
+				72DEE6CA1BA54B1CBE65B16198717AE4 /* Session.swift in Sources */,
+				759CDB581C86B9B93F6667ECD36D5C20 /* ShareRootViewController.swift in Sources */,
+				3A1C6024A123FD600CBFBA40DDF4985C /* ShareTarget.swift in Sources */,
+				9662EF80D7ED548294834081207AC256 /* ShareTargetSearchController.swift in Sources */,
+				8D09C0DBF2349097D75CB33990274382 /* ShareTargetSearchResultTableViewController.swift in Sources */,
+				0FE2109AF2E7CD8390EE8950B6B0A6C6 /* ShareTargetSearchResultViewController.swift in Sources */,
+				A443BE1402A5F851557894DF0D43234A /* ShareTargetSelectingSectionHeaderView.swift in Sources */,
+				38C6FB712A61B3B90C2DA6BE8E0C9525 /* ShareTargetSelectingTableCell.swift in Sources */,
+				86786B0B42D44EDACF75470577CA5683 /* ShareTargetSelectingViewController.swift in Sources */,
+				4F1A88002FC6DFEA12A3F5BA9DCB07C9 /* ShareTargetTableViewStyling.swift in Sources */,
+				4775224CE0040FB322E3AD6C513E3006 /* ShareViewController.swift in Sources */,
+				4EFCCE9974DD066778941BB5B5093525 /* ShareViewControllerDelegate.swift in Sources */,
+				4B74C9E6D2FB23A68E5C762384B0A4DF /* String.swift in Sources */,
+				581E409FFD24AA6018308EBEE18D7E3E /* StyleNavigationController.swift in Sources */,
+				8EE988657610A1212EDFD58DE522EE49 /* TemplateButtonsPayload.swift in Sources */,
+				7EEEF57E93EC54229F167FD64609271E /* TemplateCarouselPayload.swift in Sources */,
+				E2B2C56733ECA4AD379F7BF729967FD2 /* TemplateConfirmPayload.swift in Sources */,
+				9FCCD2EE8197E83180E7F98951EEB182 /* TemplateImageCarouselPayload.swift in Sources */,
+				441AB5D35C154A1BEEFF0660D5236B8A /* TemplateMessage.swift in Sources */,
+				009260A677B6FD5971DF1A7F359CE482 /* TemplateMessagePayload.swift in Sources */,
+				2944914CCE437C092A27DE83F2E1459D /* TemplateMessageProperties.swift in Sources */,
+				CEFBA0FFF61A9220E0CEB62E536BF555 /* TextMessage.swift in Sources */,
+				A3BFEBF25279C5CABD70282D2093F3D7 /* ToastView.swift in Sources */,
+				412C70FCE3B1A2D48616E28E1C178331 /* Unit.swift in Sources */,
+				BEC72C0C0FC813671E6D8ADB8B5E581A /* URLs.swift in Sources */,
+				9DEDA7B194FB0BE64AFE0789AF91405E /* User.swift in Sources */,
+				79C4911E695876E71EE03CB652B42CA4 /* UserDefaultsValue.swift in Sources */,
+				24202E36F78235C1C4D381F6EDEE0D99 /* UserProfile.swift in Sources */,
+				33E4F6DE7ACBFCBE9D1319A986D8B0DE /* VerticallyCenteredTextView.swift in Sources */,
+				8F95D5715152432CF8FB9353417F14D5 /* VideoMessage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46846EB5602270F4A26F6083685727F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				150B5C657C03FFBDD9F72982F12464DD /* Pods-RSSReaderApp-RSSReaderAppUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B51BA575B2EDE3206DB6E512E623B1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F9FF75376B31C53A780CB7CB003B36B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6A13B5B3592AC964FC095D97ED8390C /* Pods-RSSReaderApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A81F1DAC6A7A2B8AD48D9D4474CC7742 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E34420D9AE35C5C211F2EBE04E249DF /* Pods-RSSReaderAppTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37861D89A10BC37B8F4F2BF0D6DE2697 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LineSDKSwift;
+			target = 60341B61A103DC4E82D2E469E8D72F20 /* LineSDKSwift */;
+			targetProxy = 1E9D7B0879B714BC7187848065DCED08 /* PBXContainerItemProxy */;
+		};
+		6C17E54A1994729DE629C024E33558AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LineSDKSwift-LineSDK";
+			target = 6692DAAD6A57E72084D39B7BF259E4EF /* LineSDKSwift-LineSDK */;
+			targetProxy = A6C6262B06E584A86B4E708151C7CD23 /* PBXContainerItemProxy */;
+		};
+		9439C7945500580F41D4B78D73AEA1DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LineSDKSwift;
+			target = 60341B61A103DC4E82D2E469E8D72F20 /* LineSDKSwift */;
+			targetProxy = 096CE21A2D9C6BCB29D591D1C74FEA7F /* PBXContainerItemProxy */;
+		};
+		FD99862A7396BD6E2E3036C0EA8450D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-RSSReaderApp";
+			target = 3D0EC5A99C1524143507D6890CFE86D7 /* Pods-RSSReaderApp */;
+			targetProxy = 050E004BD6627EF4C037D20D31BFEF6B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		125C51B0F88E28C868DC90BD45E4E727 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		1B24251086ADAEE290A4A3BA9C8B0644 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC5E6CCE0C733E1ADCD44D5B970C327A /* Pods-RSSReaderApp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RSSReaderApp/Pods-RSSReaderApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSSReaderApp/Pods-RSSReaderApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		40A6E32F8C15C781809EDC704CCE01C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 062CCD96827F6F594B1EB2DB453C5CDB /* Pods-RSSReaderApp-RSSReaderAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RSSReaderApp-RSSReaderAppUITests/Pods-RSSReaderApp-RSSReaderAppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSSReaderApp-RSSReaderAppUITests/Pods-RSSReaderApp-RSSReaderAppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4DA5AC9F75AF2299FE39F5C71812DF73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7254D2349C34A309C6941D4D036D323 /* Pods-RSSReaderApp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RSSReaderApp/Pods-RSSReaderApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSSReaderApp/Pods-RSSReaderApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		55809CF5A94467541966DF436AB74E92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D727C6801E39B380B29420436A63AE43 /* LineSDKSwift.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LineSDKSwift";
+				IBSC_MODULE = LineSDK;
+				INFOPLIST_FILE = "Target Support Files/LineSDKSwift/ResourceBundle-LineSDK-LineSDKSwift-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = LineSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		7AEDF65CD4888E55FA32867E6863FDF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81D7438EF8909C8CC98C627BA3CB8541 /* Pods-RSSReaderAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RSSReaderAppTests/Pods-RSSReaderAppTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSSReaderAppTests/Pods-RSSReaderAppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		92A3E9AC052A7345115439021B218E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		965038D8F8630C99AA4D4E9276B91AD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6175F23A1FB4ED14BD06FF395AA22933 /* LineSDKSwift.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LineSDKSwift";
+				IBSC_MODULE = LineSDK;
+				INFOPLIST_FILE = "Target Support Files/LineSDKSwift/ResourceBundle-LineSDK-LineSDKSwift-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = LineSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		A13B885F5F790B71F054EA1DA17BD27A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4701BF235D3BCC4176FC632ED05D414C /* Pods-RSSReaderAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RSSReaderAppTests/Pods-RSSReaderAppTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSSReaderAppTests/Pods-RSSReaderAppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B7C3A5C840E2A1AA0FC5716826C2F7BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D727C6801E39B380B29420436A63AE43 /* LineSDKSwift.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LineSDKSwift/LineSDKSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LineSDKSwift/LineSDKSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LineSDKSwift/LineSDKSwift.modulemap";
+				PRODUCT_MODULE_NAME = LineSDK;
+				PRODUCT_NAME = LineSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D3AEE8B70B9F3D3301939E0E3A6F9AB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6175F23A1FB4ED14BD06FF395AA22933 /* LineSDKSwift.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LineSDKSwift/LineSDKSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LineSDKSwift/LineSDKSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LineSDKSwift/LineSDKSwift.modulemap";
+				PRODUCT_MODULE_NAME = LineSDK;
+				PRODUCT_NAME = LineSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DCDD2D896553A463EABDC0E71D2B37EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B6DB7135C38AB69660F6C7331120B83 /* Pods-RSSReaderApp-RSSReaderAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RSSReaderApp-RSSReaderAppUITests/Pods-RSSReaderApp-RSSReaderAppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSSReaderApp-RSSReaderAppUITests/Pods-RSSReaderApp-RSSReaderAppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0346BC586ED9D8C038FD38D07D87360B /* Build configuration list for PBXNativeTarget "Pods-RSSReaderApp-RSSReaderAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDD2D896553A463EABDC0E71D2B37EF /* Debug */,
+				40A6E32F8C15C781809EDC704CCE01C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				125C51B0F88E28C868DC90BD45E4E727 /* Debug */,
+				92A3E9AC052A7345115439021B218E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5039F583E9D90813AF2933B3F331730B /* Build configuration list for PBXNativeTarget "Pods-RSSReaderApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DA5AC9F75AF2299FE39F5C71812DF73 /* Debug */,
+				1B24251086ADAEE290A4A3BA9C8B0644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56B7FAB204C8F0FC39FE040C1F0933BD /* Build configuration list for PBXNativeTarget "LineSDKSwift-LineSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				965038D8F8630C99AA4D4E9276B91AD0 /* Debug */,
+				55809CF5A94467541966DF436AB74E92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A95EEAE21FCD14B45B17A96207DF7D7F /* Build configuration list for PBXNativeTarget "Pods-RSSReaderAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AEDF65CD4888E55FA32867E6863FDF9 /* Debug */,
+				A13B885F5F790B71F054EA1DA17BD27A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5529260463649162495B9E5C354FF56 /* Build configuration list for PBXNativeTarget "LineSDKSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3AEE8B70B9F3D3301939E0E3A6F9AB4 /* Debug */,
+				B7C3A5C840E2A1AA0FC5716826C2F7BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
