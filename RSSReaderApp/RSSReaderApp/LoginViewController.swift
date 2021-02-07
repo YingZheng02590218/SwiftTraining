@@ -17,7 +17,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         print(UserDefaults.standard.string(forKey: "userName"))
-        print(UserDefaults.standard.string(forKey: "userPassword"))
         print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
         userNameTextField.delegate = self
         userPasswordTextField.delegate = self
@@ -30,7 +29,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let loginButton = LoginButton()
         loginButton.delegate = self
         // Configuration for permissions and presenting.
-        loginButton.permissions = [.profile]
+        loginButton.permissions = [.openID, .email]
         loginButton.presentingViewController = self
         // Add button to view and layout it.
         view.addSubview(loginButton)
@@ -80,25 +79,47 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginButtonTapped(_ sender: Any) {
         let userName = userNameTextField.text;
         let userPassword = userPasswordTextField.text;
-        let userNameStored = UserDefaults.standard.string(forKey: "userName")
-        let userPasswordStored = UserDefaults.standard.string(forKey: "userPassword")
-        if(userNameStored == userName){
-            if(userPasswordStored == userPassword){
-                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-                self.dismiss(animated: true, completion:nil)
-
-            }
-
+        // ユーザー情報 辞書型
+        guard let dictionary = UserDefaults.standard.dictionary(forKey: "userInformation") else {
+            return
         }
-
+        print(dictionary)
+        print(UserDefaults.standard.string(forKey: "userName"))
+        print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
+        guard let userInformationPassword = dictionary[userName!] else {
+            return
+        }
+        print(dictionary[userName!] as! String)
+        if( userInformationPassword as! String == userPassword!) {
+            UserDefaults.standard.set(userNameTextField.text, forKey: "userName")
+            UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+            self.dismiss(animated: true, completion:nil)
+        }
     }
-
 }
 // LINE
 extension LoginViewController: LoginButtonDelegate {
     func loginButton(_ button: LoginButton, didSucceedLogin loginResult: LoginResult) {
-        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-        print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
+        if let email = loginResult.accessToken.IDToken?.payload.email {
+            print("User Email: \(email)")
+            // ユーザー情報 辞書型
+            // ID(email)が登録されているかどうかをUserDefaults内で検索して、なければ新規登録する
+            let dictionary = UserDefaults.standard.dictionary(forKey: email)
+            print(dictionary)
+            if dictionary == nil {
+                let userInformation: [String: String] = [ // 『辞書』を初期化しつつ宣言します。
+                    email : "", // SNSログインの場合は、Passwordを空白とする
+                ]
+                UserDefaults.standard.set(userInformation, forKey: email)
+                // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
+                UserDefaults.standard.set(email, forKey: "userName")
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+            }else {
+                // IDが同じユーザーが既に登録されている場合
+            }
+            print(UserDefaults.standard.string(forKey: "userName"))
+            print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
+        }
         print("Login Succeeded.")
     }
     
