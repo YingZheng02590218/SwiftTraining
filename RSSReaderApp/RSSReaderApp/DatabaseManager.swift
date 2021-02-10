@@ -116,4 +116,28 @@ class DatabaseManagerArticle {
         objects = objects.sorted(byKeyPath: "ArticlePubDate", ascending: SortByLatest) // true:降順　新しいものから
         return objects
     }
+    // 既読制御機能
+    func changeArticleHasRead(number: Int, ArticleHasRead: Bool) {
+        print(number, ArticleHasRead)
+        let realm = try! Realm()
+        try! realm.write {
+            let value: [String: Any] = ["number": number, "ArticleHasRead": ArticleHasRead]
+            realm.create(DatabaseArticle.self, value: value, update: .modified)
+        }
+    }
+    // お気に入り機能　記事 取得
+    func getArticleByPrimaryKey(number: Int)  -> DatabaseArticle {
+        let realm = try! Realm()
+        return realm.object(ofType: DatabaseArticle.self, forPrimaryKey: number)!
+    }
+    // お気に入り機能　記事
+    func changeArticleIsFavorite(number: Int) {
+        let article = getArticleByPrimaryKey(number: number)
+        print(number, article.ArticleIsFavorite)
+        let realm = try! Realm()
+        try! realm.write {
+            let value: [String: Any] = ["number": number, "ArticleIsFavorite": !article.ArticleIsFavorite]
+            realm.create(DatabaseArticle.self, value: value, update: .modified) // 一部上書き更新
+        }
+    }
 }
