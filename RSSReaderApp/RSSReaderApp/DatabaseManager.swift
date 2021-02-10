@@ -48,6 +48,16 @@ class DatabaseManager {
             .filter("RSSFavorite == \(true)")
         return objects
     }
+    // 登録したフィードを削除
+    func delete(RSSFeed: String) {
+        let realm = try! Realm()
+        try! realm.write {
+            let object = realm.objects(Database.self)
+                .filter("User LIKE '\(UserDefaults.standard.string(forKey: "userName")!)'")
+                .filter("RSSFeed LIKE '\(RSSFeed)'")
+            realm.delete(object)
+        }
+    }
 }
 
 class DatabaseManagerArticle {
