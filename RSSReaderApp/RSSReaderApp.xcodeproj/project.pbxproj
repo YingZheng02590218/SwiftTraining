@@ -10,6 +10,7 @@
 		247956255903653BCDD23D9A /* Pods_RSSReaderAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4196F4CD4D3BA8B63992EE13 /* Pods_RSSReaderAppTests.framework */; };
 		389CF2328828046249365D14 /* Pods_RSSReaderApp_RSSReaderAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55456A71DF42B58BE72C1DBE /* Pods_RSSReaderApp_RSSReaderAppUITests.framework */; };
 		B21F0E38696AC08D16181F7E /* Pods_RSSReaderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 895B58FBA9D057DE37F8721B /* Pods_RSSReaderApp.framework */; };
+		F918CC2925CBE543009482BF /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918CC2825CBE543009482BF /* SettingsTableViewController.swift */; };
 		F97F3C9225BEB65A001B8CC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F3C9125BEB65A001B8CC3 /* AppDelegate.swift */; };
 		F97F3C9425BEB65A001B8CC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F3C9325BEB65A001B8CC3 /* SceneDelegate.swift */; };
 		F97F3C9625BEB65A001B8CC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F3C9525BEB65A001B8CC3 /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		7F162FE7AA22EB12AC6593E4 /* Pods-RSSReaderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReaderApp.release.xcconfig"; path = "Target Support Files/Pods-RSSReaderApp/Pods-RSSReaderApp.release.xcconfig"; sourceTree = "<group>"; };
 		895B58FBA9D057DE37F8721B /* Pods_RSSReaderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReaderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22906E34104BEBE79C6535C /* Pods-RSSReaderAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReaderAppTests.debug.xcconfig"; path = "Target Support Files/Pods-RSSReaderAppTests/Pods-RSSReaderAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F918CC2825CBE543009482BF /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F97F3C8E25BEB65A001B8CC3 /* RSSReaderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReaderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97F3C9125BEB65A001B8CC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F97F3C9325BEB65A001B8CC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				F97F3C9F25BEB65C001B8CC3 /* Info.plist */,
 				F984271725C27E5F0069AD72 /* LoginViewController.swift */,
 				F9AF498C25C3CB6900A9CC6B /* SignUpViewController.swift */,
+				F918CC2825CBE543009482BF /* SettingsTableViewController.swift */,
 			);
 			path = RSSReaderApp;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F984271825C27E5F0069AD72 /* LoginViewController.swift in Sources */,
+				F918CC2925CBE543009482BF /* SettingsTableViewController.swift in Sources */,
 				F97F3C9625BEB65A001B8CC3 /* ViewController.swift in Sources */,
 				F97F3C9225BEB65A001B8CC3 /* AppDelegate.swift in Sources */,
 				F97F3C9425BEB65A001B8CC3 /* SceneDelegate.swift in Sources */,
