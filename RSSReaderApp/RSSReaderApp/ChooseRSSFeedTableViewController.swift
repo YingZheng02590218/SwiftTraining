@@ -15,7 +15,9 @@ class ChooseRSSFeedTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // RSSフィード　仮登録
+        UserDefaults.standard.set("andyoutoobrutus@yahoo.com", forKey: "userName")
+        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
     }
 
     // MARK: - Table view data source
@@ -115,6 +117,17 @@ class ChooseRSSFeedTableViewController: UITableViewController {
             // フィードを削除
             databaseManager.delete(RSSFeed: newsType.urlStr)
         }
+        // フィードを登録していればDoneボタンを有効とする
+        if databaseManager.getRSSFeeds().count > 0 {
+            doneButton.isEnabled = true
+        }else {
+            doneButton.isEnabled = false
+        }
         tableView.reloadData()
+    }
+    
+    @IBOutlet var doneButton: UIBarButtonItem!
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        dismiss(animated: false, completion: nil)
     }
 }

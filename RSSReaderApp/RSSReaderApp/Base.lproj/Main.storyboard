@@ -571,7 +571,16 @@
                             <outlet property="delegate" destination="VcL-iz-rmv" id="7ac-U1-0MB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="RSSフィード選択画面" id="xGc-rB-gJ1"/>
+                    <navigationItem key="navigationItem" title="RSSフィード選択画面" id="xGc-rB-gJ1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="jE5-4x-5Qr">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="VcL-iz-rmv" id="vPv-Fa-mhk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="jE5-4x-5Qr" id="9ql-gN-MRG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNC-jh-8Tm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
