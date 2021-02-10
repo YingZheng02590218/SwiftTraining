@@ -7,6 +7,7 @@ target 'RSSReaderApp' do
 
   # Pods for RSSReaderApp
 pod 'LineSDKSwift', '~> 5.0'
+pod 'RealmSwift'
 
   target 'RSSReaderAppTests' do
     inherit! :search_paths
