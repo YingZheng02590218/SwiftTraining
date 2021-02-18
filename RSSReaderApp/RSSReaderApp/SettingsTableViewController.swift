@@ -51,8 +51,13 @@ class SettingsTableViewController: UITableViewController {
     
 
     override func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
-        // 暫定処理 todo
-        performSegue(withIdentifier: "SettingDetailTableViewController",sender: nil)
+        // 購読RSS管理 RSSフィード選択画面を流用して、購読RSS管理として利用する
+        // 暫定処理 todo RSSフィード選択画面のブランチをマージ後に動作確認する
+        if indexPath.row == 2 {
+            // todo RSSフィード選択画面 ブランチで　ナビゲーションコントローラのStoryboardIDを"NavigationController"と設定する
+            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+            self.present(secondViewController, animated: true, completion: nil)
+        }
     }
 
 }
