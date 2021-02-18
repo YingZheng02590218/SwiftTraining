@@ -18,6 +18,7 @@ class ChooseRSSFeedTableViewController: UITableViewController {
         // RSSフィード　仮登録
         UserDefaults.standard.set("andyoutoobrutus@yahoo.com", forKey: "userName")
         UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+        doneButton.isEnabled = false
     }
 
     // MARK: - Table view data source
