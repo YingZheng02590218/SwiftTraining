@@ -11,6 +11,15 @@ class DetailSettingsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // ダークモード　コントローラ毎に下記を記述する　todo
+        print(UserDefaults.standard.bool(forKey: "DarkMode"))
+        if UserDefaults.standard.bool(forKey: "DarkMode") {
+            // 常にダークモード（暗い外観）を指定する
+                    self.overrideUserInterfaceStyle = .dark
+        }else {
+            // 常にライトモード（明るい外観）を指定する
+                    self.overrideUserInterfaceStyle = .light
+        }
     }
 
     // MARK: - Table view data source
@@ -65,6 +74,13 @@ class DetailSettingsTableViewController: UITableViewController {
         case 4:
             UserDefaults.standard.set(sender.isOn, forKey: "DarkMode")
             print(UserDefaults.standard.bool(forKey: "DarkMode"))
+            if sender.isOn {
+                // 常にダークモード（暗い外観）を指定する
+                        self.overrideUserInterfaceStyle = .dark
+            }else {
+                // 常にライトモード（明るい外観）を指定する
+                        self.overrideUserInterfaceStyle = .light
+            }
             break
         default:
             break
