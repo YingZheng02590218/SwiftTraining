@@ -20,7 +20,7 @@ class DatabaseManager {
                 database.User = UserDefaults.standard.string(forKey: "userName")!
                 database.RSSFeed = RSSFeed
                 database.RSSFeedTitle = RSSFeedTitle
-                database.RSSFavorite = false
+                database.RSSFavorite = true//todo falseに戻す 確認用
                 realm.add(database)
             }
         }
@@ -38,6 +38,14 @@ class DatabaseManager {
         let realm = try! Realm()
         let objects = realm.objects(Database.self)
             .filter("User LIKE '\(UserDefaults.standard.string(forKey: "userName")!)'")
+        return objects
+    }
+    // 登録したフィードを取得 お気に入り
+    func getFavoriteRSSFeeds() -> Results<Database> {
+        let realm = try! Realm()
+        let objects = realm.objects(Database.self)
+            .filter("User LIKE '\(UserDefaults.standard.string(forKey: "userName")!)'")
+            .filter("RSSFavorite == \(true)")
         return objects
     }
 }

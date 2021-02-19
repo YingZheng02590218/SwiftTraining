@@ -7,6 +7,7 @@
 
 import UIKit
 import LineSDK
+import BackgroundTasks
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -51,8 +52,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        // バックグラウンド起動に移ったときにスケジューリング登録
+        scheduleAppRefresh()
     }
-
-
+    // RSS取得間隔　更新通知
+    private func scheduleAppRefresh() {
+        // Info.plistで定義したIdentifierを指定
+        let request = BGAppRefreshTaskRequest(identifier: "com.SwiftTraining.RSSReaderApp.refresh")
+        // 最低で、どの程度の期間を置いてから実行するか指定
+        print(UserDefaults.standard.double(forKey: "SyncInterval")) // RSS取得間隔
+        request.earliestBeginDate = Date(timeIntervalSinceNow: (UserDefaults.standard.double(forKey: "SyncInterval") * 60) - (9 * 60))
+        print(request)
+        do {
+            // スケジューラーに実行リクエストを登録
+            try BGTaskScheduler.shared.submit(request) // シミュレーターではエラー発生するので実機で確認する
+        } catch {
+            print("Could not schedule app refresh: \(error)")
+        }
+    }
+    
+    
 }
 
