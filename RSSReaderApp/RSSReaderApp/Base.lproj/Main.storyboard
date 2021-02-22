@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MeX-QI-WJg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -140,6 +140,8 @@
                         <outlet property="loginButton" destination="JXI-7v-Evr" id="gSx-Qz-O9x"/>
                         <outlet property="userNameTextField" destination="IBA-NR-t2O" id="xpS-3D-w2a"/>
                         <outlet property="userPasswordTextField" destination="GI4-IC-x76" id="vsq-JD-Enp"/>
+                        <segue destination="MeX-QI-WJg" kind="presentation" identifier="toCollectionView" modalPresentationStyle="fullScreen" id="ktD-f8-aWA"/>
+                        <segue destination="10q-Sf-Ef9" kind="presentation" identifier="toTableView" modalPresentationStyle="fullScreen" id="lIS-ja-MjS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
