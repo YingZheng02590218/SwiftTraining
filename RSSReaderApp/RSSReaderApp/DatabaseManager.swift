@@ -53,7 +53,7 @@ class DatabaseManager {
 class DatabaseManagerArticle {
     
     // 記事をデータベースに登録する。
-    func add(ArticleRSSFeed: String, ArticleLink: String, ArticlePubDate: String, ArticleTitle: String) {
+    func add(ArticleRSSFeed: String, ArticleLink: String, ArticlePubDate: String, ArticleTitle: String) -> Bool {
         if check(ArticleLink: ArticleLink) {
             let realm = try! Realm()
             try! realm.write {
@@ -70,7 +70,9 @@ class DatabaseManagerArticle {
                 print(database)
                 realm.add(database)
             }
+            return true
         }
+        return false
     }
     // 記事の重複チェック
     func check(ArticleLink: String) -> Bool {

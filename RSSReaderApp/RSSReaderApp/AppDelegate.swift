@@ -8,9 +8,10 @@
 import UIKit
 import LineSDK
 import BackgroundTasks
+import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 
 
@@ -29,7 +30,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // バックグラウンド処理したい内容 ※後述します
             self.handleAppRefresh(task: task as! BGAppRefreshTask)
         }
+        // 1日の間、何度も実行したい場合は、1回実行するごとに新たにスケジューリングに登録します
+        scheduleAppRefresh()
+        // 通知許可の取得
+        UNUserNotificationCenter.current().requestAuthorization(
+        options: [.alert, .sound, .badge]){
+            (granted, _) in
+            if granted{
+                UNUserNotificationCenter.current().delegate = self
+            }
+        }
         return true
+    }
+    // 更新通知 バックグラウンドで通知を受け取った場合
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+
+        let trigger = response.notification.request.trigger
+
+        switch trigger {
+        case is UNPushNotificationTrigger:
+            print("UNPushNotificationTrigger")
+        case is UNTimeIntervalNotificationTrigger:
+            print("UNTimeIntervalNotificationTrigger")
+        case is UNCalendarNotificationTrigger:
+            print("UNCalendarNotificationTrigger")
+        case is UNLocationNotificationTrigger:
+            print("UNLocationNotificationTrigger")
+        default:
+            break
+        }
+        completionHandler()
+    }
+    // 更新通知 フォアグラウンドで通知を受け取った時
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // アプリ起動時も通知を行う
+        completionHandler([ .badge, .sound, .alert ])
     }
     // LINE
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -55,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let request = BGAppRefreshTaskRequest(identifier: "com.SwiftTraining.RSSReaderApp.refresh")
         // 最低で、どの程度の期間を置いてから実行するか指定
         print(UserDefaults.standard.double(forKey: "SyncInterval")) // RSS取得間隔
-        request.earliestBeginDate = Date(timeIntervalSinceNow: (UserDefaults.standard.double(forKey: "SyncInterval") * 60) - (9 * 60))
+        request.earliestBeginDate = Date(timeIntervalSinceNow: UserDefaults.standard.double(forKey: "SyncInterval") * 60)
         print(request)
         do {
             // スケジューラーに実行リクエストを登録
@@ -66,9 +103,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     // RSS取得間隔　更新通知
     private func handleAppRefresh(task: BGAppRefreshTask) {
-        // 1日の間、何度も実行したい場合は、1回実行するごとに新たにスケジューリングに登録します
-        scheduleAppRefresh()
-
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 1
         // 時間内に実行完了しなかった場合は、処理を解放します
@@ -82,8 +116,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 最後の処理が完了したら、必ず完了したことを伝える必要があります
         task.setTaskCompleted(success: bGOperation.isFinished)
         queue.addOperation(bGOperation)
+        let content = UNMutableNotificationContent()
+        content.title = "更新通知"
+        content.subtitle = "最後の処理が完了"
+        content.sound = UNNotificationSound.default
+        // 直ぐに通知を表示
+        let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         // 処理が終了したら次の処理を登録する
-        // todo
+        // 1日の間、何度も実行したい場合は、1回実行するごとに新たにスケジューリングに登録します
+        scheduleAppRefresh()
     }
 }
 // RSS取得間隔　更新通知
@@ -94,6 +136,7 @@ class BGOperation: Operation, XMLParserDelegate {
     var item:Item?
     var currentString = ""
     var ArticleRSSFeed = "" // 解析中のXML
+    var rSSFeedTitle = "" // 解析中のRSSフィードのタイトル
 
     func feedDownload() {
         print(#function)
@@ -102,6 +145,7 @@ class BGOperation: Operation, XMLParserDelegate {
         let objects = databaseManager.getFavoriteRSSFeeds()
         // フィードをダウンロード
         for i in 0..<objects.count {
+            self.rSSFeedTitle = objects[i].RSSFeedTitle
             startDownload(RSSFeed: objects[i].RSSFeed)
         }
     }
@@ -144,7 +188,18 @@ class BGOperation: Operation, XMLParserDelegate {
             self.items.append(self.item!)
             // 記事をデータベースに保存
             let databaseManagerArticle = DatabaseManagerArticle()
-            databaseManagerArticle.add(ArticleRSSFeed: self.ArticleRSSFeed, ArticleLink: self.item!.link, ArticlePubDate: self.item!.pubDate, ArticleTitle: self.item!.title)
+            let result = databaseManagerArticle.add(ArticleRSSFeed: self.ArticleRSSFeed, ArticleLink: self.item!.link, ArticlePubDate: self.item!.pubDate, ArticleTitle: self.item!.title)
+            // 更新通知
+            if result {
+                let content = UNMutableNotificationContent()
+                content.title = "更新通知"
+                content.subtitle = "お気に入りのフィードで記事の更新があった場合通知を表示する。"
+                content.body = "\(self.rSSFeedTitle) \(self.item!.title)"
+                content.sound = UNNotificationSound.default
+                // 直ぐに通知を表示
+                let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            }
         default: break
         }
     }
