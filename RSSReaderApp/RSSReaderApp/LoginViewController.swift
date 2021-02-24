@@ -15,9 +15,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         print(UserDefaults.standard.string(forKey: "userName"))
         print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
+        print(UserDefaults.standard.dictionary(forKey: "userInformation"))
+        print(UserDefaults.standard.array(forKey: "visited"))
+              
         userNameTextField.delegate = self
         userPasswordTextField.delegate = self
         // 入力された文字を非表示モードにする.
@@ -122,7 +124,34 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             UserDefaults.standard.set(userNameTextField.text, forKey: "userName")
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             self.dismiss(animated: true, completion:nil)
+            // 一覧画面へ遷移する todo
+
         }
+    }
+    // 初回ログイン時のみ表示　RSSフィード選択画面　へ遷移
+    func transfarViewController() {
+        // 初回ログイン array型
+        print(UserDefaults.standard.array(forKey: "visited"))
+        let id = UserDefaults.standard.string(forKey: "userName")! as String
+        if UserDefaults.standard.array(forKey: "visited") == nil {
+            // 最初回
+            let visited: [String] = [id]
+            UserDefaults.standard.set(visited, forKey: "visited")
+        }else {
+            var visited = UserDefaults.standard.array(forKey: "visited")
+            for i in 0..<visited!.count { // 初回ログインではない場合
+                if visited![i] as! String == id {
+                    return // 画面遷移させない
+                }
+            }
+            // 初回ログイン時にRSSフィード選択画面へ遷移済みとする
+            visited!.append(id)
+            UserDefaults.standard.set(visited, forKey: "visited")
+        }
+        print(UserDefaults.standard.array(forKey:"visited"))
+        // RSSフィード選択画面 ブランチで　ナビゲーションコントローラのStoryboardIDを"NavigationController"と設定する
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+        self.present(secondViewController, animated: true, completion: nil)
     }
 }
 // LINE
@@ -149,6 +178,8 @@ extension LoginViewController: LoginButtonDelegate {
             print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
         }
         print("Login Succeeded.")
+        // RSSフィード選択画面 へ遷移
+        transfarViewController()
     }
     
     func loginButton(_ button: LoginButton, didFailLogin error: LineSDKError) {
