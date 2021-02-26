@@ -40,13 +40,62 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         //下部からマージン100を指定
         loginButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+        // ログイン中のアカウントがLINEログインの場合、アクセストークンの検証を実行する
+        verificationForAccessToken()
+    }
+    // ログイン中のアカウントがLINEログインの場合、アクセストークンの検証を実行する
+    func verificationForAccessToken() {
+        // LINE SDKに保存されたアクセストークン
+        if let token = AccessTokenStore.shared.current {
+            // ユーザー情報　辞書型
+            var dictionary = UserDefaults.standard.dictionary(forKey: "userInformation")
+            // ユーザー情報　現在ログイン中のIDのパスワード(アクセストークン)を取得
+            guard let pw: String = dictionary?[UserDefaults.standard.string(forKey: "userName")!] as? String else { // ログイン情報　ID パスワード
+                return
+            }
+            print(token.value)
+            print(pw)
+            // ログイン中のアカウントがLINEログインか判断 ログイン情報のパスワード(アクセストークン)　と　LINE SDKに保存されたアクセストークンを比較
+            if pw == token.value {
+                //　トークン検証
+                API.Auth.verifyAccessToken { [self] result in
+                    switch result {
+                    case .success(let value): // 検証成功
+                        print(value.channelID) // Bound channel ID of the token.
+                        print(value.permissions) // The permissions of this token.
+                        print(value.expiresIn) // How long it is before the token expires.
+                    case .failure(let error): // 検証失敗　トークンは無効、失効、または期限切れであり、エラーが返されます。
+                        print(error)
+                        // ログアウト
+                        lineLogout()
+                        UserDefaults.standard.set("", forKey: "userName")
+                        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+                    }
+                }
+            }
+        } // LINEログアウトした場合
+    }
+    // ログイン中のアカウントがLINEログインの場合、ログアウトする
+    func lineLogout() {
+        // LINE SDKに保存されたアクセストークン
+        if let token = AccessTokenStore.shared.current {
+            
+            LoginManager.shared.logout { result in
+                switch result {
+                case .success:
+                    print("Logout from LINE")
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        } // LINEログアウトした場合
     }
     
     override func viewDidAppear(_ animated: Bool) {
         // オートログイン
         // 動作確認用
 //        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+//        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         // ログイン判定
         let ud = UserDefaults.standard
         let isUserLoggedIn: Bool? = ud.object(forKey: "isUserLoggedIn") as? Bool
@@ -164,13 +213,14 @@ extension LoginViewController: LoginButtonDelegate {
     func loginButton(_ button: LoginButton, didSucceedLogin loginResult: LoginResult) {
         if let email = loginResult.accessToken.IDToken?.payload.email {
             print("User Email: \(email)")
+            let token = loginResult.accessToken.value
             // ユーザー情報 辞書型
             // ID(email)が登録されているかどうかをUserDefaults内で検索して、なければ新規登録する
-            let dictionary = UserDefaults.standard.dictionary(forKey: "userInformation")
+            var dictionary = UserDefaults.standard.dictionary(forKey: "userInformation")
             print(dictionary)
             if dictionary == nil { // ユーザー情報を新規作成
                 let userInformation: [String: String] = [ // 『辞書』を初期化しつつ宣言します。
-                    email : "", // SNSログインの場合は、Passwordを空白とする
+                    email : token,
                 ]
                 UserDefaults.standard.set(userInformation, forKey: "userInformation")
                 // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
@@ -179,18 +229,28 @@ extension LoginViewController: LoginButtonDelegate {
             }else {
                 // IDが同じユーザーが既に登録されている場合
                 print(dictionary?[email])
+                print(token)
+                dictionary![email] = token // ユーザー情報　パスワード(アクセストークン)
+                UserDefaults.standard.set(dictionary, forKey: "userInformation")
                 // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
                 UserDefaults.standard.set(email, forKey: "userName")
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             }
             print(UserDefaults.standard.string(forKey: "userName"))
             print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
+            print("Login Succeeded.")
+            // RSSフィード選択画面 へ遷移
+            transfarViewController()
+            // 一覧画面 へ遷移
+            transfarViewControllerToList()
+        }else { // メールアドレスの使用を許可されなかった場合
+            // アラートを出す
+            let dialog: UIAlertController = UIAlertController(title: "ログイン失敗", message: "メールアドレスの使用を許可してください。", preferredStyle: .alert)
+            self.present(dialog, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
-        print("Login Succeeded.")
-        // RSSフィード選択画面 へ遷移
-        transfarViewController()
-        // 一覧画面 へ遷移
-        transfarViewControllerToList()
     }
     
     func loginButton(_ button: LoginButton, didFailLogin error: LineSDKError) {
