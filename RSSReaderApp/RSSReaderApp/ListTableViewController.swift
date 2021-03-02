@@ -182,6 +182,8 @@ class ListTableViewController: UITableViewController, XMLParserDelegate {
         // お気に入りボタン
         print(objects[indexPath.row].number, objects[indexPath.row].ArticleIsFavorite)
         let action = UIContextualAction(style: .destructive, title: "お気に入り") { (action, view, completionHandler) in
+            // データベース　お気に入りフラグ 変更
+            databaseManagerArticle.changeArticleIsFavorite(number: objects[indexPath.row].number)
             completionHandler(true) // 処理成功時はtrue/失敗時はfalseを設定する
         }
         action.image = UIImage(systemName: "star.fill") // 画像設定（タイトルは非表示になる）
