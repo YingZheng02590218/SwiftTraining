@@ -2,17 +2,27 @@ PODS:
   - LineSDKSwift (5.7.0):
     - LineSDKSwift/Core (= 5.7.0)
   - LineSDKSwift/Core (5.7.0)
+  - Realm (10.5.1):
+    - Realm/Headers (= 10.5.1)
+  - Realm/Headers (10.5.1)
+  - RealmSwift (10.5.1):
+    - Realm (= 10.5.1)
 
 DEPENDENCIES:
   - LineSDKSwift (~> 5.0)
+  - RealmSwift
 
 SPEC REPOS:
   trunk:
     - LineSDKSwift
+    - Realm
+    - RealmSwift
 
 SPEC CHECKSUMS:
   LineSDKSwift: f9c232f89185b887b5725aa278325f3a23e33bbc
+  Realm: 77fcb4e0b9f2963ea06f584749a0d7dc9cab95e1
+  RealmSwift: 6abe6aa6cd8b70cc1a87afcb9232cabea74ff1ac
 
-PODFILE CHECKSUM: 3f024d7849cf17828b06c80fea548ac16ea84d1f
+PODFILE CHECKSUM: 791efa3288ee471c036d75139e867ba8bac958be
 
 COCOAPODS: 1.10.1

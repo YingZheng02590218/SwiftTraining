@@ -15,7 +15,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+//        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         print(UserDefaults.standard.string(forKey: "userName"))
         print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
         userNameTextField.delegate = self
@@ -38,6 +38,34 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //下部からマージン100を指定
         loginButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // オートログイン
+        // 動作確認用
+        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+//        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        // ログイン判定
+        let ud = UserDefaults.standard
+        let isUserLoggedIn: Bool? = ud.object(forKey: "isUserLoggedIn") as? Bool
+        if isUserLoggedIn != nil && !isUserLoggedIn! { // 未ログインの場合
+            // ログイン画面
+        } else { // ログイン中の場合
+            // TableView　か　CollectionView　を分岐する
+            // 動作確認用
+            UserDefaults.standard.set(true, forKey: "TableViewOrCollectionView")
+//            UserDefaults.standard.set(false, forKey: "TableViewOrCollectionView")
+            print(UserDefaults.standard.bool(forKey: "TableViewOrCollectionView"))
+            if UserDefaults.standard.bool(forKey: "TableViewOrCollectionView") { // true: TableView
+                // 暫定処理 todo 設定詳細画面のブランチをマージ後に動作確認する
+                // todo 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toTableView"と設定する
+                self.performSegue(withIdentifier: "toTableView", sender: nil)
+            }else {
+                // todo 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toCollectionView"と設定する
+                self.performSegue(withIdentifier: "toCollectionView", sender: nil)
+            }
+        }
+    }
+    
     @IBOutlet var loginButton: UIButton!
     
     // .editingDidEndOnExit イベントが送信されると呼ばれる

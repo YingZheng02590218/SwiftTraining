@@ -11,6 +11,14 @@
 		389CF2328828046249365D14 /* Pods_RSSReaderApp_RSSReaderAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55456A71DF42B58BE72C1DBE /* Pods_RSSReaderApp_RSSReaderAppUITests.framework */; };
 		B21F0E38696AC08D16181F7E /* Pods_RSSReaderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 895B58FBA9D057DE37F8721B /* Pods_RSSReaderApp.framework */; };
 		F918CC2925CBE543009482BF /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918CC2825CBE543009482BF /* SettingsTableViewController.swift */; };
+		F916D92725CFEBF000851C49 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = F916D92625CFEBF000851C49 /* Database.swift */; };
+		F916D93D25CFFBEF00851C49 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F916D93C25CFFBEF00851C49 /* DatabaseManager.swift */; };
+		F918CC1925CBB770009482BF /* NewsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918CC1825CBB770009482BF /* NewsType.swift */; };
+		F964397E25DF5AC00092E74E /* ListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964397D25DF5AC00092E74E /* ListCollectionViewController.swift */; };
+		F964398425DF62EF0092E74E /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964398325DF62EF0092E74E /* ListCollectionViewCell.swift */; };
+		F964399325DF675C0092E74E /* FilterForCollectionViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964399225DF675C0092E74E /* FilterForCollectionViewTableViewController.swift */; };
+		F96A2A2F25C408E800918F1D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A2A2E25C408E700918F1D /* Item.swift */; };
+		F96A2A3325C4097300918F1D /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A2A3225C4097300918F1D /* ListTableViewController.swift */; };
 		F97F3C9225BEB65A001B8CC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F3C9125BEB65A001B8CC3 /* AppDelegate.swift */; };
 		F97F3C9425BEB65A001B8CC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F3C9325BEB65A001B8CC3 /* SceneDelegate.swift */; };
 		F97F3C9625BEB65A001B8CC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F3C9525BEB65A001B8CC3 /* ViewController.swift */; };
@@ -21,6 +29,7 @@
 		F97F3CB425BEB65D001B8CC3 /* RSSReaderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F3CB325BEB65D001B8CC3 /* RSSReaderAppUITests.swift */; };
 		F984271825C27E5F0069AD72 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F984271725C27E5F0069AD72 /* LoginViewController.swift */; };
 		F9AF498D25C3CB6900A9CC6B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF498C25C3CB6900A9CC6B /* SignUpViewController.swift */; };
+		F9AA75AA25CA97F900C33908 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AA75A925CA97F900C33908 /* FilterTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +73,14 @@
 		895B58FBA9D057DE37F8721B /* Pods_RSSReaderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReaderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22906E34104BEBE79C6535C /* Pods-RSSReaderAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReaderAppTests.debug.xcconfig"; path = "Target Support Files/Pods-RSSReaderAppTests/Pods-RSSReaderAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F918CC2825CBE543009482BF /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		F916D92625CFEBF000851C49 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		F916D93C25CFFBEF00851C49 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		F918CC1825CBB770009482BF /* NewsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsType.swift; sourceTree = "<group>"; };
+		F964397D25DF5AC00092E74E /* ListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewController.swift; sourceTree = "<group>"; };
+		F964398325DF62EF0092E74E /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		F964399225DF675C0092E74E /* FilterForCollectionViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterForCollectionViewTableViewController.swift; sourceTree = "<group>"; };
+		F96A2A2E25C408E700918F1D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F96A2A3225C4097300918F1D /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		F97F3C8E25BEB65A001B8CC3 /* RSSReaderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReaderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97F3C9125BEB65A001B8CC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F97F3C9325BEB65A001B8CC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +98,7 @@
 		F984271725C27E5F0069AD72 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F984276A25C2D13B0069AD72 /* LineSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LineSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9AF498C25C3CB6900A9CC6B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F9AA75A925CA97F900C33908 /* FilterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +188,15 @@
 				F984271725C27E5F0069AD72 /* LoginViewController.swift */,
 				F9AF498C25C3CB6900A9CC6B /* SignUpViewController.swift */,
 				F918CC2825CBE543009482BF /* SettingsTableViewController.swift */,
+				F96A2A2E25C408E700918F1D /* Item.swift */,
+				F96A2A3225C4097300918F1D /* ListTableViewController.swift */,
+				F964397D25DF5AC00092E74E /* ListCollectionViewController.swift */,
+				F964398325DF62EF0092E74E /* ListCollectionViewCell.swift */,
+				F9AA75A925CA97F900C33908 /* FilterTableViewController.swift */,
+				F964399225DF675C0092E74E /* FilterForCollectionViewTableViewController.swift */,
+				F918CC1825CBB770009482BF /* NewsType.swift */,
+				F916D92625CFEBF000851C49 /* Database.swift */,
+				F916D93C25CFFBEF00851C49 /* DatabaseManager.swift */,
 			);
 			path = RSSReaderApp;
 			sourceTree = "<group>";
@@ -431,12 +458,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96A2A2F25C408E800918F1D /* Item.swift in Sources */,
+				F918CC1925CBB770009482BF /* NewsType.swift in Sources */,
+				F964397E25DF5AC00092E74E /* ListCollectionViewController.swift in Sources */,
+				F916D93D25CFFBEF00851C49 /* DatabaseManager.swift in Sources */,
 				F984271825C27E5F0069AD72 /* LoginViewController.swift in Sources */,
 				F918CC2925CBE543009482BF /* SettingsTableViewController.swift in Sources */,
 				F97F3C9625BEB65A001B8CC3 /* ViewController.swift in Sources */,
+				F964398425DF62EF0092E74E /* ListCollectionViewCell.swift in Sources */,
+				F96A2A3325C4097300918F1D /* ListTableViewController.swift in Sources */,
 				F97F3C9225BEB65A001B8CC3 /* AppDelegate.swift in Sources */,
+				F964399325DF675C0092E74E /* FilterForCollectionViewTableViewController.swift in Sources */,
+				F916D92725CFEBF000851C49 /* Database.swift in Sources */,
 				F97F3C9425BEB65A001B8CC3 /* SceneDelegate.swift in Sources */,
 				F9AF498D25C3CB6900A9CC6B /* SignUpViewController.swift in Sources */,
+				F9AA75AA25CA97F900C33908 /* FilterTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
