@@ -210,4 +210,13 @@ class ListTableViewController: UITableViewController, XMLParserDelegate {
         let configuration = UISwipeActionsConfiguration(actions: [action, action2])
         return configuration
     }
+    // 遷移先で実行する
+    func changeScreens() {
+        // 一覧画面 を切り替える
+        if !UserDefaults.standard.bool(forKey: "TableViewOrCollectionView") { // false: CollectionView
+            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "ListCollectionViewController") as! UINavigationController
+            secondViewController.modalPresentationStyle = .fullScreen
+            self.present(secondViewController, animated: true, completion: nil)
+        }
+    }
 }

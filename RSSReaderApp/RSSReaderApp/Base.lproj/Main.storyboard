@@ -321,7 +321,7 @@
         <!--Navigation Controller-->
         <scene sceneID="EVF-IH-fij">
             <objects>
-                <navigationController id="10q-Sf-Ef9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="10q-Sf-Ef9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AEg-pg-TGT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -337,7 +337,7 @@
         <!--Navigation Controller-->
         <scene sceneID="XwE-FA-0P1">
             <objects>
-                <navigationController id="MeX-QI-WJg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ListCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MeX-QI-WJg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vul-dt-Txx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

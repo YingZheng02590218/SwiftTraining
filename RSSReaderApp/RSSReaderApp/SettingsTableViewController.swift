@@ -14,6 +14,17 @@ class SettingsTableViewController: UITableViewController {
 
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        // 遷移元のメソッドを実行
+        if let navigationController = self.presentingViewController as? UINavigationController,
+              let controller = navigationController.topViewController as? ListTableViewController {
+            controller.changeScreens()
+        }
+        if let navigationController2 = self.presentingViewController as? UINavigationController,
+              let controller2 = navigationController2.topViewController as? ListCollectionViewController {
+            controller2.changeScreens()
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
