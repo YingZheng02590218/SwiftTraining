@@ -45,14 +45,14 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
         print(UserDefaults.standard.double(forKey: "SyncInterval"))
         UserDefaults.standard.set(1, forKey: "SyncInterval")
 
-        let databaseManager = DatabaseManager()
-        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
-        newsType = .science
-        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
-        newsType = .sports
-        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
-        newsType = .economics
-        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
+//        let databaseManager = DatabaseManager()
+//        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
+//        newsType = .science
+//        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
+//        newsType = .sports
+//        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
+//        newsType = .economics
+//        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
         // テーブルをスワイプすることで、記事を更新することができる
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector(("refreshTable")), for: UIControl.Event.valueChanged)

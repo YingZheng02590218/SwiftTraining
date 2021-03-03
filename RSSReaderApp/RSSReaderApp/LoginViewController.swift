@@ -155,6 +155,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print(UserDefaults.standard.array(forKey:"visited"))
         // RSSフィード選択画面 ブランチで　ナビゲーションコントローラのStoryboardIDを"NavigationController"と設定する
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+        secondViewController.modalPresentationStyle = .fullScreen
         self.present(secondViewController, animated: true, completion: nil)
     }
 }
@@ -165,18 +166,22 @@ extension LoginViewController: LoginButtonDelegate {
             print("User Email: \(email)")
             // ユーザー情報 辞書型
             // ID(email)が登録されているかどうかをUserDefaults内で検索して、なければ新規登録する
-            let dictionary = UserDefaults.standard.dictionary(forKey: email)
+            let dictionary = UserDefaults.standard.dictionary(forKey: "userInformation")
             print(dictionary)
-            if dictionary == nil {
+            if dictionary == nil { // ユーザー情報を新規作成
                 let userInformation: [String: String] = [ // 『辞書』を初期化しつつ宣言します。
                     email : "", // SNSログインの場合は、Passwordを空白とする
                 ]
-                UserDefaults.standard.set(userInformation, forKey: email)
+                UserDefaults.standard.set(userInformation, forKey: "userInformation")
                 // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
                 UserDefaults.standard.set(email, forKey: "userName")
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             }else {
                 // IDが同じユーザーが既に登録されている場合
+                print(dictionary?[email])
+                // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
+                UserDefaults.standard.set(email, forKey: "userName")
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             }
             print(UserDefaults.standard.string(forKey: "userName"))
             print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
@@ -184,6 +189,8 @@ extension LoginViewController: LoginButtonDelegate {
         print("Login Succeeded.")
         // RSSフィード選択画面 へ遷移
         transfarViewController()
+        // 一覧画面 へ遷移
+        transfarViewControllerToList()
     }
     
     func loginButton(_ button: LoginButton, didFailLogin error: LineSDKError) {
