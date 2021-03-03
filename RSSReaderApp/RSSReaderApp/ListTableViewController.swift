@@ -28,9 +28,9 @@ class ListTableViewController: UITableViewController, XMLParserDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // RSSフィード　仮登録
-        UserDefaults.standard.set("andyoutoobrutus@yahoo.com", forKey: "userName")
-        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+//        // RSSフィード　仮登録
+//        UserDefaults.standard.set("andyoutoobrutus@yahoo.com", forKey: "userName")
+//        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
         let databaseManager = DatabaseManager()
         databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
         newsType = .science

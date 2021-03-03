@@ -53,19 +53,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if isUserLoggedIn != nil && !isUserLoggedIn! { // 未ログインの場合
             // ログイン画面
         } else { // ログイン中の場合
-            // TableView　か　CollectionView　を分岐する
-            // 動作確認用
-            UserDefaults.standard.set(true, forKey: "TableViewOrCollectionView")
+            // 一覧画面 へ遷移
+            transfarViewControllerToList()
+        }
+    }
+    // 一覧画面へ画面遷移
+    func transfarViewControllerToList() {
+        // TableView　か　CollectionView　を分岐する
+        // 動作確認用
+        UserDefaults.standard.set(true, forKey: "TableViewOrCollectionView")
 //            UserDefaults.standard.set(false, forKey: "TableViewOrCollectionView")
-            print(UserDefaults.standard.bool(forKey: "TableViewOrCollectionView"))
-            if UserDefaults.standard.bool(forKey: "TableViewOrCollectionView") { // true: TableView
-                // 暫定処理 todo 設定詳細画面のブランチをマージ後に動作確認する
-                // todo 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toTableView"と設定する
-                self.performSegue(withIdentifier: "toTableView", sender: nil)
-            }else {
-                // todo 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toCollectionView"と設定する
-                self.performSegue(withIdentifier: "toCollectionView", sender: nil)
-            }
+        print(UserDefaults.standard.bool(forKey: "TableViewOrCollectionView"))
+        if UserDefaults.standard.bool(forKey: "TableViewOrCollectionView") { // true: TableView
+            // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toTableView"と設定する
+            self.performSegue(withIdentifier: "toTableView", sender: nil)
+        }else {
+            // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toCollectionView"と設定する
+            self.performSegue(withIdentifier: "toCollectionView", sender: nil)
         }
     }
     
@@ -124,9 +128,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if( userInformationPassword as! String == userPassword!) {
             UserDefaults.standard.set(userNameTextField.text, forKey: "userName")
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-            self.dismiss(animated: true, completion:nil)
-            // 一覧画面へ遷移する todo
-
+            // 一覧画面 へ遷移
+            transfarViewControllerToList()
         }
     }
     // 初回ログイン時のみ表示　RSSフィード選択画面　へ遷移

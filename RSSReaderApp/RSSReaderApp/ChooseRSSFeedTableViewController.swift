@@ -15,9 +15,9 @@ class ChooseRSSFeedTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // RSSフィード　仮登録
-        UserDefaults.standard.set("andyoutoobrutus@yahoo.com", forKey: "userName")
-        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+//        // RSSフィード　仮登録
+//        UserDefaults.standard.set("andyoutoobrutus@yahoo.com", forKey: "userName")
+//        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
         doneButton.isEnabled = false
     }
 
