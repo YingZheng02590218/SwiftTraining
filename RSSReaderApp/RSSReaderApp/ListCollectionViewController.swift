@@ -206,6 +206,15 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
             controller2.urlStr = objects[indexPath!.first!.row].ArticleLink
             controller2.ArticleNumber = objects[indexPath!.first!.row].number
         }
+        // 設定画面へ遷移
+        if segue.identifier == "settingButtonTapped" {
+            // 遷移先のコントローラに値を渡す
+            guard let navigationController = segue.destination as? UINavigationController,
+                  let controller = navigationController.topViewController as? SettingsTableViewController else {
+                fatalError()
+            }
+            controller.title = "設定画面"
+        }
     }
     
     // MARK: UICollectionViewDelegate
