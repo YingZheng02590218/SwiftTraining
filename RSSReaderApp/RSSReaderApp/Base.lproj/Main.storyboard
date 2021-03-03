@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MeX-QI-WJg">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHh-sg-foe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1449" y="312"/>
+            <point key="canvasLocation" x="-1581" y="1154"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="ruA-ON-eai">
@@ -269,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9K-TU-m2z" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2562" y="311"/>
+            <point key="canvasLocation" x="-2562" y="313"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="gS2-Mk-uwc">
@@ -294,11 +294,13 @@
                             <outlet property="delegate" destination="j76-fg-xa1" id="UBB-vB-o75"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="3De-gw-VPH"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="3De-gw-VPH">
+                        <barButtonItem key="backBarButtonItem" title="設定画面" id="1aw-To-ZkL"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkY-gY-QjN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-542" y="250"/>
+            <point key="canvasLocation" x="742" y="-504"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BZf-7u-eDX">
@@ -314,12 +316,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bur-Yi-tzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1449" y="251"/>
+            <point key="canvasLocation" x="32" y="-504"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EVF-IH-fij">
             <objects>
-                <navigationController id="10q-Sf-Ef9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="10q-Sf-Ef9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AEg-pg-TGT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -330,12 +332,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rxh-0v-D7X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1449" y="207"/>
+            <point key="canvasLocation" x="32" y="313"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XwE-FA-0P1">
             <objects>
-                <navigationController id="MeX-QI-WJg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ListCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MeX-QI-WJg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vul-dt-Txx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -346,7 +348,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVh-gI-dAK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1449" y="-481"/>
+            <point key="canvasLocation" x="743" y="313"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M3H-RG-bl9">
@@ -363,7 +365,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tdG-2E-0Qj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-452" y="921"/>
+            <point key="canvasLocation" x="2236" y="313"/>
         </scene>
         <!--List Table View Controller-->
         <scene sceneID="CO3-pK-tjc">
@@ -408,6 +410,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="3N9-cb-Ofh">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="gear" catalog="system" id="hXN-F4-Z7S">
+                            <connections>
+                                <segue destination="QZs-VH-XDB" kind="presentation" identifier="settingButtonTapped" id="1aZ-zb-QH4"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" id="3F8-Zn-Jbx">
                             <connections>
                                 <segue destination="3ca-uh-oWc" kind="presentation" identifier="buttonTapped" id="Mix-Ez-1C4"/>
@@ -420,7 +427,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRZ-SZ-uM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-452" y="207"/>
+            <point key="canvasLocation" x="32" y="980"/>
         </scene>
         <!--List Collection View Controller-->
         <scene sceneID="rN2-CP-XPJ">
@@ -456,6 +463,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="13H-Pf-wnJ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="gear" catalog="system" id="1a4-VM-E4d">
+                            <connections>
+                                <segue destination="QZs-VH-XDB" kind="presentation" identifier="settingButtonTapped" id="oJL-AS-kfb"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" id="kHQ-8Z-tjc">
                             <connections>
                                 <segue destination="EoV-bx-N7V" kind="presentation" identifier="buttonTapped" id="4Uj-sb-dXN"/>
@@ -465,7 +477,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x95-Th-7Tr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386" y="-481"/>
+            <point key="canvasLocation" x="742" y="981"/>
         </scene>
         <!--Filter Table View Controller-->
         <scene sceneID="XTD-rZ-Q2E">
@@ -500,7 +512,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRm-MS-vx3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-452" y="1648"/>
+            <point key="canvasLocation" x="2236" y="984"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w5g-Nz-Xz8">
@@ -517,7 +529,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DlB-0T-htW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386" y="921"/>
+            <point key="canvasLocation" x="2945" y="313"/>
         </scene>
         <!--Filter For Collection View Table View Controller-->
         <scene sceneID="eku-B8-X4c">
@@ -552,12 +564,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCi-2U-5x8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386" y="1648"/>
+            <point key="canvasLocation" x="2945" y="984"/>
         </scene>
         <!--RSSフィード選択画面-->
         <scene sceneID="vhS-LN-xot">
             <objects>
-                <tableViewController id="VcL-iz-rmv" customClass="ChooseRSSFeedTableViewController" customModule="RSSReaderApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ChooseRSSFeedTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VcL-iz-rmv" customClass="ChooseRSSFeedTableViewController" customModule="RSSReaderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lUq-pi-ESK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -590,7 +602,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNC-jh-8Tm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-559" y="313"/>
+            <point key="canvasLocation" x="-891" y="313"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rda-gX-S1Q">
@@ -606,7 +618,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wm0-kZ-1v2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1449" y="313"/>
+            <point key="canvasLocation" x="-1628" y="313"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dgN-wI-jGW">
@@ -656,11 +668,137 @@
             </objects>
             <point key="canvasLocation" x="-1449" y="250"/>
         </scene>
+        <!--Detail Settings Table View Controller-->
+        <scene sceneID="ExE-5p-Eco">
+            <objects>
+                <tableViewController storyboardIdentifier="DetailSettingsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8aW-ya-hjN" customClass="DetailSettingsTableViewController" customModule="RSSReaderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7mC-8B-7CH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="FPp-JP-rMp">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FPp-JP-rMp" id="J50-1f-CIv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellWithSwitch" id="m63-wb-lIP" customClass="DetailSettingsTableViewCell" customModule="RSSReaderApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m63-wb-lIP" id="fxv-uw-UGi">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ixs-vS-KZ1">
+                                            <rect key="frame" x="357" y="6" width="49" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="switchTapped:" destination="8aW-ya-hjN" eventType="valueChanged" id="wtH-ya-lq7"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="toggleSwitch" destination="Ixs-vS-KZ1" id="Y2W-wr-xX4"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellWithStepper" id="QN3-jJ-vtP" customClass="DetailSettingsTableViewCell" customModule="RSSReaderApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="115" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QN3-jJ-vtP" id="Urb-NR-Oax">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" maximumValue="1440" stepValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="Gea-ya-Pyl">
+                                            <rect key="frame" x="300" y="6" width="94" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="stepperTapped:" destination="8aW-ya-hjN" eventType="valueChanged" id="1px-FH-e7X"/>
+                                            </connections>
+                                        </stepper>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Aa-oe-VpO">
+                                            <rect key="frame" x="192" y="11" width="80" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="6Aa-oe-VpO" id="mvr-qB-xgD"/>
+                                    <outlet property="stepper" destination="Gea-ya-Pyl" id="hDy-0D-Pa3"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellWithStepperCharSize" id="Diy-dZ-rkY" customClass="DetailSettingsTableViewCell" customModule="RSSReaderApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="158.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Diy-dZ-rkY" id="ki0-IZ-thu">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="10" maximumValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="sNi-aG-Kxz">
+                                            <rect key="frame" x="300" y="6" width="94" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="stepperTapped:" destination="8aW-ya-hjN" eventType="valueChanged" id="5eh-lo-GWI"/>
+                                            </connections>
+                                        </stepper>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otA-NB-eS3">
+                                            <rect key="frame" x="198" y="11" width="81" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="otA-NB-eS3" id="bp5-5b-WHP"/>
+                                    <outlet property="stepper" destination="sNi-aG-Kxz" id="Y5t-qi-uWN"/>
+                                    <outlet property="stepperCharSize" destination="sNi-aG-Kxz" id="IIz-MB-NTx"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellWithSwitchDarkMode" id="qA2-ai-IGA" customClass="DetailSettingsTableViewCell" customModule="RSSReaderApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="202" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qA2-ai-IGA" id="Hj6-cF-9b6">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9I8-Ba-fq6">
+                                            <rect key="frame" x="357" y="6" width="49" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="switchTapped:" destination="8aW-ya-hjN" eventType="valueChanged" id="D8r-zH-TgV"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="toggleSwitchDarkMode" destination="9I8-Ba-fq6" id="aD6-20-7Jb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8aW-ya-hjN" id="U4r-Lo-HTI"/>
+                            <outlet property="delegate" destination="8aW-ya-hjN" id="ye3-yW-tNa"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XzJ-wn-LKR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2945" y="-504"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

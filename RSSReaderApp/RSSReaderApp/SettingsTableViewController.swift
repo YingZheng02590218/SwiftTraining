@@ -14,6 +14,17 @@ class SettingsTableViewController: UITableViewController {
 
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        // 遷移元のメソッドを実行
+        if let navigationController = self.presentingViewController as? UINavigationController,
+              let controller = navigationController.topViewController as? ListTableViewController {
+            controller.changeScreens()
+        }
+        if let navigationController2 = self.presentingViewController as? UINavigationController,
+              let controller2 = navigationController2.topViewController as? ListCollectionViewController {
+            controller2.changeScreens()
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,17 +63,15 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
         // 購読RSS管理 RSSフィード選択画面を流用して、購読RSS管理として利用する
-        // 暫定処理 todo RSSフィード選択画面のブランチをマージ後に動作確認する
         if indexPath.row == 2 {
-            // todo RSSフィード選択画面 ブランチで　ナビゲーションコントローラのStoryboardIDを"NavigationController"と設定する
-            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+            // RSSフィード選択画面 へ遷移
+            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChooseRSSFeedTableViewController") as! ChooseRSSFeedTableViewController
             self.present(secondViewController, animated: true, completion: nil)
         }else {
-            // 暫定処理 todo 設定詳細画面のブランチをマージ後に動作確認する
-            // todo 設定詳細画面 ブランチで　コントローラのStoryboardIDを"DetailSettingsTableViewController"と設定する
-//            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailSettingsTableViewController") as! DetailSettingsTableViewController
-//            secondViewController.settingsType = indexPath.row // どの設定詳細画面かを判別する値を渡す
-//            self.present(secondViewController, animated: true, completion: nil)
+            // 設定詳細画面 へ遷移
+            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailSettingsTableViewController") as! DetailSettingsTableViewController
+            secondViewController.settingsType = indexPath.row // どの設定詳細画面かを判別する値を渡す
+            self.present(secondViewController, animated: true, completion: nil)
         }
     }
 

@@ -173,6 +173,15 @@ class ListTableViewController: UITableViewController, XMLParserDelegate {
             controller2.urlStr = objects[indexPath!.row].ArticleLink
             controller2.ArticleNumber = objects[indexPath!.row].number
         }
+        // 設定画面へ遷移
+        if segue.identifier == "settingButtonTapped" {
+            // 遷移先のコントローラに値を渡す
+            guard let navigationController = segue.destination as? UINavigationController,
+                  let controller = navigationController.topViewController as? SettingsTableViewController else {
+                fatalError()
+            }
+            controller.title = "設定画面"
+        }
     }
     // セルをスワイプ
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -200,5 +209,14 @@ class ListTableViewController: UITableViewController, XMLParserDelegate {
         action2.backgroundColor = .systemGreen
         let configuration = UISwipeActionsConfiguration(actions: [action, action2])
         return configuration
+    }
+    // 遷移先で実行する
+    func changeScreens() {
+        // 一覧画面 を切り替える
+        if !UserDefaults.standard.bool(forKey: "TableViewOrCollectionView") { // false: CollectionView
+            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "ListCollectionViewController") as! UINavigationController
+            secondViewController.modalPresentationStyle = .fullScreen
+            self.present(secondViewController, animated: true, completion: nil)
+        }
     }
 }
