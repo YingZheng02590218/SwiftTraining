@@ -128,9 +128,4 @@ class ChooseRSSFeedTableViewController: UITableViewController {
     }
     
     @IBOutlet var doneButton: UIBarButtonItem!
-    @IBAction func doneButtonTapped(_ sender: Any) {
-        dismiss(animated: false, completion: nil)
-        // 一覧画面へ遷移する todo
-        
-    }
 }

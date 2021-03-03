@@ -574,7 +574,7 @@
                     <navigationItem key="navigationItem" title="RSSフィード選択画面" id="xGc-rB-gJ1">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="jE5-4x-5Qr">
                             <connections>
-                                <action selector="doneButtonTapped:" destination="VcL-iz-rmv" id="vPv-Fa-mhk"/>
+                                <segue destination="10q-Sf-Ef9" kind="presentation" modalPresentationStyle="fullScreen" id="4Ec-gL-o0I"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

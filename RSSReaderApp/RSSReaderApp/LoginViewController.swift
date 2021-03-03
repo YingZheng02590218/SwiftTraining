@@ -19,7 +19,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
         print(UserDefaults.standard.dictionary(forKey: "userInformation"))
         print(UserDefaults.standard.array(forKey: "visited"))
-              
+        // 動作確認用
+        UserDefaults.standard.set(nil, forKey: "visited")
         userNameTextField.delegate = self
         userPasswordTextField.delegate = self
         // 入力された文字を非表示モードにする.
@@ -44,8 +45,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         // オートログイン
         // 動作確認用
-        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-//        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+//        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         // ログイン判定
         let ud = UserDefaults.standard
         let isUserLoggedIn: Bool? = ud.object(forKey: "isUserLoggedIn") as? Bool
