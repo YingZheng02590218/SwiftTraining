@@ -146,17 +146,32 @@ class ListTableViewController: UITableViewController, XMLParserDelegate {
     }
     // 画面遷移の準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let navigationController = segue.destination as? UINavigationController,
-              let controller = navigationController.topViewController as? FilterTableViewController else {
-            fatalError()
-        }
-        // 遷移先のコントローラに値を渡す
+        // フィルター画面へ遷移
         if segue.identifier == "buttonTapped" {
+            // 遷移先のコントローラに値を渡す
+            guard let navigationController = segue.destination as? UINavigationController,
+                  let controller = navigationController.topViewController as? FilterTableViewController else {
+                fatalError()
+            }
             controller.RSSFeedTitle = RSSFeedTitle
             controller.FilterFeed = FilterFeed
             controller.FilterRead = FilterRead
             controller.FilterFavorite = FilterFavorite
             controller.SortByLatest = SortByLatest
+        }
+        // 記事画面へ遷移
+        if segue.identifier == "cellSelected" {
+            // 記事をデータベースから取得
+            let databaseManagerArticle = DatabaseManagerArticle()
+            let objects = databaseManagerArticle.getArticle(FilterFeed: FilterFeed, FilterRead: FilterRead, FilterFavorite: FilterFavorite, SortByLatest: SortByLatest)
+            // 遷移先のコントローラに値を渡す
+            guard let navigationController2 = segue.destination as? UINavigationController,
+                  let controller2 = navigationController2.topViewController as? DetailViewController else {
+                fatalError()
+            }
+            let indexPath = self.tableView.indexPathForSelectedRow
+            controller2.urlStr = objects[indexPath!.row].ArticleLink
+            controller2.ArticleNumber = objects[indexPath!.row].number
         }
     }
     // セルをスワイプ
@@ -167,6 +182,8 @@ class ListTableViewController: UITableViewController, XMLParserDelegate {
         // お気に入りボタン
         print(objects[indexPath.row].number, objects[indexPath.row].ArticleIsFavorite)
         let action = UIContextualAction(style: .destructive, title: "お気に入り") { (action, view, completionHandler) in
+            // データベース　お気に入りフラグ 変更
+            databaseManagerArticle.changeArticleIsFavorite(number: objects[indexPath.row].number)
             completionHandler(true) // 処理成功時はtrue/失敗時はfalseを設定する
         }
         action.image = UIImage(systemName: "star.fill") // 画像設定（タイトルは非表示になる）

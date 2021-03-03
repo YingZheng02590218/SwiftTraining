@@ -20,6 +20,8 @@
 		F96A2A2F25C408E800918F1D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A2A2E25C408E700918F1D /* Item.swift */; };
 		F96A2A3325C4097300918F1D /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A2A3225C4097300918F1D /* ListTableViewController.swift */; };
 		F902BF6825D3E91900B45388 /* ChooseRSSFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F902BF6725D3E91800B45388 /* ChooseRSSFeedTableViewController.swift */; };
+		F918CC1F25CBC9FD009482BF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918CC1E25CBC9FD009482BF /* DetailViewController.swift */; };
+		F918CC2325CBD7EA009482BF /* LINEActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918CC2225CBD7E9009482BF /* LINEActivity.swift */; };
 		F97F3C9225BEB65A001B8CC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F3C9125BEB65A001B8CC3 /* AppDelegate.swift */; };
 		F97F3C9425BEB65A001B8CC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F3C9325BEB65A001B8CC3 /* SceneDelegate.swift */; };
 		F97F3C9625BEB65A001B8CC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F3C9525BEB65A001B8CC3 /* ViewController.swift */; };
@@ -83,6 +85,8 @@
 		F96A2A2E25C408E700918F1D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F96A2A3225C4097300918F1D /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		F902BF6725D3E91800B45388 /* ChooseRSSFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRSSFeedTableViewController.swift; sourceTree = "<group>"; };
+		F918CC1E25CBC9FD009482BF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F918CC2225CBD7E9009482BF /* LINEActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LINEActivity.swift; sourceTree = "<group>"; };
 		F97F3C8E25BEB65A001B8CC3 /* RSSReaderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReaderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97F3C9125BEB65A001B8CC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F97F3C9325BEB65A001B8CC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				F916D92625CFEBF000851C49 /* Database.swift */,
 				F916D93C25CFFBEF00851C49 /* DatabaseManager.swift */,
 				F902BF6725D3E91800B45388 /* ChooseRSSFeedTableViewController.swift */,
+				F918CC1E25CBC9FD009482BF /* DetailViewController.swift */,
+				F918CC2225CBD7E9009482BF /* LINEActivity.swift */,
 			);
 			path = RSSReaderApp;
 			sourceTree = "<group>";
@@ -470,6 +476,8 @@
 				F97F3C9625BEB65A001B8CC3 /* ViewController.swift in Sources */,
 				F964398425DF62EF0092E74E /* ListCollectionViewCell.swift in Sources */,
 				F96A2A3325C4097300918F1D /* ListTableViewController.swift in Sources */,
+				F918CC2325CBD7EA009482BF /* LINEActivity.swift in Sources */,
+				F918CC1F25CBC9FD009482BF /* DetailViewController.swift in Sources */,
 				F97F3C9225BEB65A001B8CC3 /* AppDelegate.swift in Sources */,
 				F964399325DF675C0092E74E /* FilterForCollectionViewTableViewController.swift in Sources */,
 				F916D92725CFEBF000851C49 /* Database.swift in Sources */,

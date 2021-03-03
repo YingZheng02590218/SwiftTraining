@@ -61,8 +61,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func transfarViewControllerToList() {
         // TableView　か　CollectionView　を分岐する
         // 動作確認用
-        UserDefaults.standard.set(true, forKey: "TableViewOrCollectionView")
-//            UserDefaults.standard.set(false, forKey: "TableViewOrCollectionView")
+//            UserDefaults.standard.set(true, forKey: "TableViewOrCollectionView")
+        UserDefaults.standard.set(false, forKey: "TableViewOrCollectionView")
         print(UserDefaults.standard.bool(forKey: "TableViewOrCollectionView"))
         if UserDefaults.standard.bool(forKey: "TableViewOrCollectionView") { // true: TableView
             // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toTableView"と設定する

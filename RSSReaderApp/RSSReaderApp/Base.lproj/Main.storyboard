@@ -397,6 +397,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Npm-lb-MFg" kind="presentation" identifier="cellSelected" id="8kM-W8-Fid"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -442,6 +445,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="193" height="128"/>
+                                <connections>
+                                    <segue destination="Npm-lb-MFg" kind="presentation" identifier="cellSelected" id="4xY-tK-rE3"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -602,9 +608,59 @@
             </objects>
             <point key="canvasLocation" x="-1449" y="313"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dgN-wI-jGW">
+            <objects>
+                <navigationController id="Npm-lb-MFg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xLO-kB-hdz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hV3-dB-8IL" kind="relationship" relationship="rootViewController" id="zW5-f0-B5I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3E0-Db-tif" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2220" y="250"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="jPd-JQ-hdU">
+            <objects>
+                <viewController id="hV3-dB-8IL" customClass="DetailViewController" customModule="RSSReaderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YAd-rB-Wzr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="NI0-rA-dz1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JbS-1m-Dat">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="star.fill" catalog="system" id="nr7-Zo-6sw">
+                                <connections>
+                                    <action selector="favoriteButtonTapped:" destination="hV3-dB-8IL" id="1bf-Kh-tzq"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="Z2k-Zk-xLB">
+                                <connections>
+                                    <action selector="shareButtonTapped:" destination="hV3-dB-8IL" id="Vhs-99-wD9"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="favoriteButton" destination="nr7-Zo-6sw" id="oKC-FD-6zZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06m-ZW-3Ac" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1449" y="250"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
