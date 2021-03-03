@@ -48,7 +48,6 @@ class SignUpViewController: LoginViewController {
             // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
             UserDefaults.standard.set(userNameTextField.text, forKey: "userName")
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-            self.dismiss(animated: true, completion:nil)
         }else {
             if dictionary?[userNameTextField.text!] == nil { // ユーザー情報を追加
                 dictionary![userNameTextField.text!] = userPasswordTextField.text!
@@ -56,14 +55,13 @@ class SignUpViewController: LoginViewController {
                 // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
                 UserDefaults.standard.set(userNameTextField.text, forKey: "userName")
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-                self.dismiss(animated: true, completion:nil)
             }else {
                 // IDが同じユーザーが既に登録されている場合
             }
         }
         print(UserDefaults.standard.string(forKey: "userName"))
         print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
-        //次の画面に遷移するなど
-//        performSegue(withIdentifier: "goTimeLine", sender: nil)
+        // RSSフィード選択画面 へ遷移
+        transfarViewController()
     }
 }

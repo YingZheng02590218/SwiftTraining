@@ -38,21 +38,21 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         collectionView.collectionViewLayout = layout
-        // RSSフィード　仮登録
-        UserDefaults.standard.set("andyoutoobrutus@yahoo.com", forKey: "userName")
-        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+//        // RSSフィード　仮登録
+//        UserDefaults.standard.set("andyoutoobrutus@yahoo.com", forKey: "userName")
+//        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
         // RSS取得間隔　確認用
         print(UserDefaults.standard.double(forKey: "SyncInterval"))
         UserDefaults.standard.set(1, forKey: "SyncInterval")
 
-        let databaseManager = DatabaseManager()
-        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
-        newsType = .science
-        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
-        newsType = .sports
-        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
-        newsType = .economics
-        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
+//        let databaseManager = DatabaseManager()
+//        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
+//        newsType = .science
+//        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
+//        newsType = .sports
+//        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
+//        newsType = .economics
+//        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
         // テーブルをスワイプすることで、記事を更新することができる
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector(("refreshTable")), for: UIControl.Event.valueChanged)

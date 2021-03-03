@@ -15,9 +15,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         print(UserDefaults.standard.string(forKey: "userName"))
         print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
+        print(UserDefaults.standard.dictionary(forKey: "userInformation"))
+        print(UserDefaults.standard.array(forKey: "visited"))
+        // 動作確認用
+        UserDefaults.standard.set(nil, forKey: "visited")
         userNameTextField.delegate = self
         userPasswordTextField.delegate = self
         // 入力された文字を非表示モードにする.
@@ -42,27 +45,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         // オートログイン
         // 動作確認用
-        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-//        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+//        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         // ログイン判定
         let ud = UserDefaults.standard
         let isUserLoggedIn: Bool? = ud.object(forKey: "isUserLoggedIn") as? Bool
         if isUserLoggedIn != nil && !isUserLoggedIn! { // 未ログインの場合
             // ログイン画面
         } else { // ログイン中の場合
-            // TableView　か　CollectionView　を分岐する
-            // 動作確認用
-            UserDefaults.standard.set(true, forKey: "TableViewOrCollectionView")
+            // 一覧画面 へ遷移
+            transfarViewControllerToList()
+        }
+    }
+    // 一覧画面へ画面遷移
+    func transfarViewControllerToList() {
+        // TableView　か　CollectionView　を分岐する
+        // 動作確認用
+        UserDefaults.standard.set(true, forKey: "TableViewOrCollectionView")
 //            UserDefaults.standard.set(false, forKey: "TableViewOrCollectionView")
-            print(UserDefaults.standard.bool(forKey: "TableViewOrCollectionView"))
-            if UserDefaults.standard.bool(forKey: "TableViewOrCollectionView") { // true: TableView
-                // 暫定処理 todo 設定詳細画面のブランチをマージ後に動作確認する
-                // todo 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toTableView"と設定する
-                self.performSegue(withIdentifier: "toTableView", sender: nil)
-            }else {
-                // todo 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toCollectionView"と設定する
-                self.performSegue(withIdentifier: "toCollectionView", sender: nil)
-            }
+        print(UserDefaults.standard.bool(forKey: "TableViewOrCollectionView"))
+        if UserDefaults.standard.bool(forKey: "TableViewOrCollectionView") { // true: TableView
+            // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toTableView"と設定する
+            self.performSegue(withIdentifier: "toTableView", sender: nil)
+        }else {
+            // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toCollectionView"と設定する
+            self.performSegue(withIdentifier: "toCollectionView", sender: nil)
         }
     }
     
@@ -121,8 +128,35 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if( userInformationPassword as! String == userPassword!) {
             UserDefaults.standard.set(userNameTextField.text, forKey: "userName")
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-            self.dismiss(animated: true, completion:nil)
+            // 一覧画面 へ遷移
+            transfarViewControllerToList()
         }
+    }
+    // 初回ログイン時のみ表示　RSSフィード選択画面　へ遷移
+    func transfarViewController() {
+        // 初回ログイン array型
+        print(UserDefaults.standard.array(forKey: "visited"))
+        let id = UserDefaults.standard.string(forKey: "userName")! as String
+        if UserDefaults.standard.array(forKey: "visited") == nil {
+            // 最初回
+            let visited: [String] = [id]
+            UserDefaults.standard.set(visited, forKey: "visited")
+        }else {
+            var visited = UserDefaults.standard.array(forKey: "visited")
+            for i in 0..<visited!.count { // 初回ログインではない場合
+                if visited![i] as! String == id {
+                    return // 画面遷移させない
+                }
+            }
+            // 初回ログイン時にRSSフィード選択画面へ遷移済みとする
+            visited!.append(id)
+            UserDefaults.standard.set(visited, forKey: "visited")
+        }
+        print(UserDefaults.standard.array(forKey:"visited"))
+        // RSSフィード選択画面 ブランチで　ナビゲーションコントローラのStoryboardIDを"NavigationController"と設定する
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+        secondViewController.modalPresentationStyle = .fullScreen
+        self.present(secondViewController, animated: true, completion: nil)
     }
 }
 // LINE
@@ -132,23 +166,31 @@ extension LoginViewController: LoginButtonDelegate {
             print("User Email: \(email)")
             // ユーザー情報 辞書型
             // ID(email)が登録されているかどうかをUserDefaults内で検索して、なければ新規登録する
-            let dictionary = UserDefaults.standard.dictionary(forKey: email)
+            let dictionary = UserDefaults.standard.dictionary(forKey: "userInformation")
             print(dictionary)
-            if dictionary == nil {
+            if dictionary == nil { // ユーザー情報を新規作成
                 let userInformation: [String: String] = [ // 『辞書』を初期化しつつ宣言します。
                     email : "", // SNSログインの場合は、Passwordを空白とする
                 ]
-                UserDefaults.standard.set(userInformation, forKey: email)
+                UserDefaults.standard.set(userInformation, forKey: "userInformation")
                 // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
                 UserDefaults.standard.set(email, forKey: "userName")
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             }else {
                 // IDが同じユーザーが既に登録されている場合
+                print(dictionary?[email])
+                // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
+                UserDefaults.standard.set(email, forKey: "userName")
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             }
             print(UserDefaults.standard.string(forKey: "userName"))
             print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
         }
         print("Login Succeeded.")
+        // RSSフィード選択画面 へ遷移
+        transfarViewController()
+        // 一覧画面 へ遷移
+        transfarViewControllerToList()
     }
     
     func loginButton(_ button: LoginButton, didFailLogin error: LineSDKError) {
