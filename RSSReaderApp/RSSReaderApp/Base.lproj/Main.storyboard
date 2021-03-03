@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QZs-VH-XDB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="10q-Sf-Ef9">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -294,7 +294,9 @@
                             <outlet property="delegate" destination="j76-fg-xa1" id="UBB-vB-o75"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="3De-gw-VPH"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="3De-gw-VPH">
+                        <barButtonItem key="backBarButtonItem" title="設定画面" id="1aw-To-ZkL"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkY-gY-QjN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -408,6 +410,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="3N9-cb-Ofh">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="gear" catalog="system" id="hXN-F4-Z7S">
+                            <connections>
+                                <segue destination="QZs-VH-XDB" kind="presentation" identifier="settingButtonTapped" id="1aZ-zb-QH4"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" id="3F8-Zn-Jbx">
                             <connections>
                                 <segue destination="3ca-uh-oWc" kind="presentation" identifier="buttonTapped" id="Mix-Ez-1C4"/>
@@ -786,6 +793,7 @@
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -173,6 +173,15 @@ class ListTableViewController: UITableViewController, XMLParserDelegate {
             controller2.urlStr = objects[indexPath!.row].ArticleLink
             controller2.ArticleNumber = objects[indexPath!.row].number
         }
+        // 設定画面へ遷移
+        if segue.identifier == "settingButtonTapped" {
+            // 遷移先のコントローラに値を渡す
+            guard let navigationController = segue.destination as? UINavigationController,
+                  let controller = navigationController.topViewController as? SettingsTableViewController else {
+                fatalError()
+            }
+            controller.title = "設定画面"
+        }
     }
     // セルをスワイプ
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
