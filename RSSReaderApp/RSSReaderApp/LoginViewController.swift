@@ -98,12 +98,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 //        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         // ログイン判定
         let ud = UserDefaults.standard
-        let isUserLoggedIn: Bool? = ud.object(forKey: "isUserLoggedIn") as? Bool
-        if isUserLoggedIn != nil && !isUserLoggedIn! { // 未ログインの場合
-            // ログイン画面
-        } else { // ログイン中の場合
-            // 一覧画面 へ遷移
-            transfarViewControllerToList()
+        if let isUserLoggedIn = ud.object(forKey: "isUserLoggedIn") as? Bool {
+            if !isUserLoggedIn { // 未ログインの場合
+                // ログイン画面
+            } else { // ログイン中の場合
+                // 一覧画面 へ遷移
+                transfarViewControllerToList()
+            }
         }
     }
     // 一覧画面へ画面遷移
