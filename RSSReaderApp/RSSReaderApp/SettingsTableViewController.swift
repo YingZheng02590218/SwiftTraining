@@ -32,7 +32,7 @@ class SettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,6 +54,9 @@ class SettingsTableViewController: UITableViewController {
         case 4:
             cell.textLabel?.text = "ダークモード"
             break
+        case 5:
+            cell.textLabel?.text = "Logout"
+            break
         default:
             break
         }
@@ -67,6 +70,15 @@ class SettingsTableViewController: UITableViewController {
             // RSSフィード選択画面 へ遷移
             let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChooseRSSFeedTableViewController") as! ChooseRSSFeedTableViewController
             self.present(secondViewController, animated: true, completion: nil)
+        }else if indexPath.row == 5 {
+            // ログアウト機能
+            // ログイン情報
+            print(UserDefaults.standard.string(forKey: "userName"))
+            print(UserDefaults.standard.bool(forKey: "isUserLoggedIn"))
+            UserDefaults.standard.set("", forKey: "userName")
+            UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+            // ログイン画面コントローラからログイン画面コントローラへSegueを繋ぎ、そのIdentiferを"toLoginViewController"と設定する
+            self.performSegue(withIdentifier: "toLoginViewController", sender: nil)
         }else {
             // 設定詳細画面 へ遷移
             let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailSettingsTableViewController") as! DetailSettingsTableViewController

@@ -20,7 +20,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print(UserDefaults.standard.dictionary(forKey: "userInformation"))
         print(UserDefaults.standard.array(forKey: "visited"))
         // 動作確認用
-        UserDefaults.standard.set(nil, forKey: "visited")
+//        UserDefaults.standard.set(nil, forKey: "visited")
         userNameTextField.delegate = self
         userPasswordTextField.delegate = self
         // 入力された文字を非表示モードにする.

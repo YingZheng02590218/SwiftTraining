@@ -297,6 +297,9 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="3De-gw-VPH">
                         <barButtonItem key="backBarButtonItem" title="設定画面" id="1aw-To-ZkL"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toLoginViewController" modalPresentationStyle="fullScreen" id="t4v-oD-1RR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkY-gY-QjN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
