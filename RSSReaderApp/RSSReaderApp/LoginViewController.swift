@@ -109,17 +109,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     // 一覧画面へ画面遷移
     func transfarViewControllerToList() {
-        // TableView　か　CollectionView　を分岐する
-        // 動作確認用
+        if UserDefaults.standard.bool(forKey: "isUserLoggedIn") { // true: ログイン中
+            // TableView　か　CollectionView　を分岐する
+            // 動作確認用
 //            UserDefaults.standard.set(true, forKey: "TableViewOrCollectionView")
-        UserDefaults.standard.set(false, forKey: "TableViewOrCollectionView")
-        print(UserDefaults.standard.bool(forKey: "TableViewOrCollectionView"))
-        if UserDefaults.standard.bool(forKey: "TableViewOrCollectionView") { // true: TableView
-            // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toTableView"と設定する
-            self.performSegue(withIdentifier: "toTableView", sender: nil)
-        }else {
-            // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toCollectionView"と設定する
-            self.performSegue(withIdentifier: "toCollectionView", sender: nil)
+//            UserDefaults.standard.set(false, forKey: "TableViewOrCollectionView")
+            print(UserDefaults.standard.bool(forKey: "TableViewOrCollectionView"))
+            if UserDefaults.standard.bool(forKey: "TableViewOrCollectionView") { // true: TableView
+                // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toTableView"と設定する
+                self.performSegue(withIdentifier: "toTableView", sender: nil)
+            }else {
+                // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toCollectionView"と設定する
+                self.performSegue(withIdentifier: "toCollectionView", sender: nil)
+            }
         }
     }
     
@@ -215,6 +217,18 @@ extension LoginViewController: LoginButtonDelegate {
         if let email = loginResult.accessToken.IDToken?.payload.email {
             print("User Email: \(email)")
             let token = loginResult.accessToken.value
+            // ビルドモード
+            #if RELEASE || DEBUGSECURE // ユーザに関する情報（メールアドレス、アクセストークン）を既存のUserDefaultからKeychainで管理する
+            print("[コードブロック Release, debug-secure]")
+            // ユーザー情報を新規作成 もしくは、更新
+            let result = KeyChain.saveKeyChain(id: email, password: token)
+            if result {
+                // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
+                UserDefaults.standard.set(email, forKey: "userName")
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+            }
+            #else
+            print("[コードブロック それ以外]")
             // ユーザー情報 辞書型
             // ID(email)が登録されているかどうかをUserDefaults内で検索して、なければ新規登録する
             var dictionary = UserDefaults.standard.dictionary(forKey: "userInformation")
@@ -237,6 +251,7 @@ extension LoginViewController: LoginButtonDelegate {
                 UserDefaults.standard.set(email, forKey: "userName")
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             }
+            #endif
             print(UserDefaults.standard.string(forKey: "userName"))
             print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
             print("Login Succeeded.")
