@@ -47,12 +47,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func verificationForAccessToken() {
         // LINE SDKに保存されたアクセストークン
         if let token = AccessTokenStore.shared.current {
+            // ビルドモード
+            #if RELEASE || DEBUGSECURE // ユーザに関する情報（メールアドレス、アクセストークン）を既存のUserDefaultからKeychainで管理する
+            print("[コードブロック Release, debug-secure]")
+            // ユーザー情報　キーチェーン
+            guard let pw: String = KeyChain.getKeyChain(id: UserDefaults.standard.string(forKey: "userName")!).password else { // ログイン情報　ID パスワード
+                return
+            }
+            #else
+            print("[コードブロック それ以外]")
             // ユーザー情報　辞書型
             var dictionary = UserDefaults.standard.dictionary(forKey: "userInformation")
             // ユーザー情報　現在ログイン中のIDのパスワード(アクセストークン)を取得
             guard let pw: String = dictionary?[UserDefaults.standard.string(forKey: "userName")!] as? String else { // ログイン情報　ID パスワード
                 return
             }
+            #endif
             print(token.value)
             print(pw)
             // ログイン中のアカウントがLINEログインか判断 ログイン情報のパスワード(アクセストークン)　と　LINE SDKに保存されたアクセストークンを比較
@@ -70,10 +80,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         lineLogout()
                         UserDefaults.standard.set("", forKey: "userName")
                         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+                        // 最前面のViewController(一覧画面)からログイン画面 へ切り替える
+                        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                        secondViewController.modalPresentationStyle = .fullScreen
+                        topViewController(controller: self)!.present(secondViewController, animated: true, completion: nil)
                     }
                 }
             }
         } // LINEログアウトした場合
+    }
+    // 最前面のViewControllerの取得
+    func topViewController(controller: UIViewController?) -> UIViewController? {
+        if let tabController = controller as? UITabBarController {
+            if let selected = tabController.selectedViewController {
+                return topViewController(controller: selected)
+            }
+        }
+        if let navigationController = controller as? UINavigationController {
+            return topViewController(controller: navigationController.visibleViewController)
+        }
+        if let presented = controller?.presentedViewController {
+            return topViewController(controller: presented)
+        }
+        return controller
     }
     // ログイン中のアカウントがLINEログインの場合、ログアウトする
     func lineLogout() {
