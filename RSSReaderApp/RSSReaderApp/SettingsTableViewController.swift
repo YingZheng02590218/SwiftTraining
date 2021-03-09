@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LineSDK
 
 class SettingsTableViewController: UITableViewController {
 
@@ -32,7 +33,15 @@ class SettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // ビルドモード
+        #if DEBUGSECURE || DEBUGNONSECURE // アクセストークン更新機能
+        print("[コードブロック debug-secure]")
+        print("[コードブロック debug-non-secure]")
+        return 7
+        #else
+        print("[コードブロック それ以外]")
         return 6
+        #endif
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,6 +66,14 @@ class SettingsTableViewController: UITableViewController {
         case 5:
             cell.textLabel?.text = "Logout"
             break
+        case 6:
+            // ビルドモード
+            #if DEBUGSECURE || DEBUGNONSECURE // アクセストークン更新機能
+            print("[コードブロック debug-secure]")
+            print("[コードブロック debug-non-secure]")
+            cell.textLabel?.text = "アクセストークンを更新する"
+            #endif
+            break
         default:
             break
         }
@@ -79,6 +96,48 @@ class SettingsTableViewController: UITableViewController {
             UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
             // ログイン画面コントローラからログイン画面コントローラへSegueを繋ぎ、そのIdentiferを"toLoginViewController"と設定する
             self.performSegue(withIdentifier: "toLoginViewController", sender: nil)
+        }else if indexPath.row == 6 {
+            // ビルドモード
+            #if DEBUGSECURE || DEBUGNONSECURE // アクセストークン更新機能
+            print("[コードブロック debug-secure]")
+            print("[コードブロック debug-non-secure]")
+            // LINE SDKから貰えるリフレッシュトークンを使用してアクセストークンを洗い替えできる機能の追加、イメージとしてはログアウトボタンの下にトークン更新ボタンの配置的な感じです。
+            if let token = AccessTokenStore.shared.current {
+                print("アクセストークン: Token expires at: \(token.expiresAt)")
+                print("アクセストークン: Token right now: \(token.value)")
+            }
+            API.Auth.refreshAccessToken { result in
+                switch result {
+                case .success(let token):
+                    print("アクセストークン: Token Refreshed: \(token.value)")
+                    if let email = token.IDToken?.payload.email {
+                        print("User Email: \(email)")
+                        // ユーザー情報を新規作成 もしくは、更新
+                        let result = KeyChain.saveKeyChain(id: email, password: token.value)
+                        if result {
+                            // アラートを出す
+                            DispatchQueue.main.async {
+                                let dialog: UIAlertController = UIAlertController(title: "アクセストークン ", message: "更新しました。", preferredStyle: .alert)
+                                self.present(dialog, animated: true)
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                    self.dismiss(animated: true, completion: nil)
+                                }
+                            }
+                        }
+                    }
+                case .failure(let error):
+                    print(error)
+                    // アラートを出す
+                    DispatchQueue.main.async {
+                        let dialog: UIAlertController = UIAlertController(title: "アクセストークン ", message: "更新できませんでした。", preferredStyle: .alert)
+                        self.present(dialog, animated: true)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            self.dismiss(animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
+            #endif
         }else {
             // 設定詳細画面 へ遷移
             let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailSettingsTableViewController") as! DetailSettingsTableViewController
