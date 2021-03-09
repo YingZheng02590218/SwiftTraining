@@ -195,6 +195,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginButtonTapped(_ sender: Any) {
         let userName = userNameTextField.text;
         let userPassword = userPasswordTextField.text;
+        // ビルドモード
+        #if RELEASE || DEBUGSECURE // ユーザに関する情報（メールアドレス、アクセストークン）を既存のUserDefaultからKeychainで管理する
+        print("[コードブロック Release, debug-secure]")
+        // ユーザー情報　キーチェーン
+        guard let userInformationPassword: String = KeyChain.getKeyChain(id: userName!).password else { // ログイン情報　ID パスワード
+            // アラートを出す
+            let dialog: UIAlertController = UIAlertController(title: "ログイン失敗", message: "IDかパスワードが不正です。", preferredStyle: .alert)
+            self.present(dialog, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.dismiss(animated: true, completion: nil)
+            }
+            return
+        }
+        #else
+        print("[コードブロック それ以外]")
         // ユーザー情報 辞書型
         guard let dictionary = UserDefaults.standard.dictionary(forKey: "userInformation") else {
             return
@@ -206,6 +221,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         print(dictionary[userName!] as! String)
+        #endif
         if( userInformationPassword as! String == userPassword!) {
             UserDefaults.standard.set(userNameTextField.text, forKey: "userName")
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
