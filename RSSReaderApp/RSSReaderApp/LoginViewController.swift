@@ -33,21 +33,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         #if DEBUGDUMMY // デバッグ用機能
         print("[コードブロック debug-dummy]")
         // あと、ビルドモードがdebug-dummyの場合、内部的にはSNSログインを行わず、入力ログインIDのバリデートのみ（パスワードは空でOK）で次画面に遷移できるようなデバッグ用機能を追加して欲しいです。
-        let loginButton = LoginButtonForDummy()
+        self.loginButtonLINE = LoginButtonForDummy()
+        self.loginButtonLINE.isEnabled = false // 初期値　ボタン無効
         #else
         print("[コードブロック それ以外]")
-        let loginButton = LoginButton()
+        let loginButtonLINE = LoginButton()
         #endif
-        loginButton.delegate = self
+        loginButtonLINE.delegate = self
         // Configuration for permissions and presenting.
-        loginButton.permissions = [.openID, .email]
-        loginButton.presentingViewController = self
+        loginButtonLINE.permissions = [.openID, .email]
+        loginButtonLINE.presentingViewController = self
         // Add button to view and layout it.
-        view.addSubview(loginButton)
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
-        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        view.addSubview(loginButtonLINE)
+        loginButtonLINE.translatesAutoresizingMaskIntoConstraints = false
+        loginButtonLINE.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         //下部からマージン100を指定
-        loginButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+        loginButtonLINE.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
         // ログイン中のアカウントがLINEログインの場合、アクセストークンの検証を実行する
         verificationForAccessToken()
     }
@@ -163,6 +164,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBOutlet var loginButton: UIButton!
+    // ビルドモード
+    #if DEBUGDUMMY // デバッグ用機能
+    var loginButtonLINE: LoginButtonForDummy! // デバッグ用機能
+    #endif
     
     // .editingDidEndOnExit イベントが送信されると呼ばれる
     @objc func onExitAction(sender: Any) {
@@ -170,6 +175,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func validate() {
+        // ビルドモード
+        #if DEBUGDUMMY // デバッグ用機能
+        print("[コードブロック debug-dummy]")
+        guard let email = userNameTextField.text else {
+            loginButtonLINE.isEnabled = false
+            return
+        }
+        if self.validateEmail(candidate: email) {
+            // メールアドレスが正しく入力された場合
+            loginButtonLINE.isEnabled = true
+        } else {
+            // メールアドレスが正しく入力されなかった場合
+            loginButtonLINE.isEnabled = false
+        }
+        #else
+        print("[コードブロック それ以外]")
         guard let email = userNameTextField.text, let password = userPasswordTextField.text else {
             loginButton.isEnabled = false
             return
@@ -186,6 +207,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             // メールアドレスが正しく入力されなかった場合
             loginButton.isEnabled = false
         }
+        #endif
     }
     //　バリデーションチェック　ID
     func validateEmail(candidate: String) -> Bool {
@@ -342,7 +364,8 @@ extension LoginViewController: LoginButtonDelegate {
         #endif
     }
 }
-// デバッグ用機能
+// ビルドモード
+#if DEBUGDUMMY // デバッグ用機能
 open class LoginButtonForDummy: LoginButton {
 
     @objc override open func login() {
@@ -350,3 +373,4 @@ open class LoginButtonForDummy: LoginButton {
         delegate?.loginButtonDidStartLogin(self)
     }
 }
+#endif
