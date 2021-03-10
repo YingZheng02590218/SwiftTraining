@@ -64,7 +64,7 @@ class SettingsTableViewController: UITableViewController {
             cell.textLabel?.text = "ダークモード"
             break
         case 5:
-            cell.textLabel?.text = "Logout"
+            cell.textLabel?.text = "Logout  (\(UserDefaults.standard.string(forKey: "userName")!))"
             break
         case 6:
             // ビルドモード

@@ -29,7 +29,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         userPasswordTextField.addTarget(self, action: #selector(onExitAction), for: .editingDidEndOnExit)
         // LINE
         // Create Login Button.
+        // ビルドモード
+        #if DEBUGDUMMY // デバッグ用機能
+        print("[コードブロック debug-dummy]")
+        // あと、ビルドモードがdebug-dummyの場合、内部的にはSNSログインを行わず、入力ログインIDのバリデートのみ（パスワードは空でOK）で次画面に遷移できるようなデバッグ用機能を追加して欲しいです。
+        let loginButton = LoginButtonForDummy()
+        #else
+        print("[コードブロック それ以外]")
         let loginButton = LoginButton()
+        #endif
         loginButton.delegate = self
         // Configuration for permissions and presenting.
         loginButton.permissions = [.openID, .email]
@@ -320,5 +328,25 @@ extension LoginViewController: LoginButtonDelegate {
     
     func loginButtonDidStartLogin(_ button: LoginButton) {
         print("Login Started.")
+        // ビルドモード
+        #if DEBUGDUMMY // デバッグ用機能
+        print("[コードブロック debug-dummy]")
+        // 内部的にはSNSログインを行わないように、省略する
+        print(UserDefaults.standard.string(forKey: "userName")!)
+        print(UserDefaults.standard.string(forKey: "isUserLoggedIn")!)
+        // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
+        UserDefaults.standard.set(userNameTextField.text, forKey: "userName")
+        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+        // 一覧画面 へ遷移
+        transfarViewControllerToList()
+        #endif
+    }
+}
+// デバッグ用機能
+open class LoginButtonForDummy: LoginButton {
+
+    @objc override open func login() {
+        // 内部的にはSNSログインを行わないように、省略する
+        delegate?.loginButtonDidStartLogin(self)
     }
 }
