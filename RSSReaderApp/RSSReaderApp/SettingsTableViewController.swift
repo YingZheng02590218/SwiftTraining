@@ -112,6 +112,9 @@ class SettingsTableViewController: UITableViewController {
                     print("アクセストークン: Token Refreshed: \(token.value)")
                     if let email = token.IDToken?.payload.email {
                         print("User Email: \(email)")
+                        // ビルドモード
+                        #if DEBUGSECURE  // アクセストークン更新機能
+                        print("[コードブロック debug-secure]")
                         // ユーザー情報を新規作成 もしくは、更新
                         let result = KeyChain.saveKeyChain(id: email, password: token.value)
                         if result {
@@ -124,6 +127,33 @@ class SettingsTableViewController: UITableViewController {
                                 }
                             }
                         }
+                        #elseif DEBUGNONSECURE // アクセストークン更新機能
+                        print("[コードブロック debug-non-secure]")
+                        // ユーザー情報 辞書型
+                        // ID(email)が登録されているかどうかをUserDefaults内で検索して、なければ新規登録する
+                        var dictionary = UserDefaults.standard.dictionary(forKey: "userInformation")
+                        print(dictionary)
+                        if dictionary == nil { // ユーザー情報を新規作成
+                            let userInformation: [String: String] = [ // 『辞書』を初期化しつつ宣言します。
+                                email : token.value,
+                            ]
+                            UserDefaults.standard.set(userInformation, forKey: "userInformation")
+                        }else {
+                            // IDが同じユーザーが既に登録されている場合
+                            print(dictionary?[email])
+                            print(token.value)
+                            dictionary![email] = token.value // ユーザー情報　パスワード(アクセストークン)
+                            UserDefaults.standard.set(dictionary, forKey: "userInformation")
+                        }
+                        // アラートを出す
+                        DispatchQueue.main.async {
+                            let dialog: UIAlertController = UIAlertController(title: "アクセストークン ", message: "更新しました。", preferredStyle: .alert)
+                            self.present(dialog, animated: true)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                        }
+                        #endif
                     }
                 case .failure(let error):
                     print(error)
