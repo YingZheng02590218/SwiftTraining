@@ -174,12 +174,22 @@ code_sign_if_enabled() {
   fi
 }
 
-if [[ "$CONFIGURATION" == "Debug" ]]; then
+if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/LineSDKSwift/LineSDK.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"
 fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
+if [[ "$CONFIGURATION" == "debug-dummy" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/LineSDKSwift/LineSDK.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"
+fi
+if [[ "$CONFIGURATION" == "debug-non-secure" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/LineSDKSwift/LineSDK.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"
+fi
+if [[ "$CONFIGURATION" == "debug-secure" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/LineSDKSwift/LineSDK.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"

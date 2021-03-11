@@ -29,17 +29,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         userPasswordTextField.addTarget(self, action: #selector(onExitAction), for: .editingDidEndOnExit)
         // LINE
         // Create Login Button.
-        let loginButton = LoginButton()
-        loginButton.delegate = self
+        // ビルドモード
+        #if DEBUGDUMMY // デバッグ用機能
+        print("[コードブロック debug-dummy]")
+        // あと、ビルドモードがdebug-dummyの場合、内部的にはSNSログインを行わず、入力ログインIDのバリデートのみ（パスワードは空でOK）で次画面に遷移できるようなデバッグ用機能を追加して欲しいです。
+        self.loginButtonLINE = LoginButtonForDummy()
+        self.loginButtonLINE.isEnabled = false // 初期値　ボタン無効
+        #else
+        print("[コードブロック それ以外]")
+        let loginButtonLINE = LoginButton()
+        #endif
+        loginButtonLINE.delegate = self
         // Configuration for permissions and presenting.
-        loginButton.permissions = [.openID, .email]
-        loginButton.presentingViewController = self
+        loginButtonLINE.permissions = [.openID, .email]
+        loginButtonLINE.presentingViewController = self
         // Add button to view and layout it.
-        view.addSubview(loginButton)
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
-        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        view.addSubview(loginButtonLINE)
+        loginButtonLINE.translatesAutoresizingMaskIntoConstraints = false
+        loginButtonLINE.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         //下部からマージン100を指定
-        loginButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+        loginButtonLINE.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
         // ログイン中のアカウントがLINEログインの場合、アクセストークンの検証を実行する
         verificationForAccessToken()
     }
@@ -47,12 +56,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func verificationForAccessToken() {
         // LINE SDKに保存されたアクセストークン
         if let token = AccessTokenStore.shared.current {
+            // ビルドモード
+            #if RELEASE || DEBUGSECURE // ユーザに関する情報（メールアドレス、アクセストークン）を既存のUserDefaultからKeychainで管理する
+            print("[コードブロック Release, debug-secure]")
+            // ユーザー情報　キーチェーン
+            guard let pw: String = KeyChain.getKeyChain(id: UserDefaults.standard.string(forKey: "userName")!).password else { // ログイン情報　ID パスワード
+                return
+            }
+            #else
+            print("[コードブロック それ以外]")
             // ユーザー情報　辞書型
             var dictionary = UserDefaults.standard.dictionary(forKey: "userInformation")
             // ユーザー情報　現在ログイン中のIDのパスワード(アクセストークン)を取得
             guard let pw: String = dictionary?[UserDefaults.standard.string(forKey: "userName")!] as? String else { // ログイン情報　ID パスワード
                 return
             }
+            #endif
             print(token.value)
             print(pw)
             // ログイン中のアカウントがLINEログインか判断 ログイン情報のパスワード(アクセストークン)　と　LINE SDKに保存されたアクセストークンを比較
@@ -70,10 +89,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         lineLogout()
                         UserDefaults.standard.set("", forKey: "userName")
                         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+                        // 最前面のViewController(一覧画面)からログイン画面 へ切り替える
+                        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                        secondViewController.modalPresentationStyle = .fullScreen
+                        topViewController(controller: self)!.present(secondViewController, animated: true, completion: nil)
                     }
                 }
             }
         } // LINEログアウトした場合
+    }
+    // 最前面のViewControllerの取得
+    func topViewController(controller: UIViewController?) -> UIViewController? {
+        if let tabController = controller as? UITabBarController {
+            if let selected = tabController.selectedViewController {
+                return topViewController(controller: selected)
+            }
+        }
+        if let navigationController = controller as? UINavigationController {
+            return topViewController(controller: navigationController.visibleViewController)
+        }
+        if let presented = controller?.presentedViewController {
+            return topViewController(controller: presented)
+        }
+        return controller
     }
     // ログイン中のアカウントがLINEログインの場合、ログアウトする
     func lineLogout() {
@@ -109,21 +147,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     // 一覧画面へ画面遷移
     func transfarViewControllerToList() {
-        // TableView　か　CollectionView　を分岐する
-        // 動作確認用
+        if UserDefaults.standard.bool(forKey: "isUserLoggedIn") { // true: ログイン中
+            // TableView　か　CollectionView　を分岐する
+            // 動作確認用
 //            UserDefaults.standard.set(true, forKey: "TableViewOrCollectionView")
-        UserDefaults.standard.set(false, forKey: "TableViewOrCollectionView")
-        print(UserDefaults.standard.bool(forKey: "TableViewOrCollectionView"))
-        if UserDefaults.standard.bool(forKey: "TableViewOrCollectionView") { // true: TableView
-            // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toTableView"と設定する
-            self.performSegue(withIdentifier: "toTableView", sender: nil)
-        }else {
-            // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toCollectionView"と設定する
-            self.performSegue(withIdentifier: "toCollectionView", sender: nil)
+//            UserDefaults.standard.set(false, forKey: "TableViewOrCollectionView")
+            print(UserDefaults.standard.bool(forKey: "TableViewOrCollectionView"))
+            if UserDefaults.standard.bool(forKey: "TableViewOrCollectionView") { // true: TableView
+                // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toTableView"と設定する
+                self.performSegue(withIdentifier: "toTableView", sender: nil)
+            }else {
+                // 一覧画面をマージ後に、設定詳細画面ブランチで　ログイン画面コントローラから一覧画面コントローラへSegueを繋ぎ、そのIdentiferを"toCollectionView"と設定する
+                self.performSegue(withIdentifier: "toCollectionView", sender: nil)
+            }
         }
     }
     
     @IBOutlet var loginButton: UIButton!
+    // ビルドモード
+    #if DEBUGDUMMY // デバッグ用機能
+    var loginButtonLINE: LoginButtonForDummy! // デバッグ用機能
+    #endif
     
     // .editingDidEndOnExit イベントが送信されると呼ばれる
     @objc func onExitAction(sender: Any) {
@@ -131,6 +175,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func validate() {
+        // ビルドモード
+        #if DEBUGDUMMY // デバッグ用機能
+        print("[コードブロック debug-dummy]")
+        guard let email = userNameTextField.text else {
+            loginButtonLINE.isEnabled = false
+            return
+        }
+        if self.validateEmail(candidate: email) {
+            // メールアドレスが正しく入力された場合
+            loginButtonLINE.isEnabled = true
+        } else {
+            // メールアドレスが正しく入力されなかった場合
+            loginButtonLINE.isEnabled = false
+        }
+        #else
+        print("[コードブロック それ以外]")
         guard let email = userNameTextField.text, let password = userPasswordTextField.text else {
             loginButton.isEnabled = false
             return
@@ -147,6 +207,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             // メールアドレスが正しく入力されなかった場合
             loginButton.isEnabled = false
         }
+        #endif
     }
     //　バリデーションチェック　ID
     func validateEmail(candidate: String) -> Bool {
@@ -164,6 +225,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginButtonTapped(_ sender: Any) {
         let userName = userNameTextField.text;
         let userPassword = userPasswordTextField.text;
+        // ビルドモード
+        #if RELEASE || DEBUGSECURE // ユーザに関する情報（メールアドレス、アクセストークン）を既存のUserDefaultからKeychainで管理する
+        print("[コードブロック Release, debug-secure]")
+        // ユーザー情報　キーチェーン
+        guard let userInformationPassword: String = KeyChain.getKeyChain(id: userName!).password else { // ログイン情報　ID パスワード
+            // アラートを出す
+            let dialog: UIAlertController = UIAlertController(title: "ログイン失敗", message: "IDかパスワードが不正です。", preferredStyle: .alert)
+            self.present(dialog, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.dismiss(animated: true, completion: nil)
+            }
+            return
+        }
+        #else
+        print("[コードブロック それ以外]")
         // ユーザー情報 辞書型
         guard let dictionary = UserDefaults.standard.dictionary(forKey: "userInformation") else {
             return
@@ -175,6 +251,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         print(dictionary[userName!] as! String)
+        #endif
         if( userInformationPassword as! String == userPassword!) {
             UserDefaults.standard.set(userNameTextField.text, forKey: "userName")
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
@@ -215,6 +292,18 @@ extension LoginViewController: LoginButtonDelegate {
         if let email = loginResult.accessToken.IDToken?.payload.email {
             print("User Email: \(email)")
             let token = loginResult.accessToken.value
+            // ビルドモード
+            #if RELEASE || DEBUGSECURE // ユーザに関する情報（メールアドレス、アクセストークン）を既存のUserDefaultからKeychainで管理する
+            print("[コードブロック Release, debug-secure]")
+            // ユーザー情報を新規作成 もしくは、更新
+            let result = KeyChain.saveKeyChain(id: email, password: token)
+            if result {
+                // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
+                UserDefaults.standard.set(email, forKey: "userName")
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+            }
+            #else
+            print("[コードブロック それ以外]")
             // ユーザー情報 辞書型
             // ID(email)が登録されているかどうかをUserDefaults内で検索して、なければ新規登録する
             var dictionary = UserDefaults.standard.dictionary(forKey: "userInformation")
@@ -237,6 +326,7 @@ extension LoginViewController: LoginButtonDelegate {
                 UserDefaults.standard.set(email, forKey: "userName")
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             }
+            #endif
             print(UserDefaults.standard.string(forKey: "userName"))
             print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
             print("Login Succeeded.")
@@ -260,5 +350,27 @@ extension LoginViewController: LoginButtonDelegate {
     
     func loginButtonDidStartLogin(_ button: LoginButton) {
         print("Login Started.")
+        // ビルドモード
+        #if DEBUGDUMMY // デバッグ用機能
+        print("[コードブロック debug-dummy]")
+        // 内部的にはSNSログインを行わないように、省略する
+        print(UserDefaults.standard.string(forKey: "userName")!)
+        print(UserDefaults.standard.string(forKey: "isUserLoggedIn")!)
+        // UserDefaultsに保存 IDとパスワード　ログイン中のユーザーを識別する情報
+        UserDefaults.standard.set(userNameTextField.text, forKey: "userName")
+        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+        // 一覧画面 へ遷移
+        transfarViewControllerToList()
+        #endif
     }
 }
+// ビルドモード
+#if DEBUGDUMMY // デバッグ用機能
+open class LoginButtonForDummy: LoginButton {
+
+    @objc override open func login() {
+        // 内部的にはSNSログインを行わないように、省略する
+        delegate?.loginButtonDidStartLogin(self)
+    }
+}
+#endif
