@@ -56,6 +56,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func verificationForAccessToken() {
         // LINE SDKに保存されたアクセストークン
         if let token = AccessTokenStore.shared.current {
+            // ログイン情報　現在ログイン中のIDを取得
+            guard let userName: String = UserDefaults.standard.string(forKey: "userName") else {
+                return
+            }
             // ビルドモード
             #if RELEASE || DEBUGSECURE // ユーザに関する情報（メールアドレス、アクセストークン）を既存のUserDefaultからKeychainで管理する
             print("[コードブロック Release, debug-secure]")
