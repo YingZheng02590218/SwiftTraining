@@ -234,7 +234,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print("[コードブロック Release, debug-secure]")
         // ユーザー情報　キーチェーン
         guard let userInformationPassword: String = KeyChain.getKeyChain(id: userName!).password else { // ログイン情報　ID パスワード
-            // アラートを出す
+            // アラートを出す IDが不正
             let dialog: UIAlertController = UIAlertController(title: "ログイン失敗", message: "IDかパスワードが不正です。", preferredStyle: .alert)
             self.present(dialog, animated: true)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -261,6 +261,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             // 一覧画面 へ遷移
             transfarViewControllerToList()
+        }else {
+            // アラートを出す パスワードが不正
+            let dialog: UIAlertController = UIAlertController(title: "ログイン失敗", message: "IDかパスワードが不正です。", preferredStyle: .alert)
+            self.present(dialog, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     // 初回ログイン時のみ表示　RSSフィード選択画面　へ遷移
