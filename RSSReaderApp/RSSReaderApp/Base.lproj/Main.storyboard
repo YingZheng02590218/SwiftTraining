@@ -265,6 +265,8 @@
                         <outlet property="registerButton" destination="vv6-mT-oFr" id="nsa-Vf-qFH"/>
                         <outlet property="userNameTextField" destination="Xvp-Fh-7nV" id="s29-5b-GGY"/>
                         <outlet property="userPasswordTextField" destination="rlK-sk-jh2" id="9oJ-Wh-6q6"/>
+                        <segue destination="MeX-QI-WJg" kind="presentation" identifier="toCollectionView" modalPresentationStyle="fullScreen" id="Nb4-Bm-Gth"/>
+                        <segue destination="10q-Sf-Ef9" kind="presentation" identifier="toTableView" modalPresentationStyle="fullScreen" id="28x-Ba-wEl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9K-TU-m2z" sceneMemberID="firstResponder"/>
