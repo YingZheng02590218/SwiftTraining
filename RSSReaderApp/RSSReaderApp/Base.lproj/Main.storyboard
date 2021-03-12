@@ -35,7 +35,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBA-NR-t2O">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレスを入力してください。" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBA-NR-t2O">
                                 <rect key="frame" x="20" y="307" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IBA-NR-t2O" secondAttribute="height" multiplier="11:1" id="Fmv-EF-ZLK"/>
@@ -52,7 +52,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GI4-IC-x76">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="４〜６桁の数字を入力して下さい。" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GI4-IC-x76">
                                 <rect key="frame" x="20" y="391" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GI4-IC-x76" secondAttribute="height" multiplier="11:1" id="yi5-DP-ESq"/>
@@ -189,7 +189,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xvp-Fh-7nV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレスを入力してください。" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xvp-Fh-7nV">
                                 <rect key="frame" x="20" y="263" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Xvp-Fh-7nV" secondAttribute="height" multiplier="11:1" id="epV-39-Ua5"/>
@@ -206,7 +206,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rlK-sk-jh2">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="４〜６桁の数字を入力して下さい。" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rlK-sk-jh2">
                                 <rect key="frame" x="20" y="347" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rlK-sk-jh2" secondAttribute="height" multiplier="11:1" id="F1q-v1-ZX5"/>
