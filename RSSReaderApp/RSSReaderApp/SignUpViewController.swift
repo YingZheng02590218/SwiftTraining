@@ -85,8 +85,11 @@ class SignUpViewController: LoginViewController {
         #endif
         print(UserDefaults.standard.string(forKey: "userName"))
         print(UserDefaults.standard.string(forKey: "isUserLoggedIn"))
-        // RSSフィード選択画面 へ遷移
-        transfarViewController()
+        // IDが同じユーザーが既に登録されている場合、遷移させない
+        if UserDefaults.standard.bool(forKey: "isUserLoggedIn") {
+            // RSSフィード選択画面 へ遷移
+            transfarViewController()
+        }
     }
 }
 // キーチェーン

@@ -41,9 +41,9 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
 //        // RSSフィード　仮登録
 //        UserDefaults.standard.set("andyoutoobrutus@yahoo.com", forKey: "userName")
 //        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-        // RSS取得間隔　確認用
-        print(UserDefaults.standard.double(forKey: "SyncInterval"))
-        UserDefaults.standard.set(1, forKey: "SyncInterval")
+//        // RSS取得間隔　確認用
+//        print(UserDefaults.standard.double(forKey: "SyncInterval"))
+//        UserDefaults.standard.set(1, forKey: "SyncInterval")
 
 //        let databaseManager = DatabaseManager()
 //        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
@@ -64,6 +64,11 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
         feedDownload()
         self.collectionView.reloadData()
         collectionView.refreshControl?.endRefreshing()
+        DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.collectionView.contentOffset = CGPoint(x: 0, y: -(self.navigationController?.navigationBar.frame.size.height)! - UIApplication.shared.statusBarFrame.size.height)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,7 +103,18 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
             if let parser = XMLParser(contentsOf: url) {
                 self.parser = parser
                 self.parser.delegate = self
-                self.parser.parse()
+                guard self.parser.parse() else {
+                    // アラートを出す
+                    DispatchQueue.main.async {
+                        let dialog: UIAlertController = UIAlertController(title: "RSS情報の取得失敗", message: "ネットワークの通信状態を確認してください。", preferredStyle: .alert)
+                        self.present(dialog, animated: true)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            dialog.dismiss(animated: true, completion: nil)
+                        }
+                    }
+                    return
+                }
+
             }
         }
     }

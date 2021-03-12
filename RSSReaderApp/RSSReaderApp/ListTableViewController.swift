@@ -48,6 +48,11 @@ class ListTableViewController: UITableViewController, XMLParserDelegate {
         feedDownload()
         self.tableView.reloadData()
         refreshControl?.endRefreshing()
+        DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.tableView.contentOffset = CGPoint(x: 0, y: -(self.navigationController?.navigationBar.frame.size.height)! - UIApplication.shared.statusBarFrame.size.height)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +87,17 @@ class ListTableViewController: UITableViewController, XMLParserDelegate {
             if let parser = XMLParser(contentsOf: url) {
                 self.parser = parser
                 self.parser.delegate = self
-                self.parser.parse()
+                guard self.parser.parse() else {
+                    // アラートを出す
+                    DispatchQueue.main.async {
+                        let dialog: UIAlertController = UIAlertController(title: "RSS情報の取得失敗", message: "ネットワークの通信状態を確認してください。", preferredStyle: .alert)
+                        self.present(dialog, animated: true)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            dialog.dismiss(animated: true, completion: nil)
+                        }
+                    }
+                    return
+                }
             }
         }
     }
