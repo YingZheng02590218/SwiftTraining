@@ -41,9 +41,9 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
 //        // RSSフィード　仮登録
 //        UserDefaults.standard.set("andyoutoobrutus@yahoo.com", forKey: "userName")
 //        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-        // RSS取得間隔　確認用
-        print(UserDefaults.standard.double(forKey: "SyncInterval"))
-        UserDefaults.standard.set(1, forKey: "SyncInterval")
+//        // RSS取得間隔　確認用
+//        print(UserDefaults.standard.double(forKey: "SyncInterval"))
+//        UserDefaults.standard.set(1, forKey: "SyncInterval")
 
 //        let databaseManager = DatabaseManager()
 //        databaseManager.add(RSSFeed: newsType.urlStr, RSSFeedTitle: newsType.itemInfo)
